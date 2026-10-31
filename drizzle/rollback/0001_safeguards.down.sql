@@ -1,0 +1,38 @@
+-- Reverts drizzle/0001_safeguards.sql. Development/test only: production
+-- rollbacks use a forward migration or point-in-time recovery.
+DROP TRIGGER IF EXISTS orders_allowed ON orders;
+DROP FUNCTION IF EXISTS sv_check_order_allowed();
+DROP VIEW IF EXISTS purchasable_services;
+DROP TRIGGER IF EXISTS deposit_reviews_second_check ON deposit_reviews;
+DROP FUNCTION IF EXISTS sv_check_second_review();
+DROP TRIGGER IF EXISTS role_sensitive_permissions_protect_owner ON role_sensitive_permissions;
+DROP TRIGGER IF EXISTS role_module_access_protect_owner ON role_module_access;
+DROP TRIGGER IF EXISTS roles_protect_owner ON roles;
+DROP FUNCTION IF EXISTS sv_protect_owner_role();
+DROP TRIGGER IF EXISTS staff_members_keep_owner ON staff_members;
+DROP FUNCTION IF EXISTS sv_keep_an_owner();
+DROP TRIGGER IF EXISTS order_refunds_cap ON order_refunds;
+DROP FUNCTION IF EXISTS sv_check_refund_cap();
+DROP TRIGGER IF EXISTS account_balances_no_truncate ON account_balances;
+DROP TRIGGER IF EXISTS account_balances_guard ON account_balances;
+DROP FUNCTION IF EXISTS sv_guard_balances();
+DROP TRIGGER IF EXISTS journal_lines_apply ON journal_lines;
+DROP FUNCTION IF EXISTS sv_apply_journal_line();
+DROP TRIGGER IF EXISTS journal_entries_have_lines ON journal_entries;
+DROP TRIGGER IF EXISTS journal_lines_balanced ON journal_lines;
+DROP FUNCTION IF EXISTS sv_check_entry_balanced();
+DROP TRIGGER IF EXISTS service_price_versions_append_only ON service_price_versions;
+DROP TRIGGER IF EXISTS audit_log_no_truncate ON audit_log;
+DROP TRIGGER IF EXISTS audit_log_append_only ON audit_log;
+DROP TRIGGER IF EXISTS referral_events_append_only ON referral_events;
+DROP TRIGGER IF EXISTS deposit_reviews_append_only ON deposit_reviews;
+DROP TRIGGER IF EXISTS order_refunds_append_only ON order_refunds;
+DROP TRIGGER IF EXISTS order_events_append_only ON order_events;
+DROP TRIGGER IF EXISTS ledger_accounts_no_truncate ON ledger_accounts;
+DROP TRIGGER IF EXISTS ledger_accounts_immutable ON ledger_accounts;
+DROP TRIGGER IF EXISTS journal_lines_no_truncate ON journal_lines;
+DROP TRIGGER IF EXISTS journal_lines_append_only ON journal_lines;
+DROP TRIGGER IF EXISTS journal_entries_no_truncate ON journal_entries;
+DROP TRIGGER IF EXISTS journal_entries_append_only ON journal_entries;
+DROP FUNCTION IF EXISTS sv_forbid_mutation();
+DELETE FROM drizzle.__drizzle_migrations WHERE id = (SELECT max(id) FROM drizzle.__drizzle_migrations);

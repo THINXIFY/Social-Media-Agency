@@ -1,0 +1,541 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* --font-script is only set for Arabic-script languages (see the RTL rules below). */
+  --font-sans: var(--font-script, var(--font-inter)), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-script, var(--font-manrope)), var(--font-manrope), var(--font-inter), ui-sans-serif, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand */
+  --color-violet: #7047eb;
+  --color-lime: #c8ff52;
+  --color-graphite: #202127;
+  --color-surface: var(--surface);
+  --color-subtle: var(--subtle);
+
+  /* Availability states */
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-soon: var(--soon);
+  --color-soon-soft: var(--soon-soft);
+  --color-off: var(--off);
+  --color-off-soft: var(--off-soft);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  --background: #f8f9fc;
+  --foreground: #202127;
+  --card: #ffffff;
+  --card-foreground: #202127;
+  --popover: #ffffff;
+  --popover-foreground: #202127;
+  --primary: #7047eb;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f0fd;
+  --secondary-foreground: #4a2dbd;
+  --muted: #f1f2f6;
+  --muted-foreground: #626574;
+  --accent: #f1f0fd;
+  --accent-foreground: #202127;
+  /* 5I-B: #d93d3d was 4.3-4.5:1 on light surfaces; this passes AA (5.0-5.3:1) as text and with white on it. */
+  --destructive: #c93232;
+  --border: #e9eaf0;
+  --input: #e2e3ea;
+  --ring: #7047eb;
+  --surface: #ffffff;
+  --subtle: #f3f4f8;
+
+  --ok: #1d7a46;
+  --ok-soft: #e7f7ec;
+  --soon: #96600a;
+  --soon-soft: #fdf3dd;
+  --off: #5f6270;
+  --off-soft: #eff0f4;
+
+  /* Scrollbar thumb: low-contrast graphite */
+  --scrollbar-thumb: rgb(32 33 39 / 0.18);
+  --scrollbar-thumb-hover: rgb(32 33 39 / 0.34);
+}
+
+.dark {
+  --background: #0e0f13;
+  --foreground: #f1f2f6;
+  --card: #16171c;
+  --card-foreground: #f1f2f6;
+  --popover: #1a1b21;
+  --popover-foreground: #f1f2f6;
+  /* 5I-B: #8562f2 + white was 4.2:1. This pair passes AA both ways: labels on fills 5.4:1, violet text on cards 5.3:1. */
+  --primary: #9277f4;
+  --primary-foreground: #14121f;
+  --secondary: #231d3d;
+  --secondary-foreground: #cbbdff;
+  --muted: #1d1e24;
+  --muted-foreground: #9a9cab;
+  --accent: #231d3d;
+  --accent-foreground: #f1f2f6;
+  --destructive: #f06a6a;
+  --border: #26272f;
+  --input: #2d2e37;
+  --ring: #9277f4;
+  --surface: #16171c;
+  --subtle: #131419;
+
+  --ok: #7ee2a4;
+  --ok-soft: #14291d;
+  --soon: #f3c46b;
+  --soon-soft: #2e2412;
+  --off: #a2a4b2;
+  --off-soft: #202128;
+
+  --scrollbar-thumb: rgb(255 255 255 / 0.16);
+  --scrollbar-thumb-hover: rgb(255 255 255 / 0.3);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading tracking-tight;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--color-violet) 22%, transparent);
+  }
+
+  /*
+   * One thin, rounded scrollbar everywhere. Chromium and Safari use the
+   * ::-webkit-scrollbar pseudo-elements (setting the standard properties there
+   * would disable them). Firefox gets the standard properties instead.
+   * Scrolling itself, overlay scrollbars on touch devices and scroll locking
+   * are untouched.
+   */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover);
+  }
+  @supports (-moz-appearance: none) {
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--scrollbar-thumb) transparent;
+    }
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .mask-fade-b {
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 100%);
+  }
+  /* Light thumbs on always-dark surfaces such as the graphite sidebar. */
+  .scrollbar-inverse {
+    --scrollbar-thumb: rgb(255 255 255 / 0.16);
+    --scrollbar-thumb-hover: rgb(255 255 255 / 0.3);
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .shadow-soft {
+    box-shadow:
+      0 1px 2px rgb(32 33 39 / 0.04),
+      0 8px 24px -12px rgb(32 33 39 / 0.12);
+  }
+  .shadow-float {
+    box-shadow:
+      0 1px 2px rgb(32 33 39 / 0.05),
+      0 24px 60px -24px rgb(64 38 160 / 0.28);
+  }
+  .dark .shadow-soft,
+  .dark .shadow-float {
+    box-shadow:
+      0 1px 0 rgb(255 255 255 / 0.03) inset,
+      0 24px 60px -30px rgb(0 0 0 / 0.7);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Hero ambient animation — transform/opacity only, GPU-composited           */
+/* -------------------------------------------------------------------------- */
+
+@keyframes aurora-a {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(8%, 6%, 0) scale(1.12); }
+  100% { transform: translate3d(-6%, 10%, 0) scale(0.95); }
+}
+@keyframes aurora-b {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-10%, -4%, 0) scale(1.08); }
+  100% { transform: translate3d(4%, -10%, 0) scale(1.15); }
+}
+@keyframes grid-pan {
+  to { transform: translate3d(44px, 44px, 0); }
+}
+@keyframes beam-x {
+  0% { transform: translate3d(-30vw, 0, 0); opacity: 0; }
+  10%, 70% { opacity: 1; }
+  100% { transform: translate3d(130vw, 0, 0); opacity: 0; }
+}
+@keyframes beam-y {
+  0% { transform: translate3d(0, -40vh, 0); opacity: 0; }
+  10%, 70% { opacity: 1; }
+  100% { transform: translate3d(0, 120vh, 0); opacity: 0; }
+}
+@keyframes marquee {
+  to { transform: translate3d(-50%, 0, 0); }
+}
+@keyframes shine {
+  to { transform: translateX(220%) skewX(-20deg); }
+}
+
+@layer utilities {
+  .aurora {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    will-change: transform;
+  }
+  .aurora-a {
+    animation: aurora-a 22s ease-in-out infinite alternate;
+  }
+  .aurora-b {
+    animation: aurora-b 28s ease-in-out infinite alternate;
+  }
+  .grid-pan {
+    animation: grid-pan 14s linear infinite;
+    will-change: transform;
+  }
+  .beam-x {
+    animation: beam-x 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+  .beam-y {
+    animation: beam-y 11s cubic-bezier(0.4, 0, 0.2, 1) 3s infinite;
+  }
+  .marquee {
+    animation: marquee 48s linear infinite;
+  }
+  .marquee-wrap:hover .marquee {
+    animation-play-state: paused;
+  }
+  .mask-fade-x {
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+  /* Light sweep across a button on hover */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.35), transparent);
+    transform: translateX(-120%) skewX(-20deg);
+    pointer-events: none;
+  }
+  .btn-shine:hover::after {
+    animation: shine 0.9s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-a,
+  .aurora-b,
+  .grid-pan,
+  .marquee {
+    animation: none !important;
+  }
+  .beam-x,
+  .beam-y {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Settings → Reduce motion: honoured even when the device doesn't ask for it. */
+[data-reduce-motion] *,
+[data-reduce-motion] *::before,
+[data-reduce-motion] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Dashboard languages & right-to-left layout                                */
+/* -------------------------------------------------------------------------- */
+
+/* Arabic and Urdu use a script-compatible face; Latin text still uses Inter. */
+html:lang(ar),
+html:lang(ur) {
+  --font-script: var(--font-arabic);
+}
+
+/* Letter-spacing breaks joined Arabic letters, so tracking is neutralised wherever the text is Arabic or Urdu. */
+:lang(ar),
+:lang(ur) {
+  letter-spacing: normal !important;
+}
+
+/* Directional icons point the reading direction of the text around them (English pages inside an RTL frame stay LTR). */
+:is(.lucide-arrow-right, .lucide-arrow-left, .lucide-chevron-right, .lucide-chevron-left, .lucide-panel-left-close, .lucide-panel-left-open, .lucide-log-out):dir(rtl) {
+  scale: -1 1;
+}
+
+/* IDs, links, codes and amounts keep their natural left-to-right order inside RTL text. */
+[dir="rtl"] .font-mono {
+  unicode-bidi: isolate;
+}
+/* Amounts and dates stay intact as one unit beside text in either direction. */
+html:is(:lang(ar), :lang(ur)) .tabular-nums {
+  unicode-bidi: isolate;
+}
+[dir="rtl"] .font-mono {
+  direction: ltr;
+}
+[dir="rtl"] :is(input[type="url"], input[type="email"], input[type="tel"], input[inputmode="numeric"], input[inputmode="decimal"], input[inputmode="url"]) {
+  direction: ltr;
+  text-align: end;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  SociVanta AI — small, purposeful motion (transform/opacity only)           */
+/* -------------------------------------------------------------------------- */
+
+@keyframes ai-sheen {
+  to { transform: translateX(100%); }
+}
+@keyframes ai-caret {
+  50% { opacity: 0; }
+}
+@keyframes ai-float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -6px, 0); }
+}
+@layer utilities {
+  /* Shimmer for layout-only placeholders (never fake text). */
+  .ai-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+  .ai-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.65), transparent);
+    animation: ai-sheen 2.6s ease-in-out infinite;
+  }
+  .dark .ai-sheen::after {
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.07), transparent);
+  }
+  .ai-caret {
+    animation: ai-caret 1.05s steps(1) infinite;
+  }
+  .ai-float {
+    animation: ai-float 7s ease-in-out infinite;
+  }
+  .ai-float-delayed {
+    animation: ai-float 8s ease-in-out 1.2s infinite;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ai-sheen::after,
+  .ai-caret,
+  .ai-float,
+  .ai-float-delayed {
+    animation: none !important;
+  }
+}
+
+/* AI-02: print only the content calendar when its Print button is used. */
+@media print {
+  body.ai-printing * {
+    visibility: hidden;
+  }
+  body.ai-printing .ai-print-area,
+  body.ai-printing .ai-print-area * {
+    visibility: visible;
+  }
+  body.ai-printing .ai-print-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 12px;
+  }
+}
+
+/* AI workspace: indeterminate activity bar (no fabricated progress). */
+@keyframes ai-progress {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+.ai-progress {
+  animation: ai-progress 1.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ai-progress {
+    animation: none;
+    width: 100%;
+    opacity: 0.5;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  SociVanta AI hero — living atmosphere and preview cycle                    */
+/*  Transform/opacity only; each loop ends where it starts (no visible reset). */
+/* -------------------------------------------------------------------------- */
+@keyframes ai-drift-a {
+  0%, 100% { transform: translate3d(-4%, -3%, 0) scale(1); }
+  33% { transform: translate3d(5%, 2%, 0) scale(1.06); }
+  66% { transform: translate3d(-1%, 5%, 0) scale(0.97); }
+}
+@keyframes ai-drift-b {
+  0%, 100% { transform: translate3d(3%, 4%, 0) scale(1.04); }
+  50% { transform: translate3d(-6%, -3%, 0) scale(0.95); }
+}
+@keyframes ai-drift-c {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.55; }
+  50% { transform: translate3d(-8%, 6%, 0); opacity: 1; }
+}
+@keyframes ai-rise {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes ai-cycle {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@layer utilities {
+  .ai-drift-a { animation: ai-drift-a 34s ease-in-out infinite; will-change: transform; }
+  .ai-drift-b { animation: ai-drift-b 42s ease-in-out infinite; will-change: transform; }
+  .ai-drift-c { animation: ai-drift-c 26s ease-in-out infinite; will-change: transform, opacity; }
+  /* Paused while the hero is offscreen or the tab is hidden. */
+  [data-motion="paused"] .ai-drift-a,
+  [data-motion="paused"] .ai-drift-b,
+  [data-motion="paused"] .ai-drift-c { animation-play-state: paused; }
+  .ai-rise { animation: ai-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s both; }
+  /* The preview's cycle timer: its animationend advances to the next tool. */
+  .ai-cycle { transform-origin: left center; animation: ai-cycle var(--ai-cycle, 6s) linear forwards; }
+  [data-cycle="paused"] .ai-cycle { animation-play-state: paused; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ai-drift-a,
+  .ai-drift-b,
+  .ai-drift-c,
+  .ai-rise { animation: none; }
+  .ai-cycle { animation: none; transform: scaleX(0); }
+}
+
+/* AI-06 previews: a soft shimmer marks where a platform's own figure appears (never a number). Static under reduced motion. */
+@keyframes sv-shimmer {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.sv-shimmer {
+  animation: sv-shimmer 2.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sv-shimmer { animation: none; }
+}
+
+/* AI-06 hero preview: tab progress, staggered rise and soft fade. Transform/opacity only; static under reduced motion. */
+@keyframes sv-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes sv-rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes sv-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.sv-progress { animation-name: sv-progress; animation-timing-function: linear; animation-fill-mode: both; }
+.sv-rise { animation: sv-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.sv-fade { animation: sv-fade 350ms ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .sv-rise, .sv-fade { animation: none; }
+}
