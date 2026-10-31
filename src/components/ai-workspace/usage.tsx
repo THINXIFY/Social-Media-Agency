@@ -193,7 +193,7 @@ const RULES: { title: string; body: string }[] = [
   { title: "What doesn't count", body: "AI service errors, timeouts, results we couldn't use, and requests stopped by a limit are never counted." },
   { title: "When it resets", body: "Every day at 00:00 UTC. Unused runs don't carry over." },
   { title: "Pace and safety limits", body: "Up to 5 requests a minute across tools. A platform-wide daily safety limit may also pause tools until the reset; paused requests aren't counted." },
-  { title: "Separate from your wallet", body: "AI usage is never charged to your SociVanta wallet. Your wallet is only for SMM service orders." },
+  { title: "Separate from your wallet", body: "AI usage is never charged to your Sociotix wallet. Your wallet is only for SMM service orders." },
 ];
 
 function Rules() {

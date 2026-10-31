@@ -97,7 +97,7 @@ export function ToolRow({ tool, className }: { tool: AiTool; className?: string 
   );
 }
 
-export function AiMark({ className, children = "SociVanta AI" }: { className?: string; children?: React.ReactNode }) {
+export function AiMark({ className, children = "Sociotix AI" }: { className?: string; children?: React.ReactNode }) {
   return (
     <span className={cn("inline-flex items-center gap-1.5 rounded-full bg-graphite px-2.5 py-1 text-[0.72rem] font-semibold text-lime dark:bg-white/10", className)}>
       <Sparkles className="size-3" aria-hidden /> {children}

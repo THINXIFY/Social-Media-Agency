@@ -51,7 +51,7 @@ const shares = (p: SocialPlatform) => p.capabilities.map((c) => (c === "audience
 
 export type LandingAvailability = Record<SocialProviderId, boolean>;
 
-export const SOCIAL_TITLE = "Social Media Management Platform | SociVanta AI";
+export const SOCIAL_TITLE = "Social Media Management Platform | Sociotix AI";
 export const SOCIAL_DESCRIPTION =
   "Manage multiple social media accounts in one unified workspace. Connect Instagram, Facebook, TikTok, YouTube, X and LinkedIn securely, platform by platform.";
 
@@ -62,26 +62,26 @@ export function socialFaq(ready: LandingAvailability) {
   const live = SOCIAL_PLATFORMS.filter((p) => ready[p.id]).map((p) => p.name);
   return [
     {
-      q: "What is SociVanta Social Management?",
-      a: "It's a unified, read-only social media workspace inside SociVanta AI for the accounts you manage. You connect Instagram, Facebook Pages, TikTok, YouTube, X or LinkedIn and see them side by side: how each connection is doing, and the figures each platform shares, such as follower counts.",
+      q: "What is Sociotix Social Management?",
+      a: "It's a unified, read-only social media workspace inside Sociotix AI for the accounts you manage. You connect Instagram, Facebook Pages, TikTok, YouTube, X or LinkedIn and see them side by side: how each connection is doing, and the figures each platform shares, such as follower counts.",
     },
     {
       q: "Can I connect my accounts today?",
       a: live.length
-        ? `Yes, for ${listOf(live)}. The other platforms switch on after each one reviews and approves SociVanta, and each shows exactly where it stands in your workspace.`
-        : "Not yet. Each platform has to review and approve SociVanta before accounts can be linked, so connections switch on platform by platform. The workspace is already open to signed-in customers and shows exactly where each platform stands.",
+        ? `Yes, for ${listOf(live)}. The other platforms switch on after each one reviews and approves Sociotix, and each shows exactly where it stands in your workspace.`
+        : "Not yet. Each platform has to review and approve Sociotix before accounts can be linked, so connections switch on platform by platform. The workspace is already open to signed-in customers and shows exactly where each platform stands.",
     },
     {
-      q: "Does SociVanta need my social media password?",
-      a: "No. You sign in on the platform's own page through its official authorization (OAuth). SociVanta receives a limited, read-only permission — never your password — and stores it encrypted on the server.",
+      q: "Does Sociotix need my social media password?",
+      a: "No. You sign in on the platform's own page through its official authorization (OAuth). Sociotix receives a limited, read-only permission — never your password — and stores it encrypted on the server.",
     },
     {
-      q: "What can SociVanta see and do with a connected account?",
+      q: "What can Sociotix see and do with a connected account?",
       a: "Only your profile name and handle, plus the figures the platform chooses to share, like followers, number of posts or total views. It can't post, schedule, message, edit your profile or run ads. Figures are shown exactly as the platform reported them at your last refresh.",
     },
     {
       q: "Can I schedule or publish posts?",
-      a: "Not yet. You can already write drafts, preview them for each platform and plan them on a content calendar in your workspace. Publishing to a platform stays off until that platform approves SociVanta's posting permission and you grant it yourself — today's connections are read-only.",
+      a: "Not yet. You can already write drafts, preview them for each platform and plan them on a content calendar in your workspace. Publishing to a platform stays off until that platform approves Sociotix's posting permission and you grant it yourself — today's connections are read-only.",
     },
     {
       q: "Can I automate routine social media tasks?",
@@ -89,11 +89,11 @@ export function socialFaq(ready: LandingAvailability) {
     },
     {
       q: "How do I disconnect an account?",
-      a: "Open the account and choose Disconnect. SociVanta deletes its stored access straight away and asks the platform to revoke it where the platform allows. If a platform doesn't support that, or doesn't confirm, we tell you so and show you where to remove access yourself.",
+      a: "Open the account and choose Disconnect. Sociotix deletes its stored access straight away and asks the platform to revoke it where the platform allows. If a platform doesn't support that, or doesn't confirm, we tell you so and show you where to remove access yourself.",
     },
     {
-      q: "Does connecting an account affect my SociVanta orders?",
-      a: "No. Social Management uses the same SociVanta account as our social media services, but connecting or disconnecting an account never changes your orders, wallet or payments.",
+      q: "Does connecting an account affect my Sociotix orders?",
+      a: "No. Social Management uses the same Sociotix account as our social media services, but connecting or disconnecting an account never changes your orders, wallet or payments.",
     },
   ];
 }
@@ -196,7 +196,7 @@ function Platforms({ ready }: { ready: LandingAvailability }) {
             <span className="block">Your Social Platforms.</span>
             <span className="block text-primary">One Organized Place.</span>
           </h2>
-          <p className="mt-5 max-w-[26rem] text-[1rem] leading-[1.7] text-muted-foreground">Explore the platforms SociVanta is preparing to support. See what account information each integration can provide and check its current availability.</p>
+          <p className="mt-5 max-w-[26rem] text-[1rem] leading-[1.7] text-muted-foreground">Explore the platforms Sociotix is preparing to support. See what account information each integration can provide and check its current availability.</p>
 
           <dl className="mt-7 inline-flex items-stretch rounded-2xl bg-card text-[0.8rem] ring-1 ring-border/80">
             <div className="flex items-center gap-2 px-3.5 py-2.5">
@@ -212,7 +212,7 @@ function Platforms({ ready }: { ready: LandingAvailability }) {
               <dd className="font-heading text-[0.95rem] font-extrabold tabular-nums">{waiting}</dd>
             </div>
           </dl>
-          <p className="mt-2.5 max-w-[24rem] text-[0.78rem] leading-relaxed text-muted-foreground">Each platform approves SociVanta before accounts can be linked — nothing for you to set up.</p>
+          <p className="mt-2.5 max-w-[24rem] text-[0.78rem] leading-relaxed text-muted-foreground">Each platform approves Sociotix before accounts can be linked — nothing for you to set up.</p>
 
           <div className="mt-7 max-w-[26rem] border-t border-border/80 pt-6">
             <Link href={SOCIAL_ROUTES.overview} className={cn(textLink, "text-[0.9rem]")}>
@@ -350,8 +350,8 @@ function Workspace() {
 
 function HowItWorks() {
   const steps = [
-    { icon: MousePointerClick, title: "Connect", body: "Choose a platform in your workspace and see exactly what SociVanta will be able to read — before anything happens." },
-    { icon: KeyRound, title: "Authorize", body: "Sign in on the platform's own page and approve read-only access. SociVanta never sees or stores your password." },
+    { icon: MousePointerClick, title: "Connect", body: "Choose a platform in your workspace and see exactly what Sociotix will be able to read — before anything happens." },
+    { icon: KeyRound, title: "Authorize", body: "Sign in on the platform's own page and approve read-only access. Sociotix never sees or stores your password." },
     { icon: LayoutGrid, title: "Manage", body: "Your account appears in the workspace. Refresh it when you like, reconnect when access ends, or disconnect any time." },
   ];
   return (
@@ -398,7 +398,7 @@ function Security() {
   const points = [
     { icon: UserRoundCheck, title: "Official sign-in only", body: "Accounts connect through each platform's own authorization (OAuth 2.0), using single-use, short-lived links protected against forgery." },
     { icon: Ban, title: "The fewest permissions possible", body: "Read-only access to profile details and shared figures. Permission to post, message, edit or advertise is never requested." },
-    { icon: LockKeyhole, title: "Encrypted, server-side access", body: "Access tokens are encrypted at rest on SociVanta's servers and never sent to your browser, logs or anyone else." },
+    { icon: LockKeyhole, title: "Encrypted, server-side access", body: "Access tokens are encrypted at rest on Sociotix's servers and never sent to your browser, logs or anyone else." },
     { icon: Link2Off, title: "Disconnect means disconnect", body: "Stored access is deleted immediately. Where a platform allows it we revoke access there too — and if it doesn't confirm, we tell you." },
   ];
   return (
@@ -409,7 +409,7 @@ function Security() {
           <h2 id="security-title" className={cn(h2, "mt-3")}>
             Your accounts stay yours.
           </h2>
-          <p className="mt-4 max-w-md text-lg leading-relaxed text-muted-foreground">SociVanta reads only what you approve, keeps it encrypted, and lets you take it back in one click.</p>
+          <p className="mt-4 max-w-md text-lg leading-relaxed text-muted-foreground">Sociotix reads only what you approve, keeps it encrypted, and lets you take it back in one click.</p>
           <div className="mt-8 flex items-center gap-3 rounded-2xl bg-card p-4 ring-1 ring-border">
             <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-ok-soft text-ok">
               <ShieldCheck className="size-5" aria-hidden />
@@ -454,7 +454,7 @@ function Faq({ items }: { items: { q: string; a: string }[] }) {
           <p className="mt-8 text-sm text-muted-foreground">
             Looking for help writing posts?{" "}
             <Link href="/ai-tools" className="font-semibold text-primary hover:underline">
-              Explore SociVanta AI tools
+              Explore Sociotix AI tools
             </Link>
             .
           </p>
@@ -489,7 +489,7 @@ function FinalCta() {
       <div className={wrap}>
         <Reveal className="relative isolate overflow-hidden rounded-[2rem] bg-graphite px-6 pt-12 pb-11 text-center text-white sm:px-12 sm:pt-16 dark:border dark:border-white/[0.06] dark:bg-[#121318]">
           <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_70%_at_50%_0%,rgb(112_71_235/0.35),transparent_70%)]" aria-hidden />
-          <ul className="mx-auto flex flex-wrap justify-center gap-2" aria-label="Platforms SociVanta is preparing to support">
+          <ul className="mx-auto flex flex-wrap justify-center gap-2" aria-label="Platforms Sociotix is preparing to support">
             {SOCIAL_PLATFORMS.map((p) => (
               <li key={p.id} title={p.name}>
                 <Tile id={p.id} size="md" className="ring-white/10" />
@@ -499,13 +499,13 @@ function FinalCta() {
           <h2 id="cta-title" className="mx-auto mt-9 max-w-3xl font-heading text-[2.3rem] leading-[1.02] font-extrabold tracking-[-0.04em] text-balance sm:text-[3.4rem]">
             Every account. One calm view.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white/60">Your social workspace is already open with your SociVanta account. Each platform switches on as soon as it approves SociVanta.</p>
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white/60">Your social workspace is already open with your Sociotix account. Each platform switches on as soon as it approves Sociotix.</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
             <Link href={SOCIAL_ROUTES.overview} className={cn(primaryCta, "w-full bg-lime text-graphite shadow-none hover:bg-lime/90 focus-visible:ring-lime/40 sm:w-auto")}>
               Open Social Workspace <ArrowRight className={arrow} aria-hidden />
             </Link>
             <p className="text-sm text-white/60">
-              New to SociVanta?{" "}
+              New to Sociotix?{" "}
               <Link href="/register" className="font-semibold text-white underline-offset-4 hover:underline">
                 Create a free account
               </Link>

@@ -63,11 +63,11 @@ import { AdminDemoTag } from "./ui";
 
 const CATEGORIES: { id: SettingsSection; label: string; description: string; icon: LucideIcon }[] = [
   { id: "general", label: "General", description: "Platform identity, contact details and regional defaults.", icon: Settings2 },
-  { id: "branding", label: "Branding", description: "How SociVanta looks to customers and in emails.", icon: Palette },
+  { id: "branding", label: "Branding", description: "How Sociotix looks to customers and in emails.", icon: Palette },
   { id: "orders", label: "Orders & Services", description: "Operational defaults for orders, review and fulfilment.", icon: Package },
   { id: "payments", label: "Payments & Wallet", description: "Payment methods, wallet rules and verification requirements.", icon: Wallet },
   { id: "notifications", label: "Notifications", description: "Which events you'd like to hear about.", icon: Bell },
-  { id: "integrations", label: "Integrations", description: "External services SociVanta depends on, and their real state.", icon: Puzzle },
+  { id: "integrations", label: "Integrations", description: "External services Sociotix depends on, and their real state.", icon: Puzzle },
 ];
 const CATEGORY_BY_ID = Object.fromEntries(CATEGORIES.map((c) => [c.id, c])) as Record<SettingsSection, (typeof CATEGORIES)[number]>;
 const isSection = (v: string | null): v is SettingsSection => Boolean(v && v in CATEGORY_BY_ID);
@@ -597,7 +597,7 @@ function GeneralView({ v, set, e }: ViewProps<"general">) {
               </div>
               <div className="max-w-xl rounded-xl border border-dashed p-3">
                 <p className="text-[0.68rem] font-bold tracking-wider text-muted-foreground uppercase">Preview · not shown to customers</p>
-                <p className="mt-1.5 text-sm font-semibold">{v.platformName.trim() || "SociVanta"} is under maintenance</p>
+                <p className="mt-1.5 text-sm font-semibold">{v.platformName.trim() || "Sociotix"} is under maintenance</p>
                 <p className="text-[0.82rem] text-muted-foreground">{v.maintenanceMessage.trim() || "Your message appears here."}</p>
               </div>
             </div>
@@ -639,7 +639,7 @@ function BrandingView({ v, set, e }: ViewProps<"branding">) {
         <Row id="st-displayName" label="Display name" help="How the brand is written in headers and emails." error={e.displayName}>
           <TextInput {...input("st-displayName", e, "displayName")} value={v.displayName} maxLength={40} onChange={(x) => set({ displayName: x.target.value })} />
         </Row>
-        <Row label="Logo" tag="code" help="The approved SociVanta logo. Uploading a replacement needs file storage on a backend.">
+        <Row label="Logo" tag="code" help="The approved Sociotix logo. Uploading a replacement needs file storage on a backend.">
           <div className="space-y-2">
             <div className="grid grid-cols-2 gap-2">
               <div className="grid h-16 place-items-center rounded-xl border bg-white text-[#202127]">
@@ -657,7 +657,7 @@ function BrandingView({ v, set, e }: ViewProps<"branding">) {
             </p>
           </div>
         </Row>
-        <Row label="Favicon" tag="code" help="Shown in browser tabs and bookmarks. The current file is the framework default; a SociVanta favicon hasn't been added yet.">
+        <Row label="Favicon" tag="code" help="Shown in browser tabs and bookmarks. The current file is the framework default; a Sociotix favicon hasn't been added yet.">
           <div className="flex items-center gap-3 sm:justify-end">
             {/* eslint-disable-next-line @next/next/no-img-element -- the live favicon file, shown as-is */}
             <img src="/favicon.ico" alt="Current favicon, 32 pixels" width={32} height={32} className="rounded-md border bg-white p-1" />
@@ -829,7 +829,7 @@ function OrdersView({ v, set, e }: ViewProps<"orders">) {
         <Row id="st-partialRefunds" label="Partial refunds for under-delivery" inline help="Refund the undelivered share when a provider delivers less than ordered.">
           <Switch id="st-partialRefunds" label="Partial refunds for under-delivery" describedBy="st-partialRefunds-help" checked={v.partialRefunds} onChange={(c) => set({ partialRefunds: c })} />
         </Row>
-        <Row label="Refunds are paid to" tag="code" help="Refunds return to the customer's SociVanta wallet in USD.">
+        <Row label="Refunds are paid to" tag="code" help="Refunds return to the customer's Sociotix wallet in USD.">
           <Value>Customer wallet</Value>
         </Row>
       </Group>

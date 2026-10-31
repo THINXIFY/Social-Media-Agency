@@ -235,7 +235,7 @@ export function AiHeroVisual() {
         if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setHold((h) => ({ ...h, focus: false }));
       }}
       className="ai-rise relative mx-auto w-full max-w-[30rem] lg:mr-0"
-      aria-label="Preview of SociVanta AI's Content Studio tools: example briefs and illustrative result layouts. Nothing is generated."
+      aria-label="Preview of Sociotix AI's Content Studio tools: example briefs and illustrative result layouts. Nothing is generated."
     >
       <div
         ref={glowRef}

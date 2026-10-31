@@ -490,13 +490,13 @@ const BUILDERS: Record<ReportId, (c: Ctx, out: ReportResponse) => Promise<Report
       kpi("errors", "Errors", n(u.errors), "count"),
       kpi("blocked", "Stopped by limits", n(u.blocked), "count"),
       ...(tokens ? [kpi("tokens", "Tokens", n(u.input_tokens) + n(u.output_tokens), "count")] : []),
-      kpi("cost", "Estimated cost", n(u.cost), "micros", { hint: "SociVanta's estimate, not a provider invoice" }),
+      kpi("cost", "Estimated cost", n(u.cost), "micros", { hint: "Sociotix's estimate, not a provider invoice" }),
     );
     out.series = [{ title: "AI requests", kind: "count", points: s }];
     const RUN: Record<string, string> = { running: "Running", succeeded: "Succeeded", skipped: "Skipped", failed: "Failed" };
     out.breakdowns = [
       { id: "provider", title: "Requests by provider", kind: "count", items: prov.map((x) => ({ key: x.k ?? "none", label: x.k ?? "Not sent to a provider", value: n(x.v) })) },
-      { id: "automation", title: "Internal automation runs", hint: "Run inside SociVanta; not external publishing", kind: "count", items: runs.map((x) => ({ key: x.k, label: RUN[x.k] ?? x.k, value: n(x.v) })) },
+      { id: "automation", title: "Internal automation runs", hint: "Run inside Sociotix; not external publishing", kind: "count", items: runs.map((x) => ({ key: x.k, label: RUN[x.k] ?? x.k, value: n(x.v) })) },
     ];
     out.notes = [
       `AI generation is ${state.emergencyDisabled ? "paused by the emergency switch" : state.generation.live ? "live" : `off${state.generation.reason ? `: ${state.generation.reason}` : ""}`}.`,
@@ -554,5 +554,5 @@ export async function exportReport(db: Db, env: Env, access: RoleAccess, id: Rep
     );
   }
   const csv = [header, ...body].map((line) => line.map(csvCell).join(",")).join("\r\n") + "\r\n";
-  return { csv, rows: body.length, filename: `socivanta-${id}-${r.from}-to-${r.to}.csv` };
+  return { csv, rows: body.length, filename: `sociotix-${id}-${r.from}-to-${r.to}.csv` };
 }

@@ -1,8 +1,10 @@
-# SociVanta
+# Sociotix
 
-SociVanta is a social media services platform: a marketplace for social media services, customer and admin dashboards, AI-assisted tools, and a social account management workspace. It is built on one Next.js codebase with a PostgreSQL backend.
+**Smarter Social. Bigger Impact.** Sociotix is an AI-powered social growth and marketing platform in development: a marketplace for social media services, customer and admin dashboards, AI-assisted tools, and a social account management workspace. It is built on one Next.js codebase with a PostgreSQL backend.
 
-> **Status: in development, not live.** SociVanta isn't deployed, and it isn't production-ready. Real payments, AI generation, SMM provider fulfilment, external social publishing and monetary referral rewards are **disabled**, and each stays off until it's separately approved and configured. See [Activation limits](#activation-limits).
+> **Rebrand note:** the platform was previously called **SociVanta**. All public, customer and admin interfaces now use Sociotix. Some internal identifiers keep the old name for compatibility: the local database names (`socivanta_dev`), the project folder and the GitHub repository name. The phase reports in `docs/` keep the old name as historical records. See [`docs/branding/SOCIOTIX_REBRANDING_REPORT.md`](docs/branding/SOCIOTIX_REBRANDING_REPORT.md). The intended domain is `sociotix.com`. It is used only once ownership and deployment are confirmed, through `APP_URL`.
+
+> **Status: in development, not live.** Sociotix isn't deployed, and it isn't production-ready. Real payments, AI generation, SMM provider fulfilment, external social publishing and monetary referral rewards are **disabled**, and each stays off until it's separately approved and configured. See [Activation limits](#activation-limits).
 
 ## Features
 

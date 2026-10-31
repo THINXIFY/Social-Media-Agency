@@ -35,10 +35,10 @@ const DEMO_ACCOUNTS: { id: SocialProviderId; name: string; handle: string }[] = 
 ];
 
 const EXAMPLE_EVENTS: { id: SocialProviderId; icon: LucideIcon; kind: string; title: string; meaning: string }[] = [
-  { id: "instagram", icon: Link2, kind: "Connection", title: "Connected Your brand", meaning: "Recorded when you approve read-only access on Instagram. SociVanta never sees your password." },
+  { id: "instagram", icon: Link2, kind: "Connection", title: "Connected Your brand", meaning: "Recorded when you approve read-only access on Instagram. Sociotix never sees your password." },
   { id: "youtube", icon: RefreshCw, kind: "Refresh", title: "Refreshed Your channel", meaning: "Recorded each time you ask for the latest details. Figures appear exactly as YouTube reports them." },
   { id: "tiktok", icon: KeyRound, kind: "Access renewal", title: "Renewed access to Your creator profile", meaning: "Recorded when access is renewed automatically, so the connection keeps working without signing in again." },
-  { id: "x", icon: Link2Off, kind: "Disconnection", title: "Disconnected Your profile", meaning: "Recorded when you disconnect. SociVanta deletes its stored access and tells you whether X confirmed the removal." },
+  { id: "x", icon: Link2Off, kind: "Disconnection", title: "Disconnected Your profile", meaning: "Recorded when you disconnect. Sociotix deletes its stored access and tells you whether X confirmed the removal." },
 ];
 
 /* -------------------------------------------------------------------------- */
@@ -187,7 +187,7 @@ function OverviewPanel({ ready, selected, onSelect }: { ready: Record<SocialProv
         </ul>
 
         <p className="mt-auto flex items-center gap-1.5 pt-3 text-[0.68rem] text-muted-foreground">
-          <Clock className="size-3 shrink-0" aria-hidden /> Figures appear only after {p.name} approves SociVanta and you connect.
+          <Clock className="size-3 shrink-0" aria-hidden /> Figures appear only after {p.name} approves Sociotix and you connect.
         </p>
       </div>
     </div>
@@ -344,7 +344,7 @@ export function SocialHeroPreview({ ready }: { ready: Record<SocialProviderId, b
         </span>
         <div className="min-w-0">
           <p className="truncate text-[0.88rem] font-bold">Social workspace</p>
-          <p className="hidden truncate text-[0.7rem] text-muted-foreground sm:block">SociVanta AI</p>
+          <p className="hidden truncate text-[0.7rem] text-muted-foreground sm:block">Sociotix AI</p>
         </div>
         <span className="ms-auto shrink-0 rounded-full border border-dashed border-foreground/20 px-2.5 py-1 text-[0.62rem] font-bold tracking-[0.12em] text-muted-foreground uppercase md:order-last md:ms-0">Preview</span>
 

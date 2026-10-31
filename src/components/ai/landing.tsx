@@ -31,7 +31,7 @@ import { AI_ICONS, AiMark, FAMILY, ToolGlyph } from "./parts";
 import { WorkspacePreview } from "./workspace-preview";
 
 /*
- * SociVanta AI landing page. Light editorial base with deliberate dark bands
+ * Sociotix AI landing page. Light editorial base with deliberate dark bands
  * (workspace, free use). Copy is server-rendered and accurate: tools are
  * Coming soon, free allowances are planned, nothing is generated.
  */
@@ -46,7 +46,7 @@ const h2 = "font-heading text-[2rem] leading-[1.06] font-extrabold tracking-[-0.
 
 export const AI_FAQ = [
   {
-    q: "What does SociVanta AI do?",
+    q: "What does Sociotix AI do?",
     a: "It's a family of focused tools for social media work: writing captions, finding hashtags and keywords, coming up with post ideas, planning a content calendar, and — later — deciding what to focus on next. You give a short brief; each tool organises the results for the platform you're posting on.",
   },
   {
@@ -55,7 +55,7 @@ export const AI_FAQ = [
   },
   {
     q: "Which tools will be free?",
-    a: "The Content Studio and Growth Intelligence tools are planned with free daily runs on a free SociVanta account — for example, up to 10 caption runs a day and 3 content calendars a day. Free use for the assistance tools will be announced when they launch. No paid plans are planned for the first tools.",
+    a: "The Content Studio and Growth Intelligence tools are planned with free daily runs on a free Sociotix account — for example, up to 10 caption runs a day and 3 content calendars a day. Free use for the assistance tools will be announced when they launch. No paid plans are planned for the first tools.",
   },
   {
     q: "How do usage limits work?",
@@ -63,7 +63,7 @@ export const AI_FAQ = [
   },
   {
     q: "Do I need to connect my social accounts?",
-    a: "No. The tools never connect to, read from or post to your social accounts. You copy what you like and publish it yourself. AI tools also can't place orders or move money on your SociVanta account.",
+    a: "No. The tools never connect to, read from or post to your social accounts. You copy what you like and publish it yourself. AI tools also can't place orders or move money on your Sociotix account.",
   },
   {
     q: "How is my information handled?",
@@ -336,7 +336,7 @@ function Why() {
     <section className="py-16 sm:py-24" aria-labelledby="why-title">
       <div className={cn(wrap, "grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.4fr] lg:gap-16")}>
         <Reveal>
-          <p className={cn(eyebrow, "text-primary")}>Why SociVanta AI</p>
+          <p className={cn(eyebrow, "text-primary")}>Why Sociotix AI</p>
           <h2 id="why-title" className={cn(h2, "mt-3")}>
             Built for the way you actually post.
           </h2>
@@ -380,7 +380,7 @@ function FreeUse() {
             <br />
             <span className="text-white/40">Every day.</span>
           </h2>
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-white/60">Each tool comes with free daily runs on a free SociVanta account — the same one you use for services. No card. No subscription.</p>
+          <p className="mt-6 max-w-md text-lg leading-relaxed text-white/60">Each tool comes with free daily runs on a free Sociotix account — the same one you use for services. No card. No subscription.</p>
           <div className="mt-8 flex flex-col gap-3 min-[440px]:flex-row">
             <Link href="/register" className={primaryCta}>
               Create a free account <ArrowRight className="size-4" aria-hidden />
@@ -477,7 +477,7 @@ function FinalCta() {
       <div className={wrap}>
         <Reveal className="relative isolate overflow-hidden rounded-[2rem] border bg-card px-6 pt-12 pb-11 text-center sm:px-12 sm:pt-16">
           <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(70%_60%_at_50%_0%,rgb(112_71_235/0.12),transparent_70%)] dark:bg-[radial-gradient(70%_60%_at_50%_0%,rgb(112_71_235/0.26),transparent_70%)]" aria-hidden />
-          <ul className="mx-auto flex max-w-3xl flex-wrap justify-center gap-2" aria-label="All SociVanta AI tools">
+          <ul className="mx-auto flex max-w-3xl flex-wrap justify-center gap-2" aria-label="All Sociotix AI tools">
             {AI_TOOLS.map((t) => (
               <li key={t.id} title={t.name}>
                 <ToolGlyph tool={t} size="md" className={cn(t.category === "assist" && "opacity-70")} />
@@ -487,7 +487,7 @@ function FinalCta() {
           <h2 id="cta-title" className="mx-auto mt-9 max-w-3xl font-heading text-[2.4rem] leading-[1.02] font-extrabold tracking-[-0.04em] text-balance sm:text-[3.5rem]">
             Start with one idea.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground">See every tool, what it will do and when it&apos;s arriving — and use SociVanta&apos;s social media services whenever you need them.</p>
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground">See every tool, what it will do and when it&apos;s arriving — and use Sociotix&apos;s social media services whenever you need them.</p>
           <div className="mt-8 flex flex-col justify-center gap-3 min-[440px]:flex-row">
             <a href="#tools" className={primaryCta}>
               Explore AI Tools <ArrowRight className="size-4" aria-hidden />

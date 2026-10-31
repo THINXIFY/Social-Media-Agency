@@ -4,7 +4,7 @@ import { EnvError, parseEnv } from "@/server/env";
 const SECRET = "s3cr3t-P4ss";
 const KEY_A = Buffer.alloc(32, 1).toString("base64");
 const KEY_B = Buffer.alloc(32, 2).toString("base64");
-const PROD_OK = { NODE_ENV: "production", APP_ENV: "production", DATABASE_URL: "postgresql://a:b@db.example.com/prod?sslmode=verify-full", APP_URL: "https://app.example.com", AUTH_SECRET: KEY_A, DATA_ENCRYPTION_KEY: KEY_B, EMAIL_TRANSPORT: "postmark", EMAIL_FROM: "SociVanta <no-reply@example.com>", EMAIL_API_KEY: "pm-key-0123456789" };
+const PROD_OK = { NODE_ENV: "production", APP_ENV: "production", DATABASE_URL: "postgresql://a:b@db.example.com/prod?sslmode=verify-full", APP_URL: "https://app.example.com", AUTH_SECRET: KEY_A, DATA_ENCRYPTION_KEY: KEY_B, EMAIL_TRANSPORT: "postmark", EMAIL_FROM: "Sociotix <no-reply@example.com>", EMAIL_API_KEY: "pm-key-0123456789" };
 const local = `postgresql://app:${SECRET}@localhost:5433/socivanta_dev`;
 
 describe("environment validation", () => {

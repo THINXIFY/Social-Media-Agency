@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { ResendVerificationForm, VerifyEmailConfirm } from "@/components/auth/customer-forms";
 import { AuthHeading, FormSkeleton } from "@/components/auth/frame";
 
-export const metadata: Metadata = { title: "Confirm your email · SociVanta", referrer: "no-referrer" };
+export const metadata: Metadata = { title: "Confirm your email · Sociotix", referrer: "no-referrer" };
 
 async function Content({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   await connection();

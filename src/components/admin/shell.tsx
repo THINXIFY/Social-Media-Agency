@@ -163,8 +163,8 @@ function AdminLogo({ collapsed }: { collapsed?: boolean }) {
   return (
     <Link
       href="/admin"
-      // Icon-only when collapsed; otherwise the visible "SociVanta Admin" is the name.
-      aria-label={collapsed ? "SociVanta Admin" : undefined}
+      // Icon-only when collapsed; otherwise the visible "Sociotix Admin" is the name.
+      aria-label={collapsed ? "Sociotix Admin" : undefined}
       className={cn(
         "flex items-center gap-2 rounded-lg text-white focus-visible:ring-3 focus-visible:ring-lime/40 focus-visible:outline-none [&_.text-primary]:text-[#a48bff]",
         collapsed && "[&>span>span]:hidden",

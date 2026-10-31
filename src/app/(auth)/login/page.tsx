@@ -6,7 +6,7 @@ import { AuthHeading, FormSkeleton } from "@/components/auth/frame";
 import { getCustomerSession } from "@/server/auth";
 import { safeNext } from "@/server/auth/cookies";
 
-export const metadata: Metadata = { title: "Sign in · SociVanta" };
+export const metadata: Metadata = { title: "Sign in · Sociotix" };
 
 async function Content({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const sp = await searchParams;
@@ -24,7 +24,7 @@ async function Content({ searchParams }: { searchParams: Promise<Record<string, 
           : undefined;
   return (
     <>
-      <AuthHeading title="Welcome back" description="Sign in to your SociVanta account." />
+      <AuthHeading title="Welcome back" description="Sign in to your Sociotix account." />
       <LoginForm next={next} notice={notice} />
     </>
   );

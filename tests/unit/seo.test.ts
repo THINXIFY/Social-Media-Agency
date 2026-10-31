@@ -107,7 +107,7 @@ describe("tool pages", () => {
       expect(String(m.description).length).toBeGreaterThan(110);
       expect(String(m.description).length).toBeLessThanOrEqual(175);
       // Generation is off in this environment: the description must say so and must not promise free runs now.
-      expect(String(m.description)).toMatch(/Coming soon to SociVanta AI\.$/);
+      expect(String(m.description)).toMatch(/Coming soon to Sociotix AI\.$/);
     }
     expect(titles.size).toBe(12);
     const all = [homeMetadata, hubMetadata, socialMetadata].map((m) => (m.title as { absolute: string }).absolute);

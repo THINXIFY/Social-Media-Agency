@@ -80,7 +80,7 @@ function credentials(env: Env, id: SocialProviderId): { clientId: string; client
 export function providerAvailability(env: Env, id: SocialProviderId): SocialAvailability {
   const name = SOCIAL_PLATFORM[id].name;
   const ready = enabledList(env).has(id) && credentials(env, id) !== null && !!env.DATA_ENCRYPTION_KEY && !!env.AUTH_SECRET;
-  return ready ? { state: "available" } : { state: "unavailable", reason: `${name} connections aren't switched on yet. SociVanta needs ${name}'s approval before accounts can be linked.` };
+  return ready ? { state: "available" } : { state: "unavailable", reason: `${name} connections aren't switched on yet. Sociotix needs ${name}'s approval before accounts can be linked.` };
 }
 
 export const redirectUriFor = (env: Env, id: SocialProviderId) => `${env.APP_URL}/api/social/callback/${id}`;
@@ -105,15 +105,15 @@ export function problemMessage(kind: ProviderError["kind"] | "unknown", name: st
     case "rate_limited":
       return `${name} asked us to slow down. Try again in a few minutes.`;
     case "unauthorized":
-      return `${name} no longer accepts SociVanta's access. Reconnect the account to continue.`;
+      return `${name} no longer accepts Sociotix's access. Reconnect the account to continue.`;
     case "forbidden":
-      return `${name} didn't grant the permission SociVanta needs. Reconnect and allow the requested access.`;
+      return `${name} didn't grant the permission Sociotix needs. Reconnect and allow the requested access.`;
     case "unavailable":
       return `${name} didn't respond. Nothing changed — try again shortly.`;
     case "no_accounts":
-      return `${name} didn't share an account SociVanta can connect.`;
+      return `${name} didn't share an account Sociotix can connect.`;
     default:
-      return `${name} sent a response SociVanta couldn't read. Nothing changed — try again shortly.`;
+      return `${name} sent a response Sociotix couldn't read. Nothing changed — try again shortly.`;
   }
 }
 
@@ -258,7 +258,7 @@ export async function completeConnection(db: Db, input: { customerId: string; pr
         .for("update");
       if (existing && existing.customerId !== customerId) {
         elsewhere++;
-        await record(tx, { customerId, provider, type: "connect_failed", code: "linked_elsewhere", message: `${acc.displayName} is already connected to a different SociVanta account. Disconnect it there first.` });
+        await record(tx, { customerId, provider, type: "connect_failed", code: "linked_elsewhere", message: `${acc.displayName} is already connected to a different Sociotix account. Disconnect it there first.` });
         continue;
       }
       if (existing) {
@@ -346,7 +346,7 @@ export async function syncConnection(db: Db, input: { customerId: string; connec
       .update(socialConnections)
       .set({ lastSyncOk: "failed", lastErrorCode: kind, updatedAt: now, ...(expired ? { status: "needs_reauth" } : {}) })
       .where(eq(socialConnections.id, c.id));
-    const message = kind === "no_accounts" ? `${name} no longer shares ${c.displayName} with SociVanta. Reconnect it to continue.` : problemMessage(kind, name);
+    const message = kind === "no_accounts" ? `${name} no longer shares ${c.displayName} with Sociotix. Reconnect it to continue.` : problemMessage(kind, name);
     await record(db, { customerId: c.customerId, provider, type: expired ? "access_expired" : "sync_failed", connectionId: c.id, code: kind, message });
     return { ok: false, message };
   }
@@ -357,7 +357,7 @@ export async function syncConnection(db: Db, input: { customerId: string; connec
 /* -------------------------------------------------------------------------- */
 
 /**
- * Deletes SociVanta's copy of the credentials and, where the platform
+ * Deletes Sociotix's copy of the credentials and, where the platform
  * supports it, revokes access there too. A failed revocation is recorded and
  * reported as failed — never as revoked.
  */
@@ -383,10 +383,10 @@ export async function disconnectConnection(db: Db, input: { customerId: string; 
 
   const message =
     revocation === "revoked"
-      ? `Disconnected ${c.displayName}. ${platform.name} confirmed SociVanta's access was removed.`
+      ? `Disconnected ${c.displayName}. ${platform.name} confirmed Sociotix's access was removed.`
       : revocation === "failed"
-        ? `Disconnected ${c.displayName} and deleted SociVanta's access. ${platform.name} didn't confirm removing access on its side — to be sure: ${platform.manageAccessHint}`
-        : `Disconnected ${c.displayName} and deleted SociVanta's access. ${platform.name} doesn't let apps remove access themselves — to remove it there too: ${platform.manageAccessHint}`;
+        ? `Disconnected ${c.displayName} and deleted Sociotix's access. ${platform.name} didn't confirm removing access on its side — to be sure: ${platform.manageAccessHint}`
+        : `Disconnected ${c.displayName} and deleted Sociotix's access. ${platform.name} doesn't let apps remove access themselves — to remove it there too: ${platform.manageAccessHint}`;
 
   await db.transaction(async (tx) => {
     await tx
@@ -407,7 +407,7 @@ type ConnectionRow = typeof socialConnections.$inferSelect;
 
 function health(c: ConnectionRow): { health: SocialHealth; note: string } {
   const name = SOCIAL_PLATFORM[c.provider as SocialProviderId].name;
-  if (c.status === "disconnected") return { health: "disconnected", note: "Disconnected. SociVanta holds no access to this account." };
+  if (c.status === "disconnected") return { health: "disconnected", note: "Disconnected. Sociotix holds no access to this account." };
   if (c.status === "needs_reauth") return { health: "action_needed", note: `${name} access has ended. Reconnect to keep this account up to date.` };
   if (c.lastSyncOk === "failed") return { health: "sync_issue", note: problemMessage((c.lastErrorCode ?? "unknown") as ProviderError["kind"], name) };
   if (!c.lastSyncAt) return { health: "not_synced", note: "Connected. Refresh to load the latest details." };

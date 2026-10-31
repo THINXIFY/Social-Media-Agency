@@ -64,7 +64,7 @@ export const PRIMARY_NAV: NavItem[] = [
   { id: "support", key: "nav.support", icon: LifeBuoy },
 ];
 
-/** SociVanta AI areas that live inside the dashboard (AI-06): kept to one discreet group. */
+/** Sociotix AI areas that live inside the dashboard (AI-06): kept to one discreet group. */
 export const AI_NAV: NavItem[] = [
   { id: "ai", key: "nav.aiHome", icon: Sparkles },
   { id: "social", key: "nav.social", icon: Share2 },

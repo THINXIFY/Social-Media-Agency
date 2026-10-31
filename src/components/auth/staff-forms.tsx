@@ -136,7 +136,7 @@ export function RecoveryCodes({ codes, continueHref }: { codes: string[]; contin
   const [copied, setCopied] = React.useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => ref.current?.focus(), []);
-  const text = `SociVanta admin recovery codes\nEach code works once.\n\n${codes.join("\n")}\n`;
+  const text = `Sociotix admin recovery codes\nEach code works once.\n\n${codes.join("\n")}\n`;
   return (
     <div ref={ref} tabIndex={-1} className="space-y-5 focus:outline-none" role="status">
       <div className="flex items-center gap-3">
@@ -171,7 +171,7 @@ export function RecoveryCodes({ codes, continueHref }: { codes: string[]; contin
           className={ghostButton}
           onClick={() => {
             const url = URL.createObjectURL(new Blob([text], { type: "text/plain" }));
-            const a = Object.assign(document.createElement("a"), { href: url, download: "socivanta-recovery-codes.txt" });
+            const a = Object.assign(document.createElement("a"), { href: url, download: "sociotix-recovery-codes.txt" });
             a.click();
             setTimeout(() => URL.revokeObjectURL(url), 0);
           }}

@@ -373,7 +373,7 @@ function PreferencesSection() {
           ))}
         </SelectField>
       </SettingRow>
-      {/* SociVanta AI personalisation (AI-09) is saved on the server; this reopens the short introduction. */}
+      {/* Sociotix AI personalisation (AI-09) is saved on the server; this reopens the short introduction. */}
       <SettingRow title={t("preferences.ai")} description={t("preferences.aiDesc")}>
         <Link href="/dashboard/ai/welcome" className={quietButton}>
           {t("preferences.aiAction")}

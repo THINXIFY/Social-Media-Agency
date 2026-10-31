@@ -82,7 +82,7 @@ export async function api<T>(url: string, init: RequestInit = {}): Promise<T> {
       headers: { accept: "application/json", ...(init.body ? { "content-type": "application/json" } : {}), ...(init.headers ?? {}) },
     });
   } catch {
-    throw new ApiError(0, "NETWORK", "We couldn't reach SociVanta. Check your connection and try again.");
+    throw new ApiError(0, "NETWORK", "We couldn't reach Sociotix. Check your connection and try again.");
   }
   const body = (await res.json().catch(() => null)) as { error?: { code?: string; message?: string; field?: string } } | null;
   if (!res.ok) {

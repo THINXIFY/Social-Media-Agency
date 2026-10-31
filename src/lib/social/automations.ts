@@ -6,7 +6,7 @@ import { isTimeZone, utcToZonedInput, zonedToUtc } from "./time";
  * shared by the builder, the server, the worker and the AI assistant (whose
  * suggestions must parse against these same schemas).
  *
- * Every action is internal to SociVanta: in-app reminders, checklists, draft
+ * Every action is internal to Sociotix: in-app reminders, checklists, draft
  * review flags, connection-health warnings and draft suggestions the customer
  * approves. Nothing here can publish, schedule posts, place orders, move money,
  * change permissions, message anyone or call external URLs.
@@ -92,7 +92,7 @@ export const TRIGGER_META: Record<TriggerType, { label: string; hint: string }> 
 
 export const ACTION_META: Record<ActionType, { label: string; hint: string }> = {
   reminder: { label: "Create a reminder", hint: "An in-app reminder with your message." },
-  checklist: { label: "Prepare a checklist", hint: "A checklist you can tick off in SociVanta." },
+  checklist: { label: "Prepare a checklist", hint: "A checklist you can tick off in Sociotix." },
   flag_drafts: { label: "Flag drafts for review", hint: "Lists drafts planned in the coming days." },
   health_check: { label: "Check account health", hint: "Lists connected accounts that need a reconnect or refresh." },
   draft_suggestion: { label: "Suggest a draft", hint: "Prepares post text you can turn into a draft with one click." },
@@ -196,7 +196,7 @@ export function frequency(t: Trigger): string {
 
 /** What an automation may access — shown before activation. */
 export function permissionsFor(a: Action): string[] {
-  const base = ["Create items in your SociVanta Automation inbox"];
+  const base = ["Create items in your Sociotix Automation inbox"];
   if (a.type === "flag_drafts") return [...base, "Read the planned dates of your own drafts"];
   if (a.type === "health_check") return [...base, "Read the connection status of your own social accounts (never their content)"];
   if (a.type === "draft_suggestion") return [...base, "Prepare post text — a draft is created only when you approve it"];
@@ -263,7 +263,7 @@ export const TEMPLATES: AutomationTemplate[] = [
 /** Shown so customers know what's deliberately not possible yet. */
 export const UNAVAILABLE_TEMPLATES = [
   { name: "Auto-publish approved posts", reason: "Publishing isn't switched on for any platform, and automations never publish without your confirmation." },
-  { name: "Weekly performance digest", reason: "Needs account analytics, which no platform shares with SociVanta yet." },
+  { name: "Weekly performance digest", reason: "Needs account analytics, which no platform shares with Sociotix yet." },
   { name: "Reply to comments", reason: "Automations never message anyone on your behalf." },
 ];
 

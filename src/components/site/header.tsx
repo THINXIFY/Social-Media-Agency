@@ -65,7 +65,7 @@ export function ThemeToggle({ className }: { className?: string }) {
   );
 }
 
-/** The SociVanta AI entry point: a distinct link so the SMM navigation stays as it is. */
+/** The Sociotix AI entry point: a distinct link so the SMM navigation stays as it is. */
 function AiLink({ current, className, onClick, compactAtLg = false }: { current: boolean; className?: string; onClick?: () => void; compactAtLg?: boolean }) {
   return (
     <Link
@@ -117,7 +117,7 @@ export function Header({ page = "home" }: { page?: "home" | "ai" | "other" }) {
         {home ? "Skip to services" : "Skip to content"}
       </a>
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center gap-2 px-4 sm:gap-6 lg:gap-3 xl:gap-6 sm:px-6 lg:px-8">
-        <a href={home ? "#top" : "/"} aria-label="SociVanta home" className="rounded-md">
+        <a href={home ? "#top" : "/"} aria-label="Sociotix home" className="rounded-md">
           <Logo />
         </a>
 

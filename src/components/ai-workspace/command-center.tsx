@@ -342,7 +342,7 @@ function Discover({ data }: { data: CommandCenterData }) {
           <h2 id="discover-title" className={sectionTitle}>
             Discover more
           </h2>
-          <p className="mt-1.5 text-sm text-muted-foreground">Everything in SociVanta AI, grouped by what it helps with.</p>
+          <p className="mt-1.5 text-sm text-muted-foreground">Everything in Sociotix AI, grouped by what it helps with.</p>
         </div>
         <Link href="/ai-tools" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline focus-visible:underline focus-visible:outline-none dark:text-[#c4b5ff]">
           Browse the AI tools directory <ArrowUpRight className="size-4" aria-hidden />

@@ -30,7 +30,7 @@ export function MoreSolutions() {
         <Reveal className="grid grid-cols-1 gap-8 lg:grid-cols-[0.8fr_2fr] lg:items-center">
           <div>
             <Eyebrow>More solutions</Eyebrow>
-            <h2 className="mt-3 text-2xl font-bold">Also on the SociVanta roadmap</h2>
+            <h2 className="mt-3 text-2xl font-bold">Also on the Sociotix roadmap</h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Our focus is the services marketplace. These are planned additions for later.
             </p>
@@ -43,7 +43,7 @@ export function MoreSolutions() {
                   onClick={() =>
                     preview({
                       title: s.title,
-                      description: `${s.body} This is a future SociVanta offering and isn't available yet.`,
+                      description: `${s.body} This is a future Sociotix offering and isn't available yet.`,
                     })
                   }
                   className="group flex h-full w-full flex-col rounded-2xl border bg-card/60 p-4 text-left transition-colors hover:bg-card"

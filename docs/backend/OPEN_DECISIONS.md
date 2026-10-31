@@ -1,4 +1,4 @@
-# SociVanta — Open Decisions (owner approval needed)
+# Sociotix — Open Decisions (owner approval needed)
 
 Each decision lists the recommendation and the phase it blocks. Items marked **before coding** block 5A or 5B.
 
@@ -17,7 +17,7 @@ Each decision lists the recommendation and the phase it blocks. Items marked **b
 | D11 | Version control baseline | Still not a Git repo after 5A; all 5A work is uncommitted files | `git init`, private remote, tag `frontend-v1.0`, branch per phase | **Before coding** |
 | D12 | Fulfilment suppliers | Which providers, contracts and APIs | Start with manual fulfilment (5E); integrate one vetted API provider in 5F | 5F |
 | D13 | File storage | Cloudflare R2, S3, or none at launch | R2 or S3, private bucket; or launch support without attachments | 5G |
-| D14 | Brand and domain | The name "SociVanta" is provisional; no domain configured (the footer shows `support@[your-domain]`) | Settle before email (D4) and processors (D3), which require a domain | 5B |
+| D14 | Brand and domain | The name "Sociotix" is provisional; no domain configured (the footer shows `support@[your-domain]`) | Settle before email (D4) and processors (D3), which require a domain | 5B |
 | D15 | Legal entity, jurisdiction, tax/VAT, privacy policy and data retention | — | Needed before taking real payments; affects processors and GDPR-style obligations | 5D/5I |
 | D16 | Customer two-factor authentication | Optional or required for high balances | Optional, prompted when the balance exceeds a threshold | 5B |
 

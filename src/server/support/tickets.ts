@@ -156,7 +156,7 @@ async function messagesFor(db: Executor, ticketId: string, forStaff: boolean): P
     id: m.id,
     author: m.authorType as TicketMessageView["author"],
     // Customers see a staff member's first name only, never their email.
-    authorName: m.authorType === "staff" ? (forStaff ? name || email || "Staff" : `${(name || "SociVanta").split(/\s+/)[0]} · SociVanta`) : m.authorType === "customer" ? (forStaff ? name || email || "Customer" : "You") : "SociVanta",
+    authorName: m.authorType === "staff" ? (forStaff ? name || email || "Staff" : `${(name || "Sociotix").split(/\s+/)[0]} · Sociotix`) : m.authorType === "customer" ? (forStaff ? name || email || "Customer" : "You") : "Sociotix",
     body: m.body,
     at: m.createdAt.toISOString(),
   }));
@@ -183,7 +183,7 @@ async function eventsFor(db: Executor, ticketId: string, forStaff: boolean): Pro
     label: eventLabel(e.type, e.fromValue, e.toValue, forStaff),
     from: e.fromValue,
     to: e.toValue,
-    by: e.actorType === "customer" ? (forStaff ? name || "Customer" : "You") : e.actorType === "staff" ? (forStaff ? name || "Staff" : "SociVanta") : "SociVanta",
+    by: e.actorType === "customer" ? (forStaff ? name || "Customer" : "You") : e.actorType === "staff" ? (forStaff ? name || "Staff" : "Sociotix") : "Sociotix",
     at: e.at.toISOString(),
   }));
 }

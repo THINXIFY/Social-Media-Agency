@@ -520,7 +520,7 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
         <TopBar
           onOpenSearch={openSearch}
           mobileLogo={
-            <Link href="/dashboard" aria-label="SociVanta dashboard" className="[&>span>span]:hidden sm:[&>span>span]:inline">
+            <Link href="/dashboard" aria-label="Sociotix dashboard" className="[&>span>span]:hidden sm:[&>span>span]:inline">
               <Logo />
             </Link>
           }

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   // Canonical, Open Graph and sitemap URLs resolve against APP_URL (never localhost in production).
   metadataBase: new URL(siteOrigin()),
   applicationName: SITE.name,
-  title: "SociVanta — Social Media Services. Simplified.",
+  title: `${SITE.name} — ${SITE.tagline}`,
   description:
     "Discover social media services across all major platforms. Explore solutions, manage orders, and track progress from one dashboard.",
   openGraph: { type: "website", siteName: SITE.name, locale: SITE.locale },

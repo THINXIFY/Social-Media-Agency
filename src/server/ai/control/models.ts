@@ -10,7 +10,7 @@ import { ANTHROPIC_PRICES, type Price } from "../pricing";
 
 /*
  * The model library. Model ids come from three places only:
- *  - catalog: models SociVanta already runs and prices in code (Anthropic, AI-02);
+ *  - catalog: models Sociotix already runs and prices in code (Anthropic, AI-02);
  *  - discovered: ids a provider listed during a passing key test;
  *  - manual: an id an admin entered after checking the provider's docs.
  * Capabilities are never inferred from a name: a discovered or manual model

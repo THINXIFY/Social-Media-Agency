@@ -42,7 +42,7 @@ describe("statuses and copy", () => {
 
   it("customer page promises no reward amounts, balances or payout dates", () => {
     const ui = readFileSync("src/components/dashboard/live-referrals.tsx", "utf8");
-    expect(ui).toContain("Share SociVanta. Grow Together.");
+    expect(ui).toContain("Share Sociotix. Grow Together.");
     expect(ui).toContain("Rewards coming soon");
     expect(ui).not.toMatch(/\$\d|usd\(|formatMoney|earn \d|paid within|payout|cash out|withdraw/i);
   });

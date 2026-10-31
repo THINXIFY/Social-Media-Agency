@@ -80,9 +80,9 @@ export function Hero() {
             variants={text}
             className="mt-5 text-[2.6rem] leading-[1.03] font-extrabold sm:mt-6 tracking-[-0.035em] text-balance sm:text-6xl lg:text-[4.3rem]"
           >
-            Social Media Services.{" "}
+            Smarter Social.{" "}
             <span className="relative inline-block text-primary">
-              Simplified.
+              Bigger Impact.
               <svg
                 viewBox="0 0 300 18"
                 preserveAspectRatio="none"

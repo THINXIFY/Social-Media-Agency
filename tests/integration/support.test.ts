@@ -105,7 +105,7 @@ describe("customer tickets", () => {
     await staffReply(db, staffOf(s), t.reference, { body: "Thanks! Could you confirm the profile link?", key: key() });
     let v = await getOwnTicket(db, c.customer.id, t.reference);
     expect(v!.status).toBe("waiting");
-    expect(v!.messages.at(-1)).toMatchObject({ author: "staff", authorName: "Test · SociVanta" });
+    expect(v!.messages.at(-1)).toMatchObject({ author: "staff", authorName: "Test · Sociotix" });
     await replyOwn(db, actorOf(c), t.reference, { body: "Here it is: instagram.com/example", key: key() });
     expect((await getOwnTicket(db, c.customer.id, t.reference))!.status).toBe("awaiting");
     await staffReply(db, staffOf(s), t.reference, { body: "Done, all sorted.", key: key(), status: "resolved" });

@@ -42,7 +42,7 @@ export function LoginForm({ next, notice }: { next?: string; notice?: string }) 
       </AuthField>
       <SubmitButton pendingLabel="Signing in…">Sign in</SubmitButton>
       <AuthFooter>
-        New to SociVanta?{" "}
+        New to Sociotix?{" "}
         <Link href="/register" className={textLink}>
           Create an account
         </Link>
@@ -103,7 +103,7 @@ export function RegisterForm({ referral = null }: { referral?: string | null }) 
           <summary className="cursor-pointer font-medium text-muted-foreground select-none hover:text-foreground">Have a referral code? (optional)</summary>
           <div className="mt-3">
             <input type="hidden" name="refVia" value="code" />
-            <AuthField id="ref" label="Referral code" help="From a friend who uses SociVanta, e.g. SV-7K2M9QXA.">
+            <AuthField id="ref" label="Referral code" help="From a friend who uses Sociotix, e.g. SV-7K2M9QXA.">
               <AuthInput {...fieldAria("ref", undefined, true)} autoComplete="off" spellCheck={false} maxLength={32} className="font-mono uppercase" defaultValue={String(state.data?.ref ?? "")} />
             </AuthField>
           </div>

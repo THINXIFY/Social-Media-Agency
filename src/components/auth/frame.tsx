@@ -32,7 +32,7 @@ function CustomerFrame({ children }: { children: React.ReactNode }) {
       </div>
 
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
-        <Link href="/" className="rounded-lg focus-visible:ring-3 focus-visible:ring-primary/30 focus-visible:outline-none" aria-label="SociVanta home">
+        <Link href="/" className="rounded-lg focus-visible:ring-3 focus-visible:ring-primary/30 focus-visible:outline-none" aria-label="Sociotix home">
           <Logo />
         </Link>
         <ThemeToggle className="text-muted-foreground" />
@@ -52,7 +52,7 @@ function CustomerFrame({ children }: { children: React.ReactNode }) {
       </main>
 
       <footer className="mx-auto w-full max-w-6xl px-5 pb-6 text-center text-xs text-muted-foreground sm:px-8 lg:text-start">
-        SociVanta ·{" "}
+        Sociotix ·{" "}
         <Link href="/" className="underline-offset-4 hover:text-foreground hover:underline">
           Back to website
         </Link>
@@ -144,7 +144,7 @@ function StaffFrame({ children }: { children: React.ReactNode }) {
               <ShieldCheck className="size-5" />
             </span>
             <div className="leading-tight">
-              <p className="text-sm font-semibold">SociVanta Admin</p>
+              <p className="text-sm font-semibold">Sociotix Admin</p>
               <p className="text-xs text-muted-foreground">Staff access</p>
             </div>
           </div>
@@ -152,7 +152,7 @@ function StaffFrame({ children }: { children: React.ReactNode }) {
         </section>
       </main>
 
-      <footer className="px-5 pb-6 text-center text-xs text-white/45">Restricted to authorized SociVanta staff. Every sign-in requires two-step verification.</footer>
+      <footer className="px-5 pb-6 text-center text-xs text-white/45">Restricted to authorized Sociotix staff. Every sign-in requires two-step verification.</footer>
     </div>
   );
 }

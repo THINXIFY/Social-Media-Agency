@@ -90,7 +90,7 @@ function toUtc(local: string, tz: string): { iso: string; ambiguous: boolean } {
 
 /** Postgres can only store the text if the database encoding can represent it. */
 function mapEncoding(e: unknown): never {
-  if (pgErrorOf(e)?.code === "22P05") throw new AppError("VALIDATION_FAILED", "This text contains characters (such as emoji) that this server's database can't store yet. It needs a UTF-8 database — please tell the SociVanta team.", { details: { field: "text" } });
+  if (pgErrorOf(e)?.code === "22P05") throw new AppError("VALIDATION_FAILED", "This text contains characters (such as emoji) that this server's database can't store yet. It needs a UTF-8 database — please tell the Sociotix team.", { details: { field: "text" } });
   throw e;
 }
 
@@ -107,11 +107,11 @@ const TARGET_NOTE: Record<string, string> = {
   missing_permission: "The account hasn't granted posting permission.",
   invalid_content: "The post no longer meets this platform's rules.",
   post_not_approved: "The post wasn't approved for publishing.",
-  unauthorized: "The platform no longer accepts SociVanta's access. Reconnect the account.",
+  unauthorized: "The platform no longer accepts Sociotix's access. Reconnect the account.",
   forbidden: "The platform refused permission to post.",
   rate_limited: "The platform asked us to slow down; retries ran out.",
   account_unavailable: "The platform didn't recognise the account.",
-  lease_expired: "Publishing was interrupted, so SociVanta can't tell whether it was posted. Check the platform before trying again.",
+  lease_expired: "Publishing was interrupted, so Sociotix can't tell whether it was posted. Check the platform before trying again.",
   unavailable: "The platform didn't confirm the post. Check the platform before trying again.",
   bad_response: "The platform's reply couldn't be read, so the post may or may not exist. Check the platform before trying again.",
   unknown: "Something unexpected happened, so the post may or may not exist. Check the platform before trying again.",
@@ -333,7 +333,7 @@ export async function runPublishingTick(db: Db, deps: PublishingDeps) {
     .set({ status: "reconciliation_required", leaseUntil: null, lastErrorCode: "lease_expired", updatedAt: now })
     .where(and(eq(socialPostTargets.status, "publishing"), lt(socialPostTargets.leaseUntil, now)))
     .returning();
-  for (const t of stale) await event(db, { customerId: t.customerId, provider: t.provider as SocialProviderId, type: "post_unconfirmed", connectionId: t.connectionId, code: "lease_expired", message: `Publishing to ${SOCIAL_PLATFORM[t.provider as SocialProviderId].name} was interrupted and couldn't be confirmed. Check the platform before trying again — SociVanta won't retry automatically, to avoid a duplicate post.` });
+  for (const t of stale) await event(db, { customerId: t.customerId, provider: t.provider as SocialProviderId, type: "post_unconfirmed", connectionId: t.connectionId, code: "lease_expired", message: `Publishing to ${SOCIAL_PLATFORM[t.provider as SocialProviderId].name} was interrupted and couldn't be confirmed. Check the platform before trying again — Sociotix won't retry automatically, to avoid a duplicate post.` });
   summary.recovered = stale.length;
 
   const claimed = (
@@ -395,7 +395,7 @@ async function settle(db: Db, t: TargetRow, o: PublishOutcome, now: Date): Promi
   }
   if (o.kind === "uncertain") {
     await db.update(socialPostTargets).set({ status: "reconciliation_required", leaseUntil: null, lastErrorCode: o.code, updatedAt: now }).where(mine);
-    await event(db, { customerId: t.customerId, provider, type: "post_unconfirmed", connectionId: t.connectionId, code: o.code, message: `${name} didn't confirm the post. Check ${name} before trying again — SociVanta won't retry automatically, to avoid a duplicate post.` });
+    await event(db, { customerId: t.customerId, provider, type: "post_unconfirmed", connectionId: t.connectionId, code: o.code, message: `${name} didn't confirm the post. Check ${name} before trying again — Sociotix won't retry automatically, to avoid a duplicate post.` });
     return "unconfirmed";
   }
   if (o.retryable && t.attempts < MAX_ATTEMPTS) {

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { default: "Overview · SociVanta Admin", template: "%s · SociVanta Admin" },
-  description: "SociVanta admin panel.",
+  title: { default: "Overview · Sociotix Admin", template: "%s · Sociotix Admin" },
+  description: "Sociotix admin panel.",
   robots: { index: false, follow: false },
 };
 

@@ -285,7 +285,7 @@ describe("ownership and disconnecting", () => {
     const r2 = await disconnectConnection(db, { customerId: customer.id, connectionId: fail.id }, { env: env(), http: s2.http });
     expect(r2.revocation).toBe("failed");
     expect(r2.message).toMatch(/didn't confirm removing access/);
-    expect(r2.message).not.toMatch(/revoked|confirmed SociVanta's access was removed/);
+    expect(r2.message).not.toMatch(/revoked|confirmed Sociotix's access was removed/);
 
     for (const id of [ok.id, fail.id]) {
       const [row] = await db.select().from(socialConnections).where(eq(socialConnections.id, id));

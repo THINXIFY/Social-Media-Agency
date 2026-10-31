@@ -169,7 +169,7 @@ export function MyProfile() {
             <Section
               id="personal"
               title="Personal information"
-              description="How you appear in SociVanta and how we can reach you."
+              description="How you appear in Sociotix and how we can reach you."
               icon={UserRound}
             >
               {editing ? (

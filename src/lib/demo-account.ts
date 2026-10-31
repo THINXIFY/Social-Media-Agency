@@ -201,7 +201,7 @@ export const ACTIVITY: DemoActivity[] = [
 
 export type TxType = "deposit" | "payment" | "refund" | "adjustment";
 export type TxStatus = "pending" | "processing" | "completed" | "failed" | "expired" | "refunded";
-/** How money moved. `balance` = paid from the SociVanta wallet. */
+/** How money moved. `balance` = paid from the Sociotix wallet. */
 export type TxMethod = "balance" | "crypto" | "card" | "bank" | "paypal";
 
 export interface DemoTransaction {

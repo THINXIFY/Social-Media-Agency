@@ -9,10 +9,12 @@
  */
 
 export const SITE = {
-  name: "SociVanta",
-  aiName: "SociVanta AI",
-  tagline: "Social Media Services. Simplified.",
-  description: "SociVanta is a clear, organised marketplace for social media services across every major platform, with SociVanta AI tools for planning and writing social content.",
+  name: "Sociotix",
+  aiName: "Sociotix AI",
+  tagline: "Smarter Social. Bigger Impact.",
+  /** Brand positioning. Describes where the product is going; page copy states what works today. */
+  positioning: "AI-Powered Social Growth & Marketing Platform",
+  description: "Sociotix is a social growth and marketing platform: one clear marketplace for social media services across every major platform, order tracking in one dashboard, and Sociotix AI tools for planning social content as they launch.",
   locale: "en_US",
 } as const;
 

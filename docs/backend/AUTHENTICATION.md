@@ -1,4 +1,4 @@
-# SociVanta — Authentication, MFA and Authorization (Phase 5B)
+# Sociotix — Authentication, MFA and Authorization (Phase 5B)
 
 ## 1. Decision: proven primitives on our own schema, not an auth framework
 

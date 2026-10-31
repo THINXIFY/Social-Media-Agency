@@ -8,7 +8,7 @@ import { walletCode } from "../ledger/accounts";
  * Read-only customer wallet views, derived from the immutable ledger.
  *
  *  - available: the wallet account's balance = credits − debits on
- *    `wallet:<customer>` (a liability: money SociVanta holds for the customer).
+ *    `wallet:<customer>` (a liability: money Sociotix holds for the customer).
  *  - pending: deposits submitted but not yet credited. Never part of the
  *    available balance and never spendable.
  *

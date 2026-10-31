@@ -80,7 +80,7 @@ export function LiveAdminOverview() {
         <div className="min-w-0">
           <p className="text-[0.8rem] font-medium text-muted-foreground">Overview</p>
           <h1 className="mt-1.5 font-heading text-[1.75rem] leading-tight font-extrabold tracking-tight text-balance sm:text-[2.1rem]">Your Business, At a Glance.</h1>
-          <p className="mt-1 max-w-2xl text-[0.95rem] text-muted-foreground">Track performance, monitor operations, and stay in control of SociVanta.</p>
+          <p className="mt-1 max-w-2xl text-[0.95rem] text-muted-foreground">Track performance, monitor operations, and stay in control of Sociotix.</p>
         </div>
         <div className="flex min-w-0 flex-col gap-2 xl:items-end">
           <div className="flex flex-wrap items-center gap-2">
@@ -604,7 +604,7 @@ function AiPanel({ ai, periodWord }: { ai: NonNullable<OverviewResponse["ai"]>; 
   const genState = ai.emergencyPaused ? { label: "Paused (emergency)", icon: PauseCircle, ok: false, warn: true } : ai.generation.live ? { label: "Live", icon: Sparkles, ok: true, warn: false } : { label: "Off", icon: Bot, ok: false, warn: false };
   const tokens = ai.inputTokens === null ? "Not reported" : num((ai.inputTokens ?? 0) + (ai.outputTokens ?? 0));
   return (
-    <Section title="AI & automation" description="Usage estimates from SociVanta's own records, not provider invoices.">
+    <Section title="AI & automation" description="Usage estimates from Sociotix's own records, not provider invoices.">
       <div className={cn(card, "p-4 sm:p-5")}>
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
           <span className="flex items-center gap-2">
@@ -639,7 +639,7 @@ function AiPanel({ ai, periodWord }: { ai: NonNullable<OverviewResponse["ai"]>; 
             ) : (
               `No automation runs ${periodWord}.`
             )}{" "}
-            These run inside SociVanta.
+            These run inside Sociotix.
           </p>
           <p className="mt-2 flex items-center gap-2 text-sm">
             <StatusDot ok={ai.publishingProviders > 0} />

@@ -29,15 +29,15 @@ export function orderFactSheet(o: CustomerOrder): OrderFactSheet {
   const status = ORDER_STATUS_META[o.status];
   const payment = PAYMENT_STATUS_META[o.paymentStatus];
   const lines = [
-    `[order] ${o.reference}: ${o.service.name}${o.service.platform ? ` (${o.service.platform})` : ""}, quantity ${o.quantity.toLocaleString("en-US")}, total $${usd(o.totalCents)} paid from the SociVanta wallet.`,
+    `[order] ${o.reference}: ${o.service.name}${o.service.platform ? ` (${o.service.platform})` : ""}, quantity ${o.quantity.toLocaleString("en-US")}, total $${usd(o.totalCents)} paid from the Sociotix wallet.`,
     `[status] "${status.customerLabel}" — ${status.customerExplain}`,
     o.statusReason ? `[team message] ${o.statusReason.slice(0, 500)}` : null,
     `[payment] "${payment.label}" — ${customerPayment(o)}`,
     // Times stay out of the prompt: the customer sees the real ones beside the explanation, and the model never states dates.
     `[recorded steps] placed: yes; work started: ${o.startedAt ? "yes" : "no"}; completed: ${o.completedAt ? "yes" : "no"}; closed: ${o.closedAt ? "yes" : "no"}. The exact times are shown to the customer separately. No delivery estimates exist.`,
-    `[timeline] ${o.events.length ? o.events.map((e, i) => `${i + 1}. ${e.label} (by ${e.actor === "you" ? "the customer" : e.actor === "team" ? "the SociVanta team" : "the system"})${e.detail ? ` — message: "${e.detail.slice(0, 300)}"` : ""}`).join(" ") : "No activity recorded yet."}`,
+    `[timeline] ${o.events.length ? o.events.map((e, i) => `${i + 1}. ${e.label} (by ${e.actor === "you" ? "the customer" : e.actor === "team" ? "the Sociotix team" : "the system"})${e.detail ? ` — message: "${e.detail.slice(0, 300)}"` : ""}`).join(" ") : "No activity recorded yet."}`,
     `[customer can now] ${actions(o)}`,
-    `[not recorded] SociVanta does not record delivery estimates, percentages of progress or expected completion dates for orders. Refunds aren't automatic; anything after work starts needs a reviewed decision by the team.`,
+    `[not recorded] Sociotix does not record delivery estimates, percentages of progress or expected completion dates for orders. Refunds aren't automatic; anything after work starts needs a reviewed decision by the team.`,
   ];
   return { sheet: lines.filter(Boolean).join("\n"), amounts: [o.totalCents / 100] };
 }

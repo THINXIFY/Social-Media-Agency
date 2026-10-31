@@ -81,6 +81,6 @@ export async function automationApi<T>(path: string, init: RequestInit): Promise
     if (res.ok) return { ok: true, data: body as T };
     return { ok: false, message: body?.error?.issues?.[0]?.message ?? body?.error?.message ?? "Something went wrong. Please try again." };
   } catch {
-    return { ok: false, message: "We couldn't reach SociVanta. Check your connection and try again." };
+    return { ok: false, message: "We couldn't reach Sociotix. Check your connection and try again." };
   }
 }

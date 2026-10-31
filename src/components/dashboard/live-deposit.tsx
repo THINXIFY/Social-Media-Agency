@@ -216,7 +216,7 @@ export function LiveDepositDialog({
                     What happens next
                   </h3>
                   <ol className="mt-2.5 space-y-2 text-sm">
-                    {["You receive SociVanta's bank details and your reference.", "You send the transfer from your bank.", "Our team matches it on our bank statement and a second person verifies it.", "Only then is it added to your balance."].map((s, i) => (
+                    {["You receive Sociotix's bank details and your reference.", "You send the transfer from your bank.", "Our team matches it on our bank statement and a second person verifies it.", "Only then is it added to your balance."].map((s, i) => (
                       <li key={s} className="flex gap-2.5">
                         <span className="grid size-5 shrink-0 place-items-center rounded-full bg-muted text-[0.68rem] font-bold" aria-hidden>
                           {i + 1}

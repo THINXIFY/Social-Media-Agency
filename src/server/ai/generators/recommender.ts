@@ -99,10 +99,10 @@ export type RecommenderOutput = z.infer<typeof output>;
 
 const SYSTEM = `${GROWTH_RULES}
 
-Task: recommend services from SociVanta's catalog for the customer's goal.
+Task: recommend services from Sociotix's catalog for the customer's goal.
 - Choose only from the candidates provided. Use their exact ids. If none genuinely fit, return no picks — never stretch a poor match.
 - Pick at most 5, best fit first. For each: how well it fits (Strong, Good or Possible), why it fits this goal, and an honest limitation (for example that paid services support a strategy but don't replace good content).
-- Don't mention prices, discounts, delivery times, availability or results — SociVanta shows verified details itself.
+- Don't mention prices, discounts, delivery times, availability or results — Sociotix shows verified details itself.
 - Also give 2–4 pieces of practical guidance for the goal that don't require buying anything.`;
 
 /** Authorized catalog candidates for a platform (and optional focus). Public fields only. */

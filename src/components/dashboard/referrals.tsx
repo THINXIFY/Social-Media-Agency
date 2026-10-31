@@ -118,8 +118,8 @@ function useCanShare() {
   );
 }
 
-const SHARE_TEXT = `Join me on SociVanta with my invite code ${P.code}. (Demo preview: SociVanta invites aren't active yet, so nothing is tracked.)`;
-const LINK_TEXT = `[Demo preview — not active] SociVanta invite …${P.invitePath} · code ${P.code}`;
+const SHARE_TEXT = `Join me on Sociotix with my invite code ${P.code}. (Demo preview: Sociotix invites aren't active yet, so nothing is tracked.)`;
+const LINK_TEXT = `[Demo preview — not active] Sociotix invite …${P.invitePath} · code ${P.code}`;
 
 /* -------------------------------------------------------------------------- */
 /*  Hero & invite                                                             */
@@ -132,7 +132,7 @@ function Hero({ className, style }: { className?: string; style?: React.CSSPrope
 
   const share = async () => {
     try {
-      await navigator.share({ title: "SociVanta invite (demo)", text: SHARE_TEXT });
+      await navigator.share({ title: "Sociotix invite (demo)", text: SHARE_TEXT });
       setShared("done");
     } catch {
       // Cancelled or unavailable — nothing to report.
@@ -165,13 +165,13 @@ function Hero({ className, style }: { className?: string; style?: React.CSSPrope
       <div className="grid grid-cols-1 items-center gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:gap-10">
         <div>
           <p className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.16em] text-lime uppercase">
-            <Gift className="size-4" aria-hidden /> SociVanta Rewards
+            <Gift className="size-4" aria-hidden /> Sociotix Rewards
           </p>
           <h1 id="rewards-title" className="mt-3 text-[2rem] leading-[1.05] font-extrabold tracking-tight text-balance sm:text-[2.6rem] lg:text-[3rem]">
             Good things are better shared.
           </h1>
           <p className="mt-3 max-w-xl text-[0.98rem] leading-relaxed text-white/70">
-            Invite others to SociVanta, track your referrals and see your rewards in one place.
+            Invite others to Sociotix, track your referrals and see your rewards in one place.
           </p>
           <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/75">
             <Clock3 className="size-3.5 text-lime" aria-hidden />
@@ -298,8 +298,8 @@ function Stats({ className, style }: { className?: string; style?: React.CSSProp
 
 function HowItWorks({ className, style }: { className?: string; style?: React.CSSProperties }) {
   const steps = [
-    { title: "Share your invite", body: "Send your code or link to people who'd find SociVanta useful.", Icon: Share2 },
-    { title: "Your friend signs up", body: "They create a new SociVanta account using your link or code.", Icon: UserPlus },
+    { title: "Share your invite", body: "Send your code or link to people who'd find Sociotix useful.", Icon: Share2 },
+    { title: "Your friend signs up", body: "They create a new Sociotix account using your link or code.", Icon: UserPlus },
     {
       title: "Earn rewards",
       body: `Once their completed orders reach ${money(P.qualifyingSpend)} within ${P.qualifyingDays} days and a ${P.holdDays}-day review passes.`,
@@ -823,7 +823,7 @@ function RewardsHistory({ onOpen, className, style }: { onOpen: (id: string) => 
 
 function Rules({ className, style }: { className?: string; style?: React.CSSProperties }) {
   const rules = [
-    { term: "Who counts", detail: "New SociVanta customers only. Existing accounts and your own accounts don't qualify." },
+    { term: "Who counts", detail: "New Sociotix customers only. Existing accounts and your own accounts don't qualify." },
     { term: "Qualifying", detail: `Their completed orders reach ${money(P.qualifyingSpend)} within ${P.qualifyingDays} days of signing up.` },
     { term: "Reward", detail: `${money(P.reward.amount)} per qualified referral. A flat example amount, not a commission or percentage.` },
     { term: "Review", detail: `Rewards are held for ${P.holdDays} days, then approved if the qualifying orders still stand.` },

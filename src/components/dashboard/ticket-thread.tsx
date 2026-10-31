@@ -246,7 +246,7 @@ function Message({ message: m }: { message: DemoTicket["messages"][number] }) {
       )}
       <div className={cn("flex max-w-[85%] min-w-0 flex-col gap-1", mine && "items-end")}>
         <p className={cn("flex items-baseline gap-2 text-xs", mine && "flex-row-reverse")}>
-          <span className="font-semibold">{mine ? "You" : "SociVanta Support"}</span>
+          <span className="font-semibold">{mine ? "You" : "Sociotix Support"}</span>
           <time dateTime={m.at} className="text-muted-foreground">
             {formatDateTime(m.at)} UTC
           </time>

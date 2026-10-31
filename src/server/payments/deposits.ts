@@ -297,7 +297,7 @@ export async function getDepositForStaff(db: Executor, reference: string, viewer
   let next: NextAction = { id: "none", label: "No action needed", explain: STAFF_EXPLAIN[status] ?? DEPOSIT_STATUS_META[status].explain };
   if (method.verification.available) {
     if (status === "awaiting_payment" || status === "expired") {
-      next = { id: "record_receipt", label: "Record bank receipt (review 1 of 2)", explain: "When the transfer appears on SociVanta's bank statement, record its reference, amount, date and payer. Nothing is credited at this step." };
+      next = { id: "record_receipt", label: "Record bank receipt (review 1 of 2)", explain: "When the transfer appears on Sociotix's bank statement, record its reference, amount, date and payer. Nothing is credited at this step." };
       blockers.push("No bank receipt has been recorded yet.");
     } else if (status === "under_review") {
       const self = viewerUserId && first?.by === viewerUserId;
@@ -335,7 +335,7 @@ export async function getDepositForStaff(db: Executor, reference: string, viewer
 
 const SAFE_TEXT = /^[\p{L}\p{N} .,'&()\/#:_-]+$/u;
 
-/** Evidence from SociVanta's own bank statement — never from the customer. */
+/** Evidence from Sociotix's own bank statement — never from the customer. */
 export const bankReceiptSchema = z
   .object({
     bankReference: z.string().trim().min(3, "Enter the bank's transaction reference.").max(60).regex(/^[A-Za-z0-9 ._\/-]+$/, "Use letters, numbers, spaces, dots, dashes or slashes."),
@@ -344,7 +344,7 @@ export const bankReceiptSchema = z
     payerName: z.string().trim().min(2).max(120).regex(SAFE_TEXT, "Use the payer name as it appears on the statement."),
     checks: z
       .object({
-        onBankStatement: z.literal(true, { message: "Confirm the transfer is on SociVanta's bank statement." }),
+        onBankStatement: z.literal(true, { message: "Confirm the transfer is on Sociotix's bank statement." }),
         referenceMatches: z.literal(true, { message: "Confirm the deposit reference matches." }),
         fundsCleared: z.literal(true, { message: "Confirm the funds have cleared." }),
       })
@@ -362,7 +362,7 @@ function requireVerification(method: DepositMethodId) {
 }
 
 /**
- * Review 1 of 2: record the transfer as it appears on SociVanta's bank
+ * Review 1 of 2: record the transfer as it appears on Sociotix's bank
  * statement. The amount must match exactly; partial or excess payments can't
  * be credited (reject and contact the customer). Nothing is credited here.
  */

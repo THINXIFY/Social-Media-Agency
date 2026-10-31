@@ -107,7 +107,7 @@ function fieldError(field: OrderField, raw: string | undefined, service: Service
 function fieldWarning(field: OrderField, raw: string | undefined, platform: Platform): string | null {
   const value = (raw ?? "").trim();
   if (!value) return null;
-  if (PASSWORD_HINT.test(value)) return "Never share passwords or login codes. SociVanta will never ask for them.";
+  if (PASSWORD_HINT.test(value)) return "Never share passwords or login codes. Sociotix will never ask for them.";
   if (field.kind === "link") {
     const url = parseLink(value);
     if (url && isForeignHost(url, platform.id)) {

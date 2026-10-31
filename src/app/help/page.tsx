@@ -6,7 +6,7 @@ import { Header } from "@/components/site/header";
 import { breadcrumbs, faqPage, graph, webPage } from "@/lib/seo/schema";
 import { SITE } from "@/lib/seo/site";
 
-const SOCIAL = { title: "SociVanta Help Center", description: "Answers about orders, your wallet, account security, AI tools and the social workspace, plus support tickets." };
+const SOCIAL = { title: "Sociotix Help Center", description: "Answers about orders, your wallet, account security, AI tools and the social workspace, plus support tickets." };
 
 export const metadata: Metadata = {
   title: { absolute: HELP_TITLE },

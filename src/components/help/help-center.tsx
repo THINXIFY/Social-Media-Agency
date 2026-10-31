@@ -5,11 +5,11 @@ import { HelpSearch } from "./search";
 
 /* The public Help Center hub (5G-A). Server-rendered; search enhances it. */
 
-export const HELP_TITLE = "Help Center — SociVanta Support & Guides";
-export const HELP_DESCRIPTION = "Find answers about SociVanta orders, your wallet, account security, AI tools and the social workspace, or open a support ticket with our team.";
+export const HELP_TITLE = "Help Center — Sociotix Support & Guides";
+export const HELP_DESCRIPTION = "Find answers about Sociotix orders, your wallet, account security, AI tools and the social workspace, or open a support ticket with our team.";
 
 /** Short titles get the brand suffix; long ones stand alone so they stay within ~60 characters. */
-export const articleTitle = (title: string) => (title.length <= 42 ? `${title} | SociVanta Help` : title);
+export const articleTitle = (title: string) => (title.length <= 42 ? `${title} | Sociotix Help` : title);
 
 export const CATEGORY_ICON: Record<HelpCategoryId, LucideIcon> = {
   "getting-started": Rocket,

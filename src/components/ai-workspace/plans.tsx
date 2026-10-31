@@ -89,7 +89,7 @@ export function PlanComparison() {
     <>
       <div className="hidden overflow-hidden rounded-[1.5rem] border bg-card shadow-soft sm:block">
         <table className="w-full text-left text-sm">
-          <caption className="sr-only">SociVanta AI plan comparison</caption>
+          <caption className="sr-only">Sociotix AI plan comparison</caption>
           <thead className="bg-surface">
             <tr>
               <th scope="col" className="w-[28%] px-5 py-3.5 font-semibold text-muted-foreground">
@@ -137,7 +137,7 @@ export function PlanComparison() {
 
 export const BILLING_FACTS: { title: string; body: string }[] = [
   { title: "Nothing is billed today", body: "There are no paid subscriptions yet, so there's nothing to pay, cancel or renew." },
-  { title: "No payment details stored", body: "SociVanta AI doesn't ask for or keep a card. Free needs no payment method." },
-  { title: "Separate from your wallet", body: "Your SociVanta wallet is for SMM service orders only. It can't be used for AI plans." },
+  { title: "No payment details stored", body: "Sociotix AI doesn't ask for or keep a card. Free needs no payment method." },
+  { title: "Separate from your wallet", body: "Your Sociotix wallet is for SMM service orders only. It can't be used for AI plans." },
   { title: "Prices published first", body: "If paid plans are introduced, their prices and terms will be published here before anything can be bought." },
 ];

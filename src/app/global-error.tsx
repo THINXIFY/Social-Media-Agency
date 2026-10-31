@@ -9,7 +9,7 @@ export default function GlobalError({ error, reset }: { error: Error & { digest?
     <html lang="en">
       <body className="min-h-dvh bg-background text-foreground">
         <main id="main">
-          <ErrorState title="Something went wrong" body="SociVanta hit a problem loading this page. Try again in a moment." digest={error.digest} reset={reset} home={{ href: "/", label: "SociVanta homepage" }} />
+          <ErrorState title="Something went wrong" body="Sociotix hit a problem loading this page. Try again in a moment." digest={error.digest} reset={reset} home={{ href: "/", label: "Sociotix homepage" }} />
         </main>
       </body>
     </html>

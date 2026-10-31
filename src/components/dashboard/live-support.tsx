@@ -181,7 +181,7 @@ export function LiveSupport() {
                           <span className="shrink-0 text-[0.7rem] text-muted-foreground">{formatDateTime(t.updatedAt)}</span>
                         </span>
                         <span className="mt-0.5 block truncate text-xs text-muted-foreground">
-                          {t.lastMessage ? `${t.lastMessage.author === "staff" ? "SociVanta: " : "You: "}${t.lastMessage.preview}` : t.reference}
+                          {t.lastMessage ? `${t.lastMessage.author === "staff" ? "Sociotix: " : "You: "}${t.lastMessage.preview}` : t.reference}
                         </span>
                         <span className="mt-1.5 flex items-center gap-2">
                           <StatusChip status={t.status} className="h-5 px-2 text-[0.68rem]" />

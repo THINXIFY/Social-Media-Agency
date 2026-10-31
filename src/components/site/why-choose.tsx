@@ -72,7 +72,7 @@ export function WhyChoose() {
   return (
     <Section id="why" className="border-t">
       <SectionHeading
-        eyebrow="Why SociVanta"
+        eyebrow="Why Sociotix"
         title={
           <>
             Cleaner than a typical SMM panel.

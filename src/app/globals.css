@@ -375,7 +375,7 @@ html:is(:lang(ar), :lang(ur)) .tabular-nums {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  SociVanta AI — small, purposeful motion (transform/opacity only)           */
+/*  Sociotix AI — small, purposeful motion (transform/opacity only)           */
 /* -------------------------------------------------------------------------- */
 
 @keyframes ai-sheen {
@@ -463,7 +463,7 @@ html:is(:lang(ar), :lang(ur)) .tabular-nums {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  SociVanta AI hero — living atmosphere and preview cycle                    */
+/*  Sociotix AI hero — living atmosphere and preview cycle                    */
 /*  Transform/opacity only; each loop ends where it starts (no visible reset). */
 /* -------------------------------------------------------------------------- */
 @keyframes ai-drift-a {

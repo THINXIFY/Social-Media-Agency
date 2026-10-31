@@ -109,7 +109,7 @@ export function Logo({ className }: { className?: string }) {
         <circle cx="23" cy="22.5" r="2.6" fill="#C8FF52" />
       </svg>
       <span className="font-heading text-[1.15rem] font-extrabold tracking-tight">
-        Soci<span className="text-primary">Vanta</span>
+        Socio<span className="text-primary">tix</span>
       </span>
     </span>
   );

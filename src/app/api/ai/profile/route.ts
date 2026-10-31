@@ -3,7 +3,7 @@ import { getDb } from "@/server/db/client";
 import { aiProfile, saveAiProfile } from "@/server/ai/workspace";
 import { assertSameOrigin, privateJson, route } from "@/server/http";
 
-/** The signed-in customer's own SociVanta AI preferences. */
+/** The signed-in customer's own Sociotix AI preferences. */
 export const GET = route(async () => {
   const actor = await requireCustomer();
   return privateJson({ profile: await aiProfile(getDb(), actor.customerId) });

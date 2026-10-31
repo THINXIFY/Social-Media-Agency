@@ -8,7 +8,7 @@ import { AuthHeading, FormSkeleton } from "@/components/auth/frame";
 import { resetTokenValid } from "@/server/auth/accounts";
 import { getDb } from "@/server/db/client";
 
-export const metadata: Metadata = { title: "Choose a new password · SociVanta", referrer: "no-referrer" };
+export const metadata: Metadata = { title: "Choose a new password · Sociotix", referrer: "no-referrer" };
 
 async function Content({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   await connection();

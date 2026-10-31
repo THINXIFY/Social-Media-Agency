@@ -118,7 +118,7 @@ export function Footer({ page = "home" }: { page?: "home" | "ai" | "other" }) {
         <div className="grid grid-cols-1 gap-11 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.75fr)] lg:gap-14 xl:gap-20">
           {/* Brand */}
           <div className="max-w-[24rem] sm:max-w-none">
-            <Link href="/" aria-label="SociVanta home" className="inline-block rounded-md focus-visible:ring-3 focus-visible:ring-primary/30 focus-visible:outline-none">
+            <Link href="/" aria-label="Sociotix home" className="inline-block rounded-md focus-visible:ring-3 focus-visible:ring-primary/30 focus-visible:outline-none">
               <Logo />
             </Link>
             <p className="mt-5 max-w-[24rem] font-heading text-[1.2rem] leading-[1.3] font-extrabold tracking-[-0.02em] text-balance text-foreground">
@@ -132,7 +132,7 @@ export function Footer({ page = "home" }: { page?: "home" | "ai" | "other" }) {
                 className="group inline-flex h-10 items-center gap-1.5 rounded-full bg-graphite ps-3 pe-3.5 text-[0.82rem] font-semibold text-white shadow-[0_8px_20px_-12px_rgb(32_33_39/0.7)] transition-[background-color,box-shadow] duration-200 hover:bg-graphite/90 focus-visible:ring-3 focus-visible:ring-primary/35 focus-visible:outline-none dark:bg-white dark:text-graphite dark:shadow-none dark:hover:bg-white/90"
               >
                 <Sparkles className="size-3.5 text-lime dark:text-primary" aria-hidden />
-                Explore SociVanta AI
+                Explore Sociotix AI
                 <ArrowRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" aria-hidden />
               </Link>
               <Link
@@ -166,14 +166,14 @@ export function Footer({ page = "home" }: { page?: "home" | "ai" | "other" }) {
         {/* Brand signature: compact, tinted, fully above the divider. */}
         <div className="mt-12 flex items-end justify-center sm:mt-14" aria-hidden>
           <p className="bg-[linear-gradient(180deg,rgb(112_71_235/0.16),rgb(32_33_39/0.04))] bg-clip-text pb-[0.06em] font-heading text-[clamp(3.25rem,13vw,8.5rem)] leading-[0.9] font-extrabold tracking-[-0.055em] text-transparent select-none dark:bg-[linear-gradient(180deg,rgb(185_166_255/0.2),rgb(255_255_255/0.03))]">
-            SociVanta
+            Sociotix
           </p>
         </div>
 
         {/* Bottom bar */}
         <div className="border-t py-5">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-            <p className="text-[0.8rem] text-muted-foreground">© 2026 SociVanta. All rights reserved.</p>
+            <p className="text-[0.8rem] text-muted-foreground">© 2026 Sociotix. All rights reserved.</p>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
               <nav aria-label="Legal" className="flex flex-wrap gap-x-5 gap-y-2">
                 {legal.map((l) => (

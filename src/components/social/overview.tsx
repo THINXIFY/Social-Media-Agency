@@ -75,7 +75,7 @@ function Empty({ data }: { data: SocialWorkspace }) {
           <Link href={SOCIAL_ROUTES.accounts} className={cn(primaryButton, "h-11 shrink-0 bg-lime px-5 whitespace-nowrap text-graphite shadow-none hover:bg-lime/90 focus-visible:ring-lime/40")}>
             {available ? "Connect your first account" : "See every platform"} <ArrowRight className="size-4" aria-hidden />
           </Link>
-          <p className="text-[0.8rem] leading-relaxed text-white/50">{available ? `${available} platform${available === 1 ? " is" : "s are"} ready to connect.` : "Platforms switch on one by one, after each approves SociVanta."}</p>
+          <p className="text-[0.8rem] leading-relaxed text-white/50">{available ? `${available} platform${available === 1 ? " is" : "s are"} ready to connect.` : "Platforms switch on one by one, after each approves Sociotix."}</p>
         </div>
       </section>
 
@@ -102,7 +102,7 @@ function Empty({ data }: { data: SocialWorkspace }) {
           <h2 className="flex items-center gap-2 font-heading text-base font-bold">
             <Ban className="size-4 text-muted-foreground" aria-hidden /> Never, on any platform
           </h2>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">SociVanta doesn&apos;t post, schedule, message, change your profile or spend money on your accounts. Connections are read-only, and you can disconnect any time.</p>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Sociotix doesn&apos;t post, schedule, message, change your profile or spend money on your accounts. Connections are read-only, and you can disconnect any time.</p>
         </Panel>
       </div>
     </div>

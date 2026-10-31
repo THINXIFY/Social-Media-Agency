@@ -78,7 +78,7 @@ export const envSchema = z
     REVENUE_RECOGNITION_POLICY: z.enum(["deferred", "on_completion"]).default("deferred"),
 
     /**
-     * SociVanta AI (AI-01). Off unless a provider is chosen, its key and model
+     * Sociotix AI (AI-01). Off unless a provider is chosen, its key and model
      * are set, an adapter for it exists in code, and a daily budget is above
      * zero. Keys are server-only and never sent to the browser.
      */

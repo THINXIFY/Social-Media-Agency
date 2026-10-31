@@ -23,7 +23,7 @@ import { planFor } from "./plans";
 import { allowanceFor, effectiveAvailability, usageEventsToday } from "./run";
 
 /*
- * SociVanta AI workspace (AI-09): the customer's AI preferences, the Command
+ * Sociotix AI workspace (AI-09): the customer's AI preferences, the Command
  * Center snapshot and the usage dashboard. Read-only over existing records,
  * always scoped to the signed-in customer; nothing here changes accounting.
  */

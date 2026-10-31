@@ -45,7 +45,7 @@ export async function checkAssignment(db: Executor, tool: AiTool, providerId: st
   if (!row) return { problems: [...problems, "This model isn't in the model library."], estimate: null };
   if (row.status !== "available") problems.push(row.status === "deprecated" || row.status === "unavailable" ? `The model is marked ${row.status}.` : "The model hasn't been verified yet. Mark it available after checking its documentation.");
   const caps = row.capabilities as Record<string, boolean | null>;
-  for (const need of TOOL_REQUIREMENTS) if (caps[need] !== true) problems.push(`${CAPABILITY_LABEL[need]} ${caps[need] === false ? "isn't supported" : "isn't verified"} for this model; every SociVanta tool needs it.`);
+  for (const need of TOOL_REQUIREMENTS) if (caps[need] !== true) problems.push(`${CAPABILITY_LABEL[need]} ${caps[need] === false ? "isn't supported" : "isn't verified"} for this model; every Sociotix tool needs it.`);
   if (row.maxOutputTokens !== null && row.maxOutputTokens < tool.guard.maxOutputTokens) problems.push(`The model allows ${row.maxOutputTokens} output tokens; this tool needs up to ${tool.guard.maxOutputTokens}.`);
   let estimate: ReturnType<typeof worstRunMicros> | null = null;
   if (!price) problems.push("No sourced price is recorded for this model, so its cost can't be capped.");

@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   title: { absolute: SOCIAL_TITLE },
   description: SOCIAL_DESCRIPTION,
   alternates: { canonical: SOCIAL_ROUTES.landing },
-  openGraph: { type: "website", url: SOCIAL_ROUTES.landing, siteName: SITE.name, title: "SociVanta Social Management — One workspace for your accounts", description: "Bring the social accounts you manage together in one calm, read-only dashboard." },
-  twitter: { card: "summary_large_image", title: "SociVanta Social Management — One workspace for your accounts", description: "Bring the social accounts you manage together in one calm, read-only dashboard." },
+  openGraph: { type: "website", url: SOCIAL_ROUTES.landing, siteName: SITE.name, title: "Sociotix Social Management — One workspace for your accounts", description: "Bring the social accounts you manage together in one calm, read-only dashboard." },
+  twitter: { card: "summary_large_image", title: "Sociotix Social Management — One workspace for your accounts", description: "Bring the social accounts you manage together in one calm, read-only dashboard." },
 };
 
 /** Which platforms can really be connected, from the server's configuration at build time (rebuild after switching one on). */

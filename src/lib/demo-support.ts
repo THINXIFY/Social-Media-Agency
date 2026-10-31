@@ -4,7 +4,7 @@
  * Every ticket here is sample data and is labelled as such wherever it's shown.
  * Tickets reference real demo order and transaction ids so links and details
  * stay consistent with My Orders and Transactions. Replies come from the
- * "SociVanta Support" team rather than named people, and never promise
+ * "Sociotix Support" team rather than named people, and never promise
  * response times or outcomes that the order and transaction data don't show.
  */
 
@@ -230,7 +230,7 @@ export const TICKETS: DemoTicket[] = [
         id: "m2",
         from: "support",
         at: "2026-10-09T11:05:00Z",
-        body: "The order was cancelled before delivery started, and the $46.00 was returned to your SociVanta balance as REF-10508. You can see it in Transactions.",
+        body: "The order was cancelled before delivery started, and the $46.00 was returned to your Sociotix balance as REF-10508. You can see it in Transactions.",
       },
       {
         id: "m3",

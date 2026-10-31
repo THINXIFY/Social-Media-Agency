@@ -1,5 +1,5 @@
 /**
- * Demo data for SociVanta Rewards (referrals).
+ * Demo data for Sociotix Rewards (referrals).
  *
  * The program is not live: there is no referral attribution, no tracking
  * and no payout. Every figure here is illustrative and labelled as such in
@@ -97,7 +97,7 @@ export const REFERRALS: Referral[] = [
     signedUpAt: "2026-09-20T10:55:00Z",
     spend: 0,
     status: "ineligible",
-    reason: "They already had a SociVanta account. Referrals only count for new customers.",
+    reason: "They already had a Sociotix account. Referrals only count for new customers.",
   },
   { id: "RF-1003", invitee: "el•••@gmail.com", via: "link", invitedAt: "2026-09-18T15:35:00Z", signedUpAt: "2026-09-19T12:20:00Z", spend: 8, status: "pending" },
   { id: "RF-1002", invitee: "no•••@gmail.com", via: "code", invitedAt: "2026-09-15T09:45:00Z", spend: 0, status: "invited" },

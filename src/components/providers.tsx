@@ -52,7 +52,7 @@ function PreviewProvider({ children }: { children: React.ReactNode }) {
             <DialogTitle className="text-lg font-semibold">{info?.title}</DialogTitle>
             <DialogDescription className="leading-relaxed">
               {info?.description ??
-                "This part of SociVanta is in preview. It will be available once the homepage is approved and the next phase is built."}
+                "This part of Sociotix is in preview. It will be available once the homepage is approved and the next phase is built."}
             </DialogDescription>
           </DialogHeader>
           <DialogFooter className="-mx-6 -mb-6 rounded-b-xl px-6">

@@ -111,7 +111,7 @@ export function SocialHeader({ title, subtitle, action }: { title: string; subti
     <header className="flex flex-col gap-5">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="min-w-0">
-          <p className={cn(eyebrow, "text-primary")}>SociVanta AI · Social</p>
+          <p className={cn(eyebrow, "text-primary")}>Sociotix AI · Social</p>
           <h1 className="mt-1.5 text-[1.75rem] leading-tight font-extrabold tracking-tight sm:text-[2.1rem]">{title}</h1>
           <p className="mt-1 max-w-2xl text-[0.95rem] text-muted-foreground">{subtitle}</p>
         </div>
@@ -130,6 +130,6 @@ export async function socialApi<T>(path: string, init: RequestInit): Promise<{ o
     if (res.ok) return { ok: true, data: body as T };
     return { ok: false, message: body?.error?.message ?? "Something went wrong. Please try again.", code: body?.error?.code };
   } catch {
-    return { ok: false, message: "We couldn't reach SociVanta. Check your connection and try again." };
+    return { ok: false, message: "We couldn't reach Sociotix. Check your connection and try again." };
   }
 }

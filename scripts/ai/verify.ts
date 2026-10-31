@@ -31,7 +31,7 @@ const BRIEFS: Record<string, unknown> = {
   "growth-advisor": { challenge: "Our Instagram posts get a few likes but we don't see new local customers from it.", businessType: "Small business", niche: "Family Italian restaurant", platform: "Instagram", goal: "Get more leads" },
   "growth-roadmap": { niche: "A handmade candle brand selling online, mostly to repeat customers.", platform: "Instagram", objective: "Sell more products", time: "3–5 hours a week", duration: "7" },
   "service-recommender": { goal: "More people watching our new YouTube tutorials, and a few more subscribers.", platform: "youtube", focus: "Views" },
-  assistant: { messages: [{ role: "user", content: "How do orders work on SociVanta, and is ordering open right now?" }] },
+  assistant: { messages: [{ role: "user", content: "How do orders work on Sociotix, and is ordering open right now?" }] },
   "service-search": { query: "I want to promote my clothing store on Instagram" },
   "order-assistant": { goal: "More followers for my new Instagram bakery account", platform: "instagram" },
   "order-explanation": { reference: process.env.AI_VERIFY_ORDER ?? "", question: "What happens next?" },

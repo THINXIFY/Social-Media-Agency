@@ -1,7 +1,7 @@
 /*
  * Referral program definitions shared by the customer and admin UIs (Phase 5G-B).
  *
- * Statuses are the database values. "Invited" isn't one of them: SociVanta
+ * Statuses are the database values. "Invited" isn't one of them: Sociotix
  * doesn't send invitations, so nothing records a real invitation event, and a
  * copied link is never counted as one. Qualification needs an approved, active
  * reward policy; none can be activated yet (database guard SV014).

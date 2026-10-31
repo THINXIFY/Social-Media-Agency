@@ -13,7 +13,7 @@ async function Content({ searchParams }: { searchParams: Promise<Record<string, 
   const token = String((await searchParams).token ?? "");
   const invite = token ? await describeSetupLink(getDb(), token).catch(() => null) : null;
   if (!invite)
-    return <AuthHeading eyebrow="SociVanta Admin" title="This setup link isn't valid" description="Setup links work once and expire. Ask the platform owner — or, for the first owner, the server operator — for a new one." />;
+    return <AuthHeading eyebrow="Sociotix Admin" title="This setup link isn't valid" description="Setup links work once and expire. Ask the platform owner — or, for the first owner, the server operator — for a new one." />;
   return (
     <>
       <AuthHeading eyebrow={`${invite.role} access`} title={`Welcome, ${invite.name || "there"}`} description={<>Set a password for <span className="font-semibold text-foreground">{invite.email}</span>. Next you&apos;ll connect an authenticator app.</>} />

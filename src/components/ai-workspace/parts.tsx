@@ -21,7 +21,7 @@ const TABS = [
 export function AiNav({ className }: { className?: string }) {
   const pathname = usePathname();
   return (
-    <nav aria-label="SociVanta AI" className={cn("-mx-1 overflow-x-auto px-1", className)}>
+    <nav aria-label="Sociotix AI" className={cn("-mx-1 overflow-x-auto px-1", className)}>
       <ul className="inline-flex gap-1 rounded-full border bg-card p-1 shadow-soft">
         {TABS.map((t) => {
           const active = pathname === t.href;
@@ -51,7 +51,7 @@ export function AiHeader({ kicker, title, subtitle, aside }: { kicker?: string; 
       <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
         <div className="min-w-0 max-w-3xl">
           <p className="inline-flex items-center gap-1.5 text-[0.7rem] font-bold tracking-[0.16em] text-primary uppercase dark:text-[#b9a6ff]">
-            <Sparkles className="size-3.5" aria-hidden /> SociVanta AI{kicker ? <span className="text-muted-foreground"> · {kicker}</span> : null}
+            <Sparkles className="size-3.5" aria-hidden /> Sociotix AI{kicker ? <span className="text-muted-foreground"> · {kicker}</span> : null}
           </p>
           <h1 className="mt-2 font-heading text-[1.85rem] leading-[1.1] font-extrabold tracking-tight text-balance sm:text-[2.4rem]">{title}</h1>
           <p className="mt-2 max-w-2xl text-[0.98rem] text-pretty text-muted-foreground">{subtitle}</p>

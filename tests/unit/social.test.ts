@@ -60,7 +60,7 @@ describe("availability", () => {
   });
   it("explains unavailability without revealing configuration", () => {
     const a = providerAvailability(env({ SOCIAL_PROVIDERS_ENABLED: "x" }), "x");
-    expect(a).toEqual({ state: "unavailable", reason: "X connections aren't switched on yet. SociVanta needs X's approval before accounts can be linked." });
+    expect(a).toEqual({ state: "unavailable", reason: "X connections aren't switched on yet. Sociotix needs X's approval before accounts can be linked." });
     expect(JSON.stringify(a)).not.toMatch(/CLIENT|SECRET|env/i);
   });
 });
@@ -115,7 +115,7 @@ describe("bounded provider HTTP", () => {
     expect(e).toBeInstanceOf(ProviderError);
     expect(e.kind).toBe("unauthorized");
     expect(`${e.message} ${JSON.stringify(e)}`).not.toContain("SECRET-TOKEN-123");
-    expect(problemMessage("unauthorized", "X")).toBe("X no longer accepts SociVanta's access. Reconnect the account to continue.");
+    expect(problemMessage("unauthorized", "X")).toBe("X no longer accepts Sociotix's access. Reconnect the account to continue.");
   });
 });
 

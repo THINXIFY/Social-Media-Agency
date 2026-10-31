@@ -2,7 +2,7 @@ import { z } from "zod";
 import type { AiAvailability } from "./registry";
 
 /*
- * SociVanta AI workspace (AI-09): the Command Center's destinations, the
+ * Sociotix AI workspace (AI-09): the Command Center's destinations, the
  * goal-based onboarding choices and the deterministic tool recommendations.
  * Shared by the server (validation) and the client (instant previews).
  * Recommendations are plain rules: personalising navigation never calls a model.
@@ -82,7 +82,7 @@ export interface AiDestination {
 export const DESTINATION_GROUPS: { id: DestinationGroup; name: string; description: string }[] = [
   { id: "content", name: "AI Content Studio", description: "Captions, hashtags, ideas and posting plans." },
   { id: "growth", name: "Growth Intelligence", description: "Strategy, roadmaps and service recommendations." },
-  { id: "assist", name: "AI Assistant & Search", description: "Answers about SociVanta and smarter service search." },
+  { id: "assist", name: "AI Assistant & Search", description: "Answers about Sociotix and smarter service search." },
   { id: "orders", name: "Order & Support AI", description: "Help choosing, understanding and fixing orders." },
   { id: "social", name: "Social workspace", description: "Drafts, calendar, campaigns and automations." },
 ];
@@ -95,7 +95,7 @@ export const DESTINATIONS: AiDestination[] = [
   { id: "growth-advisor", toolId: "growth-advisor", name: "AI Growth Advisor", action: "Get growth advice", blurb: "A prioritised strategy for your goal.", href: "/ai-tools/growth-advisor", group: "growth", icon: "advisor" },
   { id: "growth-roadmap", toolId: "growth-roadmap", name: "AI Growth Roadmap", action: "Create a growth roadmap", blurb: "A 7, 30 or 90-day plan you can follow.", href: "/ai-tools/growth-roadmap", group: "growth", icon: "roadmap" },
   { id: "service-recommender", toolId: "service-recommender", name: "AI Service Recommender", action: "Find marketing services", blurb: "Services from the catalogue matched to your goal.", href: "/ai-tools/service-recommender", group: "growth", icon: "recommend" },
-  { id: "assistant", toolId: "assistant", name: "SociVanta AI Assistant", blurb: "Plain answers about SociVanta and its services.", href: "/ai-tools/assistant", group: "assist", icon: "assistant" },
+  { id: "assistant", toolId: "assistant", name: "Sociotix AI Assistant", blurb: "Plain answers about Sociotix and its services.", href: "/ai-tools/assistant", group: "assist", icon: "assistant" },
   { id: "service-search", toolId: "service-search", name: "AI-Powered Service Search", blurb: "Describe what you need; get matching services.", href: "/ai-tools/service-search", group: "assist", icon: "search" },
   { id: "order-assistant", toolId: "order-assistant", name: "Smart Order Assistant", blurb: "Help choosing the right service and quantity.", href: "/ai-tools/smart-order-assistant", group: "orders", icon: "order" },
   { id: "order-explanation", toolId: "order-explanation", name: "AI Order Explanation", blurb: "What's happening with an order, in plain words.", href: "/ai-tools/order-explanation", group: "orders", icon: "explain" },

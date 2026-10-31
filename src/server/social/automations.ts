@@ -54,7 +54,7 @@ const STALE_SYNC_DAYS = 14;
 const clock = (d: AutomationDeps) => (d.now ?? (() => new Date()))();
 
 function mapEncoding(e: unknown): never {
-  if (pgErrorOf(e)?.code === "22P05") throw new AppError("VALIDATION_FAILED", "This text contains characters (such as emoji) that this server's database can't store yet. It needs a UTF-8 database — please tell the SociVanta team.", { details: { field: "name" } });
+  if (pgErrorOf(e)?.code === "22P05") throw new AppError("VALIDATION_FAILED", "This text contains characters (such as emoji) that this server's database can't store yet. It needs a UTF-8 database — please tell the Sociotix team.", { details: { field: "name" } });
   throw e;
 }
 
@@ -358,7 +358,7 @@ export async function executeRun(db: Db, runId: string, now: Date): Promise<"suc
 
 type Built = { kind: InboxItemView["kind"]; title: string; body: string; outcome: string; checklist?: { text: string; done: boolean }[]; refs?: InboxItemView["refs"] } | { skip: string };
 
-/** The only actions an automation can take. All read or write the customer's own SociVanta data. */
+/** The only actions an automation can take. All read or write the customer's own Sociotix data. */
 async function buildItem(db: Db, customerId: string, action: Action, onlyIfFound: boolean, now: Date): Promise<Built> {
   switch (action.type) {
     case "reminder":

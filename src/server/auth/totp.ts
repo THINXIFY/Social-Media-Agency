@@ -6,7 +6,7 @@ import QRCode from "qrcode";
 /** RFC 6238 TOTP (30 s, 6 digits, SHA-1 — what authenticator apps support) via the `otpauth` library. */
 
 export const TOTP_PERIOD = 30;
-const ISSUER = "SociVanta";
+const ISSUER = "Sociotix";
 
 const totp = (secretBase32: string, label = "staff") => new TOTP({ issuer: ISSUER, label, algorithm: "SHA1", digits: 6, period: TOTP_PERIOD, secret: Secret.fromBase32(secretBase32) });
 

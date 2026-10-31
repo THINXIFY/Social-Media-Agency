@@ -48,7 +48,7 @@ const OUTCOME: Record<string, { tone: "ok" | "info" | "error"; title: (name: str
   reconnected: { tone: "ok", title: (name) => `${name} reconnected`, body: () => "Access is up to date again." },
   denied: { tone: "info", title: () => "Nothing was connected", body: (name) => `You cancelled on ${name}. You can try again whenever you like.` },
   expired: { tone: "error", title: () => "That sign-in link has expired", body: () => "For your security each connection link works once and only for a few minutes. Start again from this page." },
-  linked_elsewhere: { tone: "error", title: () => "Already connected elsewhere", body: (name) => `This ${name} account is connected to a different SociVanta account. Disconnect it there first.` },
+  linked_elsewhere: { tone: "error", title: () => "Already connected elsewhere", body: (name) => `This ${name} account is connected to a different Sociotix account. Disconnect it there first.` },
   no_accounts: { tone: "error", title: (name) => `${name} didn't share an account`, body: (name) => (name === "Facebook" ? "Choose at least one Page when Facebook asks." : name === "YouTube" ? "The Google account you chose doesn't have a YouTube channel." : "Make sure you sign in with the right account and allow the requested access.") },
   unavailable: { tone: "error", title: (name) => `${name} isn't available right now`, body: () => "Connections for this platform were switched off. Nothing was connected." },
   failed: { tone: "error", title: () => "Couldn't finish connecting", body: () => "Nothing was connected and no access was kept. Please try again in a moment." },
@@ -132,7 +132,7 @@ function ConnectDialog({ platform, reconnect, onOpenChange }: { platform: Social
       setError(r.message);
       return;
     }
-    // Leave for the platform's own sign-in page. SociVanta never sees the password.
+    // Leave for the platform's own sign-in page. Sociotix never sees the password.
     window.location.assign(r.data.url);
   }
 
@@ -155,7 +155,7 @@ function ConnectDialog({ platform, reconnect, onOpenChange }: { platform: Social
             <div className="space-y-5 px-5 py-5 sm:px-6">
               <section aria-labelledby="perm-title">
                 <h3 id="perm-title" className="text-sm font-bold">
-                  SociVanta will ask {platform.name} for
+                  Sociotix will ask {platform.name} for
                 </h3>
                 <ul className="mt-2.5 space-y-2">
                   {platform.permissions.map((p) => (
@@ -172,7 +172,7 @@ function ConnectDialog({ platform, reconnect, onOpenChange }: { platform: Social
 
               <section aria-labelledby="never-title">
                 <h3 id="never-title" className="text-sm font-bold">
-                  SociVanta never
+                  Sociotix never
                 </h3>
                 <ul className="mt-2 grid grid-cols-1 gap-x-4 gap-y-1.5 min-[420px]:grid-cols-2">
                   {platform.never.map((n) => (
@@ -193,7 +193,7 @@ function ConnectDialog({ platform, reconnect, onOpenChange }: { platform: Social
 
               <p className="flex gap-2.5 text-[0.8rem] leading-relaxed text-muted-foreground">
                 <Lock className="mt-0.5 size-3.5 shrink-0" aria-hidden />
-                You&apos;ll sign in on {platform.name}&apos;s own page — SociVanta never asks for your password. Access is stored encrypted, and you can disconnect at any time. {platform.renewal}
+                You&apos;ll sign in on {platform.name}&apos;s own page — Sociotix never asks for your password. Access is stored encrypted, and you can disconnect at any time. {platform.renewal}
               </p>
 
               {error ? (
@@ -445,8 +445,8 @@ function AccountSheet({ data, account, onClose, onReconnect, onDisconnected }: {
         title={`Disconnect ${a.displayName}?`}
         description={
           p.revokeOnDisconnect
-            ? `SociVanta will delete its stored access and ask ${p.name} to remove SociVanta's permission. Nothing on your ${p.name} account changes.`
-            : `SociVanta will delete its stored access. ${p.name} doesn't let apps remove their own permission, so you'll also be shown how to remove it in ${p.name}. Nothing on your account changes.`
+            ? `Sociotix will delete its stored access and ask ${p.name} to remove Sociotix's permission. Nothing on your ${p.name} account changes.`
+            : `Sociotix will delete its stored access. ${p.name} doesn't let apps remove their own permission, so you'll also be shown how to remove it in ${p.name}. Nothing on your account changes.`
         }
         confirmLabel="Disconnect"
         onConfirm={disconnect}
@@ -523,7 +523,7 @@ export function SocialAccounts({ data }: { data: SocialWorkspace }) {
 
   return (
     <div className={page}>
-      <SocialHeader title="My social accounts" subtitle="Connect the accounts you manage, see what each one shares, and disconnect any time. Read-only — SociVanta never posts for you." />
+      <SocialHeader title="My social accounts" subtitle="Connect the accounts you manage, see what each one shares, and disconnect any time. Read-only — Sociotix never posts for you." />
 
       <div className="mt-6 space-y-8">
         <OutcomeBanner />
@@ -561,7 +561,7 @@ export function SocialAccounts({ data }: { data: SocialWorkspace }) {
               <h2 id="platforms-title" className="font-heading text-lg font-bold">
                 {data.accounts.length ? "Add another platform" : "Choose a platform"}
               </h2>
-              <p className="mt-0.5 text-sm text-muted-foreground">You sign in on the platform itself. SociVanta only ever asks for read-only access.</p>
+              <p className="mt-0.5 text-sm text-muted-foreground">You sign in on the platform itself. Sociotix only ever asks for read-only access.</p>
             </div>
           </div>
           {!anyAvailable ? (
@@ -571,7 +571,7 @@ export function SocialAccounts({ data }: { data: SocialWorkspace }) {
               </span>
               <div className="text-sm" id="platforms-off">
                 <p className="font-semibold">Connections open platform by platform</p>
-                <p className="mt-0.5 leading-relaxed text-muted-foreground">Each platform has to review and approve SociVanta before accounts can be linked. None are switched on yet, so there&apos;s nothing to set up today — every platform below shows exactly where it stands.</p>
+                <p className="mt-0.5 leading-relaxed text-muted-foreground">Each platform has to review and approve Sociotix before accounts can be linked. None are switched on yet, so there&apos;s nothing to set up today — every platform below shows exactly where it stands.</p>
               </div>
             </Panel>
           ) : null}

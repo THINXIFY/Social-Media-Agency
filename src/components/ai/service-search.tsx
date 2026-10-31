@@ -22,7 +22,7 @@ import { EXAMPLE_EVENT } from "./workspace";
  * The query lives in the URL (?q=&platform=&mode=), so back/forward work.
  * An AI search never runs on its own from a URL — only when the customer
  * presses Search. Cards come from the catalog: names, prices and status are
- * SociVanta's; ordering is offered only when the server says it's possible.
+ * Sociotix's; ordering is offered only when the server says it's possible.
  */
 
 interface Card {
@@ -50,7 +50,7 @@ const money = (n: number) => `$${n.toLocaleString("en-US", { minimumFractionDigi
  * the full (empty) search panel and the browser picks up the URL after
  * hydration — no layout shift. Updates use the History API and notify here.
  */
-const URL_EVENT = "socivanta:search-url";
+const URL_EVENT = "sociotix:search-url";
 const subscribeUrl = (cb: () => void) => {
   window.addEventListener("popstate", cb);
   window.addEventListener(URL_EVENT, cb);
@@ -277,12 +277,12 @@ export function ServiceSearch({ tool }: { tool: AiTool }) {
           <Info className="mt-px size-3.5 shrink-0" aria-hidden />
           <span>
             {effectiveMode === "ai"
-              ? `AI match looks up real SociVanta services, ranks the relevant ones and explains why. Prices and availability always come from SociVanta. Each AI search uses one of today's free runs${usage ? ` (${Math.max(0, usage.allowance - usage.used)} left)` : ""}.`
+              ? `AI match looks up real Sociotix services, ranks the relevant ones and explains why. Prices and availability always come from Sociotix. Each AI search uses one of today's free runs${usage ? ` (${Math.max(0, usage.allowance - usage.used)} left)` : ""}.`
               : live
                 ? account === "verified"
                   ? "Keyword match finds services by platform and need words — no AI, and no runs used."
-                  : `Keyword match finds services by platform and need words — no AI. AI matching is free with a verified SociVanta account.`
-                : "Keyword match finds services by platform and need words — no AI. AI matching launches with SociVanta AI."}
+                  : `Keyword match finds services by platform and need words — no AI. AI matching is free with a verified Sociotix account.`
+                : "Keyword match finds services by platform and need words — no AI. AI matching launches with Sociotix AI."}
           </span>
         </p>
       </section>
@@ -379,7 +379,7 @@ export function ServiceSearch({ tool }: { tool: AiTool }) {
           <div className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-3">
             {[
               ["Say it naturally", "“More views for my YouTube channel” works better than a single keyword."],
-              ["Real services only", "Every result is a real SociVanta service. Prices and availability come from the catalog."],
+              ["Real services only", "Every result is a real Sociotix service. Prices and availability come from the catalog."],
               ["You stay in control", "Searching never orders anything. Orderable services link to New Order, where you review first."],
             ].map(([t, d]) => (
               <div key={t} className="rounded-2xl border bg-card/60 p-4">

@@ -77,7 +77,7 @@ export function AiDiagnosticsView({ data }: { data: AiDiagnostics }) {
   return (
     <div className="mx-auto max-w-[96rem] px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
       <header>
-        <p className="text-[0.8rem] font-medium text-muted-foreground">SociVanta AI</p>
+        <p className="text-[0.8rem] font-medium text-muted-foreground">Sociotix AI</p>
         {/* Rendered inside AI Management (which owns the page h1), so this is a section heading. */}
         <h2 className="mt-1.5 text-[1.75rem] leading-tight font-extrabold tracking-tight sm:text-[2.1rem]">AI usage &amp; health</h2>
         <p className="mt-1 max-w-2xl text-[0.95rem] text-muted-foreground">Whether Content Studio can generate, today&apos;s spend against the budget, and how requests ended. Usage metadata only — prompts and results are never stored.</p>

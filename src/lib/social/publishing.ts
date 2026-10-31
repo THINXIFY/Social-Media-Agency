@@ -7,7 +7,7 @@ import { SOCIAL_PLATFORM, type SocialProviderId } from "./platforms";
  * Limits follow each platform's published documentation at the time of
  * writing and are checked again on the server before anything is scheduled
  * and again when it runs. Publishing itself is switched on per platform only
- * after that platform approves SociVanta's posting permission AND the customer
+ * after that platform approves Sociotix's posting permission AND the customer
  * grants it — see src/server/social/publish-adapters.ts.
  */
 
@@ -87,7 +87,7 @@ export const PUBLISH_RULES: Record<SocialProviderId, PublishRules> = {
   },
 };
 
-/** Media SociVanta will accept for upload once storage is configured. */
+/** Media Sociotix will accept for upload once storage is configured. */
 export const MEDIA_RULES: Record<MediaKind, { types: string[]; maxBytes: number; label: string }> = {
   image: { types: ["image/jpeg", "image/png"], maxBytes: 8 * 1024 * 1024, label: "JPEG or PNG, up to 8 MB" },
   video: { types: ["video/mp4", "video/quicktime"], maxBytes: 250 * 1024 * 1024, label: "MP4 or MOV, up to 250 MB" },

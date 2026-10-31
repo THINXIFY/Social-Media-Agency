@@ -7,7 +7,7 @@ import { AI_ROUTES } from "@/lib/ai/workspace";
 import { breadcrumbs, faqPage, graph, webPage } from "@/lib/seo/schema";
 import { SITE } from "@/lib/seo/site";
 
-const SOCIAL_TITLE = "SociVanta AI plans — free to start";
+const SOCIAL_TITLE = "Sociotix AI plans — free to start";
 const SOCIAL_DESCRIPTION = "Start free with social media planning and automation. Pro and Business are proposed, with pricing not yet announced.";
 
 export const metadata: Metadata = {

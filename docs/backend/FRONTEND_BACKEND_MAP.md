@@ -1,4 +1,4 @@
-# SociVanta — Frontend → Backend Integration Map
+# Sociotix — Frontend → Backend Integration Map
 
 **How to read this.**
 - "Reuse" lists existing UI or logic to keep.

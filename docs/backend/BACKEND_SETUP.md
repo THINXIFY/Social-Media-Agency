@@ -1,4 +1,4 @@
-# SociVanta — Backend Setup and Developer Guide (Phase 5A)
+# Sociotix — Backend Setup and Developer Guide (Phase 5A)
 
 The frontend runs exactly as before with **no** backend configuration. Everything below is only needed to work on server code.
 

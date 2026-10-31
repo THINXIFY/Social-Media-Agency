@@ -450,7 +450,7 @@ export function LiveCatalog() {
 
   return (
     <div className={page}>
-      <Header title="Services" subtitle="Every service in the SociVanta catalog. Prices appear when a service opens for ordering." />
+      <Header title="Services" subtitle="Every service in the Sociotix catalog. Prices appear when a service opens for ordering." />
 
       <div className={cn("mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_12rem_12rem_10rem]", e[0].className)} style={e[0].style} role="search">
         <label className="relative sm:col-span-2 lg:col-span-1">

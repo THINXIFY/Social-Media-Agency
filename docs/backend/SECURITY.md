@@ -1,4 +1,4 @@
-# SociVanta — Security, Threat Model and Permissions
+# Sociotix — Security, Threat Model and Permissions
 
 ## 1. Assets and actors
 

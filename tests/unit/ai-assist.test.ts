@@ -71,7 +71,7 @@ describe("assistant answer rules", () => {
 });
 
 describe("assistant links", () => {
-  it("are internal SociVanta pages only", () => {
+  it("are internal Sociotix pages only", () => {
     for (const { href } of Object.values(LINKS)) {
       expect(href.startsWith("/"), href).toBe(true);
       expect(href.startsWith("//"), href).toBe(false);

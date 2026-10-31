@@ -57,7 +57,7 @@ export function PublishingNotice({ data, className }: { data: PublishingData; cl
         <span className="font-semibold text-foreground">Writing, drafts and planning work now.</span>{" "}
         {live.length
           ? `Publishing is available for ${live.join(", ")} on accounts that grant posting permission.`
-          : `Publishing to platforms isn't switched on yet — each platform must approve SociVanta's posting permission first${connected ? "" : ", and no accounts are connected"}. Nothing you write here is posted.`}
+          : `Publishing to platforms isn't switched on yet — each platform must approve Sociotix's posting permission first${connected ? "" : ", and no accounts are connected"}. Nothing you write here is posted.`}
       </span>
     </p>
   );
@@ -72,7 +72,7 @@ export async function postsApi<T>(path: string, init: RequestInit): Promise<{ ok
     const issue = body?.error?.issues?.[0]?.message;
     return { ok: false, message: issue ?? body?.error?.message ?? "Something went wrong. Please try again." };
   } catch {
-    return { ok: false, message: "We couldn't reach SociVanta. Check your connection and try again." };
+    return { ok: false, message: "We couldn't reach Sociotix. Check your connection and try again." };
   }
 }
 

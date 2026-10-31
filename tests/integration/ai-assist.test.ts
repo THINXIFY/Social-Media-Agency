@@ -145,7 +145,7 @@ describe("AI-Powered Service Search", () => {
   });
 });
 
-describe("SociVanta AI Assistant", () => {
+describe("Sociotix AI Assistant", () => {
   const say = (answer: string, extra: Record<string, unknown> = {}) => () => ({ answer, linkIds: ["newOrder", "https://evil.example", "services"], followUps: ["How do I add funds?"], searchQuery: "", ...extra });
 
   it("grounds answers in live facts and maps links to internal pages", async () => {
@@ -188,7 +188,7 @@ describe("SociVanta AI Assistant", () => {
     const subject = account();
     await db.insert(aiUsageEvents).values(Array.from({ length: 8 }, () => ({ toolId: "assistant", subjectHash: hashOf(subject.userId), subjectKind: "account", status: "ok" })));
     const p = provider(say("Here's how it works."));
-    const results = await Promise.all(Array.from({ length: 4 }, () => codeOf(runTool(db, "assistant", { messages: [{ role: "user", content: "Tell me about SociVanta" }] }, subject, {}, { provider: p.provider, env: env() }))));
+    const results = await Promise.all(Array.from({ length: 4 }, () => codeOf(runTool(db, "assistant", { messages: [{ role: "user", content: "Tell me about Sociotix" }] }, subject, {}, { provider: p.provider, env: env() }))));
     expect(results.filter((r) => r === "resolved")).toHaveLength(2);
     expect(results.filter((r) => r === "RATE_LIMITED")).toHaveLength(2);
   });

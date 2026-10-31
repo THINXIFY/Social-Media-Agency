@@ -99,7 +99,7 @@ export const BRAND = { primary: "#7047EB", graphite: "#202127", accent: "#C8FF52
 
 export const DEFAULTS: SettingsValues = {
   general: {
-    platformName: "SociVanta",
+    platformName: "Sociotix",
     platformUrl: "",
     supportEmail: ADMIN_USER.email,
     displayCurrency: DEFAULT_DISPLAY.currency,
@@ -108,11 +108,11 @@ export const DEFAULTS: SettingsValues = {
     maintenanceMessage: "",
   },
   branding: {
-    displayName: "SociVanta",
+    displayName: "Sociotix",
     primaryColor: BRAND.primary,
     accentColor: BRAND.accent,
     appearance: "light",
-    senderName: "SociVanta",
+    senderName: "Sociotix",
     replyTo: ADMIN_USER.email,
   },
   orders: {

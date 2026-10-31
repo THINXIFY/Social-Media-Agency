@@ -56,7 +56,7 @@ export type SearchOutput = z.infer<typeof output>;
 
 const SYSTEM = `${GROWTH_RULES}
 
-Task: match the customer's request to services in SociVanta's catalog.
+Task: match the customer's request to services in Sociotix's catalog.
 - Choose only from the candidates provided, by their exact ids. Never include a service that doesn't genuinely fit — an empty list is better than a weak match.
 - best: up to 4 services that directly serve the request. alternatives: up to 4 that could also help. No service in both.
 - Explain each match in plain words. Never mention prices, discounts, delivery times, availability, match percentages or results.

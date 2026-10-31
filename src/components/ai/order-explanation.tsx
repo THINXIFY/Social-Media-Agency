@@ -344,7 +344,7 @@ export function OrderExplainer({ tool }: { tool: AiTool }) {
         ) : !signedIn ? (
           <div className="flex flex-col items-center gap-3 rounded-2xl border bg-background px-4 py-6 text-center">
             {x.account === "unverified" ? <MailCheck className="size-6 text-primary" aria-hidden /> : <LogIn className="size-6 text-primary" aria-hidden />}
-            <p className="max-w-md text-sm">{x.account === "unverified" ? "Verify your email to get AI explanations of your orders." : `Log in to explain your orders — free with a SociVanta account, ${x.usage?.allowance ?? tool.free?.signedInPerDay ?? 0} explanations a day.`}</p>
+            <p className="max-w-md text-sm">{x.account === "unverified" ? "Verify your email to get AI explanations of your orders." : `Log in to explain your orders — free with a Sociotix account, ${x.usage?.allowance ?? tool.free?.signedInPerDay ?? 0} explanations a day.`}</p>
             <Link href={x.account === "unverified" ? "/verify-email" : "/login"} className="inline-flex h-10 items-center rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground">
               {x.account === "unverified" ? "Resend link" : "Log in"}
             </Link>

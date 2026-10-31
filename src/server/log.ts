@@ -33,7 +33,7 @@ export function createLogger(options: { level?: string; destination?: Destinatio
   return pino(
     {
       level: options.level ?? process.env.LOG_LEVEL ?? "info",
-      base: { service: "socivanta" },
+      base: { service: "sociotix" },
       redact: { paths: REDACT_PATHS, censor: "[redacted]" },
       serializers: {
         err: (e: unknown) => {

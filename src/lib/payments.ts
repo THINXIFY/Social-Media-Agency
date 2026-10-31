@@ -151,7 +151,7 @@ export const PAYMENT_METHODS: PaymentMethod[] = [
     steps: [
       "You'll be sent to the provider's secure checkout to enter card details.",
       "Your bank may ask you to confirm the payment.",
-      "SociVanta never asks for or stores your card number.",
+      "Sociotix never asks for or stores your card number.",
     ],
     status: "awaiting",
     feeUsd: null,

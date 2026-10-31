@@ -1,4 +1,4 @@
-# SociVanta — Database Design (PostgreSQL)
+# Sociotix — Database Design (PostgreSQL)
 
 Proposal only. Table and column names are indicative; the final schema is written as Drizzle (or Prisma) migrations in Phase 5A–5C.
 

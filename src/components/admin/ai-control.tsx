@@ -417,7 +417,7 @@ function ProvidersTab({ d, reload }: { d: Center; reload: () => void }) {
       </div>
       <p className="text-xs text-muted-foreground" aria-live="polite">
         {shown.length === d.providers.length ? `${shown.length} providers` : `Showing ${shown.length} of ${d.providers.length} providers`}
-        <span className="hidden sm:inline"> · &ldquo;Supported&rdquo; means SociVanta has an adapter; it doesn&apos;t mean a key is verified or that generation is on.</span>
+        <span className="hidden sm:inline"> · &ldquo;Supported&rdquo; means Sociotix has an adapter; it doesn&apos;t mean a key is verified or that generation is on.</span>
       </p>
 
       {shown.length === 0 ? (
@@ -867,7 +867,7 @@ function ModelsTab({ d, reload }: { d: Center; reload: () => void }) {
           </button>
         ) : null}
       </div>
-      <p className="border-t px-5 py-2.5 text-xs text-muted-foreground">Models come from SociVanta&apos;s own catalog, from a provider&apos;s model list during a key test, or from manual entry. Capabilities are never guessed from a name: anything not checked shows as not verified.</p>
+      <p className="border-t px-5 py-2.5 text-xs text-muted-foreground">Models come from Sociotix&apos;s own catalog, from a provider&apos;s model list during a key test, or from manual entry. Capabilities are never guessed from a name: anything not checked shows as not verified.</p>
       {editing ? <ModelForm initial={editing} d={d} onClose={() => setEditing(null)} onSaved={() => (setEditing(null), reload())} /> : null}
       {rows.length ? (
         <ul className="divide-y border-t">
@@ -876,7 +876,7 @@ function ModelsTab({ d, reload }: { d: Center; reload: () => void }) {
               <div className="min-w-0">
                 <p className="truncate font-mono text-[0.82rem] font-semibold">{m.modelId}</p>
                 <p className="truncate text-xs text-muted-foreground">
-                  {m.providerName} · {m.source === "catalog" ? "SociVanta catalog" : m.source === "discovered" ? "Listed by the provider" : "Added manually"}
+                  {m.providerName} · {m.source === "catalog" ? "Sociotix catalog" : m.source === "discovered" ? "Listed by the provider" : "Added manually"}
                 </p>
               </div>
               <div className="flex flex-wrap gap-x-3 gap-y-1">
@@ -1183,7 +1183,7 @@ function UsageTab({ d }: { d: Center }) {
             </option>
           ))}
         </SelectInput>
-        <p className="text-xs text-muted-foreground sm:ms-auto sm:max-w-xs">Costs are SociVanta&apos;s estimates from recorded tokens and configured prices, not provider bills.</p>
+        <p className="text-xs text-muted-foreground sm:ms-auto sm:max-w-xs">Costs are Sociotix&apos;s estimates from recorded tokens and configured prices, not provider bills.</p>
       </Card>
       {u.error ? <Alert>{u.error}</Alert> : !u.data ? <div className="h-40 animate-pulse rounded-2xl bg-muted motion-reduce:animate-none" /> : (
         <>
@@ -1307,7 +1307,7 @@ function BudgetsTab({ d, reload }: { d: Center; reload: () => void }) {
       <Card className="grid gap-6 p-5 lg:grid-cols-3">
         <LimitEditor title="Per provider" help="Daily limit for one provider." entries={perProvider} onChange={setPerProvider} disabled={locked} options={d.providers.map((p) => ({ value: p.id, label: p.name }))} />
         <LimitEditor title="Per model" help="Daily limit for one model." entries={perModel} onChange={setPerModel} disabled={locked} options={d.models.map((m) => ({ value: `${m.providerId}/${m.modelId}`, label: `${m.providerName} · ${m.modelId}` }))} />
-        <LimitEditor title="Per tool" help="Daily limit for one SociVanta tool." entries={perTool} onChange={setPerTool} disabled={locked} options={d.assignments.map((a) => ({ value: a.toolId, label: a.toolName }))} />
+        <LimitEditor title="Per tool" help="Daily limit for one Sociotix tool." entries={perTool} onChange={setPerTool} disabled={locked} options={d.assignments.map((a) => ({ value: a.toolId, label: a.toolName }))} />
       </Card>
       <Card className="p-5">
         <CardHeader id="b-disabled" title="Disabled providers" description="A disabled provider is refused for every request, even with an active key. There's no automatic fallback to another provider." />

@@ -4,7 +4,7 @@ import { RegisterForm } from "@/components/auth/customer-forms";
 import { AuthHeading, FormSkeleton } from "@/components/auth/frame";
 import { normalizeCode } from "@/server/referrals/referrals";
 
-export const metadata: Metadata = { title: "Create account · SociVanta" };
+export const metadata: Metadata = { title: "Create account · Sociotix" };
 
 async function Content({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const sp = await searchParams;

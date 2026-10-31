@@ -6,7 +6,7 @@ import { type Env, getEnv } from "../env";
  * The server-side payment-method registry: the single source of truth for
  * what customers can use and what staff can verify.
  *
- * - Bank transfer is the only method SociVanta can operate without a
+ * - Bank transfer is the only method Sociotix can operate without a
  *   third-party processor. It becomes available only when the operator turns
  *   it on and supplies the business's real receiving account (env), and it is
  *   verified by staff against the bank's own statement, by two people.
@@ -27,7 +27,7 @@ export const PROCESSOR: Record<DepositMethodId, string> = {
 /** Bank requests stay open a week: transfers can take several business days. */
 const BANK_EXPIRY_HOURS = 24 * 7;
 
-const NO_PROCESSOR = "No payment processor has been approved for SociVanta's business model yet (decision D3), and no integration is built.";
+const NO_PROCESSOR = "No payment processor has been approved for Sociotix's business model yet (decision D3), and no integration is built.";
 
 function bankConfigured(env: Env) {
   return Boolean(env.PAYMENTS_BANK_ENABLED && env.PAYMENTS_BANK_ACCOUNT_NAME && env.PAYMENTS_BANK_NAME && env.PAYMENTS_BANK_ACCOUNT);
@@ -60,14 +60,14 @@ export function methodReadiness(env: Env | null = safeEnv()): MethodReadiness[] 
       verification: {
         kind: "bank_statement_review",
         available: bank,
-        description: "Staff match the transfer on SociVanta's own bank statement (reference, amount, date, payer). A second staff member verifies before the wallet is credited.",
+        description: "Staff match the transfer on Sociotix's own bank statement (reference, amount, date, payer). A second staff member verifies before the wallet is credited.",
       },
       currencies: ["USD"],
       networks: [],
       requiredCustomerInfo: ["Send from a bank account in your own name.", "Include your deposit reference exactly as shown.", "Send the exact amount in USD."],
       limits,
       expiresInHours: BANK_EXPIRY_HOURS,
-      blockers: bank ? [] : ["SociVanta's receiving bank account hasn't been configured, so bank transfers can't be accepted yet."],
+      blockers: bank ? [] : ["Sociotix's receiving bank account hasn't been configured, so bank transfers can't be accepted yet."],
     },
     unavailable("crypto", "Cryptocurrency", "crypto", "Deposit addresses are only ever issued by an approved processor; none are generated here."),
     unavailable("card", "Visa / Mastercard", "card", "Card payments need an approved card processor."),

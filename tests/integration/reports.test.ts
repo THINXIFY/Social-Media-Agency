@@ -97,7 +97,7 @@ describe("reports reconcile with each other and with 5H-A", () => {
     const csv = await get(exportGet, "report=orders&range=7d");
     expect(csv.status).toBe(200);
     expect(csv.headers.get("content-type")).toMatch(/text\/csv/);
-    expect(csv.headers.get("content-disposition")).toMatch(/attachment; filename="socivanta-orders-/);
+    expect(csv.headers.get("content-disposition")).toMatch(/attachment; filename="sociotix-orders-/);
     expect(csv.headers.get("cache-control")).toMatch(/no-store/);
     const lines = csvRows(await csv.text());
     expect(lines[0]).toBe("order_ref,placed_at_utc,service,platform,category,quantity,order_value_usd,status");

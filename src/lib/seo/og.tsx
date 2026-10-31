@@ -10,7 +10,7 @@ export function ogImage({ eyebrow, title, subtitle }: { eyebrow: string; title: 
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
           <div style={{ width: 64, height: 64, borderRadius: 18, background: "#7047eb", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 38, fontWeight: 800 }}>S</div>
           <div style={{ display: "flex", fontSize: 34, fontWeight: 700 }}>
-            Soci<span style={{ color: "#b9a6ff" }}>Vanta</span>
+            Socio<span style={{ color: "#b9a6ff" }}>tix</span>
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>

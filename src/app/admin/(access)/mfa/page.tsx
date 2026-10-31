@@ -16,7 +16,7 @@ async function Content({ searchParams }: { searchParams: Promise<Record<string, 
   if (!ctx.hasAuthenticator) redirect("/admin/mfa/setup");
   return (
     <>
-      <AuthHeading eyebrow="Two-step verification" title="Enter your code" description="Open your authenticator app and enter the 6-digit code for SociVanta." />
+      <AuthHeading eyebrow="Two-step verification" title="Enter your code" description="Open your authenticator app and enter the 6-digit code for Sociotix." />
       <MfaVerifyForm next={safeNext(sp.next, "/admin")} />
     </>
   );

@@ -42,7 +42,7 @@ vi.mock("next/headers", async () => (await import("./auth-helpers")).jarMock());
 vi.mock("next/server", () => ({ connection: async () => {} }));
 
 let db: Db;
-const BANK = { PAYMENTS_BANK_ENABLED: "true", PAYMENTS_BANK_ACCOUNT_NAME: "SociVanta Test Ltd", PAYMENTS_BANK_NAME: "Test Bank (fixture)", PAYMENTS_BANK_ACCOUNT: "TEST-0000-FIXTURE" };
+const BANK = { PAYMENTS_BANK_ENABLED: "true", PAYMENTS_BANK_ACCOUNT_NAME: "Sociotix Test Ltd", PAYMENTS_BANK_NAME: "Test Bank (fixture)", PAYMENTS_BANK_ACCOUNT: "TEST-0000-FIXTURE" };
 const setBank = (on: boolean) => {
   for (const [k, v] of Object.entries(BANK)) {
     if (on) process.env[k] = v;

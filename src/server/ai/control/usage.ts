@@ -11,7 +11,7 @@ import { type Controls, loadControls } from "./controls";
 
 /*
  * Usage, costs and the overview for the Control Center, read from the
- * existing ai_usage_events records (metadata only). Costs are SociVanta's
+ * existing ai_usage_events records (metadata only). Costs are Sociotix's
  * estimates from recorded token counts and configured prices, or the
  * reservation ceiling when a provider didn't report usage. No provider
  * billing data is imported, and nothing is projected or invented.

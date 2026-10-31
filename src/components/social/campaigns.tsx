@@ -79,7 +79,7 @@ export function CampaignStudio({ data }: { data: PublishingData }) {
         setSaved({});
       }
     } catch {
-      setError("We couldn't reach SociVanta. Check your connection and try again.");
+      setError("We couldn't reach Sociotix. Check your connection and try again.");
     }
     setBusy(false);
   }
@@ -172,7 +172,7 @@ export function CampaignStudio({ data }: { data: PublishingData }) {
             </button>
             <p id="campaign-why" className="text-[0.72rem] leading-relaxed text-muted-foreground">
               {live
-                ? `Goal-based advice — SociVanta has no access to your accounts' analytics. ${status?.usage ? `${status.usage.allowance - status.usage.used} of ${status.usage.allowance} plans left today.` : ""}`
+                ? `Goal-based advice — Sociotix has no access to your accounts' analytics. ${status?.usage ? `${status.usage.allowance - status.usage.used} of ${status.usage.allowance} plans left today.` : ""}`
                 : "AI planning isn't switched on yet. You can fill this in now; nothing is sent and no allowance is used."}
             </p>
           </form>
@@ -282,7 +282,7 @@ export function CampaignStudio({ data }: { data: PublishingData }) {
               ))}
             </ul>
             <p className="border-t px-5 py-3.5 text-[0.75rem] leading-relaxed text-muted-foreground sm:px-6">
-              {data.workspace.accounts.length ? "Plans are goal-based: SociVanta doesn't read your accounts' analytics to make them." : "No accounts are connected, so plans are goal-based advice."} AI never schedules or publishes — you choose which ideas become drafts.
+              {data.workspace.accounts.length ? "Plans are goal-based: Sociotix doesn't read your accounts' analytics to make them." : "No accounts are connected, so plans are goal-based advice."} AI never schedules or publishes — you choose which ideas become drafts.
             </p>
           </Panel>
         )}

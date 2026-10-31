@@ -423,7 +423,7 @@ export function Composer({ data, post }: { data: PublishingData; post: PostView 
             <DialogTitle className="font-heading text-lg font-bold">Scheduling isn&apos;t available yet</DialogTitle>
             <DialogDescription className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{scheduleBlocker ?? "Choose accounts that can publish."}</DialogDescription>
             <ul className="mt-4 space-y-2 text-[0.8rem] text-muted-foreground">
-              {["A connected account on the platform", "The platform's approval of SociVanta's posting permission", "Your permission to post, granted on the platform", "Your explicit schedule — nothing is ever posted automatically"].map((s) => (
+              {["A connected account on the platform", "The platform's approval of Sociotix's posting permission", "Your permission to post, granted on the platform", "Your explicit schedule — nothing is ever posted automatically"].map((s) => (
                 <li key={s} className="flex items-start gap-2">
                   <Check className="mt-0.5 size-3.5 shrink-0 text-primary" aria-hidden /> {s}
                 </li>

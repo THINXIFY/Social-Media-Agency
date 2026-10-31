@@ -54,7 +54,7 @@ export function LiveReferrals() {
         <p className="inline-flex items-center gap-1.5 text-[0.78rem] font-semibold tracking-wide text-primary uppercase dark:text-[#c4b5ff]">
           <Gift className="size-3.5" aria-hidden /> Referrals
         </p>
-        <h1 className="mt-1.5 font-heading text-[1.75rem] leading-tight font-extrabold tracking-tight text-balance sm:text-[2.2rem]">Share SociVanta. Grow Together.</h1>
+        <h1 className="mt-1.5 font-heading text-[1.75rem] leading-tight font-extrabold tracking-tight text-balance sm:text-[2.2rem]">Share Sociotix. Grow Together.</h1>
         <p className="mt-1.5 max-w-2xl text-[0.95rem] text-pretty text-muted-foreground">Invite friends and colleagues with your personal link. When someone creates an account with it, you&apos;ll see them here.</p>
       </header>
 
@@ -136,7 +136,7 @@ function ShareCard({ data, onChange }: { data: OwnReferralSummary; onChange: (d:
   };
   const share = async () => {
     try {
-      await navigator.share({ title: "Join me on SociVanta", text: "I use SociVanta to grow on social media. Create your account with my link:", url: data.link! });
+      await navigator.share({ title: "Join me on Sociotix", text: "I use Sociotix to grow on social media. Create your account with my link:", url: data.link! });
     } catch {
       // Closing the share sheet isn't an error.
     }
@@ -240,7 +240,7 @@ function History({ data }: { data: OwnReferralSummary }) {
             <Users className="size-5" />
           </span>
           <p className="mt-3 font-semibold">No one has joined with your link yet</p>
-          <p className="mx-auto mt-1 max-w-sm text-sm text-muted-foreground">Share your link with someone who&apos;d find SociVanta useful. They&apos;ll appear here once they create an account.</p>
+          <p className="mx-auto mt-1 max-w-sm text-sm text-muted-foreground">Share your link with someone who&apos;d find Sociotix useful. They&apos;ll appear here once they create an account.</p>
         </div>
       ) : (
         <ul className="divide-y">

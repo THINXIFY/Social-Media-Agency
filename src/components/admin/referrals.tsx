@@ -1132,7 +1132,7 @@ function ProgramSettings({ config, notice, setNotice }: { config: ProgramConfig 
         </SettingsCard>
 
         <SettingsCard title="Reward distribution" description="Where rewards go and who releases them. Wallet credit, automatic release and activation need a secure backend.">
-          <OptionRow label="Destination" help={form.destination === "wallet" ? "Future: credits the SociVanta wallet through an immutable ledger. Not available yet." : "Rewards build up in a separate rewards balance. Active."}>
+          <OptionRow label="Destination" help={form.destination === "wallet" ? "Future: credits the Sociotix wallet through an immutable ledger. Not available yet." : "Rewards build up in a separate rewards balance. Active."}>
             <Segmented<Destination> name="cfg-dest" label="Destination" value={form.destination} options={[{ value: "rewards", label: "Rewards balance" }, { value: "wallet", label: "Wallet credit" }]} onChange={(v) => set({ destination: v })} />
           </OptionRow>
           <OptionRow label="Distribution" help={form.distribution === "auto" ? "Future: releases automatically after qualification and hold. Not available yet." : "Staff approve each reward after its hold. Active."}>

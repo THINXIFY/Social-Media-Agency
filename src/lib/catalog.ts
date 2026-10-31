@@ -1,5 +1,5 @@
 /**
- * SociVanta service catalog.
+ * Sociotix service catalog.
  *
  * Every listed service is discoverable and can be configured in the New
  * Order flow. A service only becomes orderable once it's added to `ACTIVATIONS`

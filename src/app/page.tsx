@@ -16,7 +16,7 @@ import { CATALOG_TOTALS } from "@/lib/catalog";
 import { graph, organization, webPage, website } from "@/lib/seo/schema";
 import { SITE } from "@/lib/seo/site";
 
-const TITLE = "SociVanta — Social Media Services for Every Major Platform";
+const TITLE = "Sociotix — Social Media Services for Every Major Platform";
 const DESCRIPTION = `Browse ${CATALOG_TOTALS.services} listed social media services across ${CATALOG_TOTALS.platforms} platforms in one clear catalog — audience, engagement, views and more — with order tracking in one dashboard.`;
 
 export const metadata: Metadata = {

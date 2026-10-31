@@ -6,7 +6,7 @@ import { AI_TOOLS, WORKSPACE_TOOLS } from "@/lib/ai/registry";
 import { effectiveAvailability } from "@/server/ai/run";
 import { aiProfile } from "@/server/ai/workspace";
 
-export const metadata: Metadata = { title: "Personalize SociVanta AI" };
+export const metadata: Metadata = { title: "Personalize Sociotix AI" };
 
 export default function AiWelcomePage() {
   return (

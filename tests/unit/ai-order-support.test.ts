@@ -136,6 +136,6 @@ describe("support honesty", () => {
   });
   it("states the human-support channel exactly", () => {
     expect(humanSupportFact({ supportEmail: null })).toMatch(/open a support ticket from the Support page.*Nothing typed to an AI assistant is sent to the team.$/);
-    expect(humanSupportFact({ supportEmail: "help@socivanta.example" })).toContain("email the SociVanta team at help@socivanta.example");
+    expect(humanSupportFact({ supportEmail: "help@sociotix.example" })).toContain("email the Sociotix team at help@sociotix.example");
   });
 });

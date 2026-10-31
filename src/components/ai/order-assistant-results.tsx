@@ -83,7 +83,7 @@ export function OrderAssistantResults({ result: r }: { result: OrderAssistantRes
   return (
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-xs text-muted-foreground">From the SociVanta catalog. Service details, limits and prices come from SociVanta, not the AI.</p>
+        <p className="text-xs text-muted-foreground">From the Sociotix catalog. Service details, limits and prices come from Sociotix, not the AI.</p>
         <CopyButton text={asText(r)} label="Copy the plan">
           Copy
         </CopyButton>

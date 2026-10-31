@@ -391,7 +391,7 @@ export function AutomationBuilder({ existing, template }: { existing: Automation
                       {aiLive ? <Sparkles className="size-4" aria-hidden /> : <Lock className="size-4" aria-hidden />} Suggest
                     </button>
                   </div>
-                  <p className="mt-1.5 text-[0.75rem] text-muted-foreground">{aiLive ? "Suggestions use only SociVanta's supported triggers and actions. You review everything before activating." : "AI suggestions aren't switched on yet — the builder below works today."}</p>
+                  <p className="mt-1.5 text-[0.75rem] text-muted-foreground">{aiLive ? "Suggestions use only Sociotix's supported triggers and actions. You review everything before activating." : "AI suggestions aren't switched on yet — the builder below works today."}</p>
                   {aiNote ? <p className="mt-2 rounded-xl bg-muted/60 px-3 py-2 text-[0.8rem]">{aiNote}</p> : null}
                 </div>
               </div>
@@ -450,7 +450,7 @@ export function AutomationBuilder({ existing, template }: { existing: Automation
               <FlowPreview trigger={(parsed.success ? parsed.data.trigger : (def.trigger as Trigger)) ?? { type: "daily", time: "09:00" }} action={(parsed.success ? parsed.data.action : (def.action as Action)) ?? { type: "health_check" }} onlyIfFound={s.onlyIfFound} />
             </div>
             <p className="mt-4 flex items-start gap-1.5 text-[0.72rem] leading-relaxed text-muted-foreground">
-              <Check className="mt-0.5 size-3 shrink-0" aria-hidden /> Results land in your Automations inbox. Nothing leaves SociVanta.
+              <Check className="mt-0.5 size-3 shrink-0" aria-hidden /> Results land in your Automations inbox. Nothing leaves Sociotix.
             </p>
           </Panel>
         </aside>

@@ -1,7 +1,7 @@
 import type { PlatformIconKey } from "@/lib/catalog";
 
 /**
- * Social Management (AI-06): the platforms SociVanta can connect to, and
+ * Social Management (AI-06): the platforms Sociotix can connect to, and
  * exactly what each connection may read. Client-safe metadata only — no
  * endpoints, credentials or secrets (those live in src/server/social).
  *
@@ -30,7 +30,7 @@ export const CAPABILITY_LABEL: Record<SocialCapability, string> = {
 export interface SocialPermission {
   /** What the customer is agreeing to, in plain words. */
   label: string;
-  /** Why SociVanta asks for it. */
+  /** Why Sociotix asks for it. */
   why: string;
 }
 
@@ -48,9 +48,9 @@ export interface SocialPlatform {
   /** The noun the platform uses for followers and posts. */
   nouns: { audience: string; content: string };
   permissions: SocialPermission[];
-  /** What SociVanta never does with this connection. */
+  /** What Sociotix never does with this connection. */
   never: string[];
-  /** Whether the platform lets SociVanta revoke access itself when you disconnect. */
+  /** Whether the platform lets Sociotix revoke access itself when you disconnect. */
   revokeOnDisconnect: boolean;
   /** Where to remove access by hand (shown when revoking isn't supported or fails). */
   manageAccessHint: string;
@@ -73,7 +73,7 @@ export const SOCIAL_PLATFORMS: SocialPlatform[] = [
     permissions: [{ label: "Your basic profile", why: "Your username, display name, follower count and number of posts." }],
     never: NEVER,
     revokeOnDisconnect: false,
-    manageAccessHint: "In Instagram, open Settings → Website permissions → Apps and websites and remove SociVanta.",
+    manageAccessHint: "In Instagram, open Settings → Website permissions → Apps and websites and remove Sociotix.",
     renewal: "Access lasts about 60 days and renews when you refresh the account.",
   },
   {
@@ -86,14 +86,14 @@ export const SOCIAL_PLATFORMS: SocialPlatform[] = [
     capabilities: ["profile", "audience"],
     nouns: { audience: "Followers", content: "Posts" },
     permissions: [
-      { label: "The list of Pages you manage", why: "So you can choose which Pages appear in SociVanta." },
+      { label: "The list of Pages you manage", why: "So you can choose which Pages appear in Sociotix." },
       { label: "Read Page details", why: "Each Page's name and follower count." },
     ],
     never: NEVER,
     // One Facebook sign-in can cover several Pages, so disconnecting one Page never revokes the others.
     revokeOnDisconnect: false,
-    manageAccessHint: "In Facebook, open Settings & privacy → Settings → Business integrations and remove SociVanta.",
-    renewal: "Access stays valid until you remove SociVanta in Facebook or change your Facebook password.",
+    manageAccessHint: "In Facebook, open Settings & privacy → Settings → Business integrations and remove Sociotix.",
+    renewal: "Access stays valid until you remove Sociotix in Facebook or change your Facebook password.",
   },
   {
     id: "tiktok",
@@ -110,7 +110,7 @@ export const SOCIAL_PLATFORMS: SocialPlatform[] = [
     ],
     never: NEVER,
     revokeOnDisconnect: true,
-    manageAccessHint: "In TikTok, open Settings and privacy → Security and permissions → Apps and services permissions and remove SociVanta.",
+    manageAccessHint: "In TikTok, open Settings and privacy → Security and permissions → Apps and services permissions and remove Sociotix.",
     renewal: "Access renews automatically while you keep the account connected.",
   },
   {
@@ -125,7 +125,7 @@ export const SOCIAL_PLATFORMS: SocialPlatform[] = [
     permissions: [{ label: "View your YouTube account", why: "Your channel name, subscriber count, number of videos and total views." }],
     never: NEVER,
     revokeOnDisconnect: true,
-    manageAccessHint: "In your Google Account, open Security → Your connections to third-party apps & services and remove SociVanta.",
+    manageAccessHint: "In your Google Account, open Security → Your connections to third-party apps & services and remove Sociotix.",
     renewal: "Access renews automatically while you keep the channel connected.",
   },
   {
@@ -139,12 +139,12 @@ export const SOCIAL_PLATFORMS: SocialPlatform[] = [
     nouns: { audience: "Followers", content: "Posts" },
     permissions: [
       { label: "Read your profile", why: "Your name, @handle, follower count and number of posts." },
-      { label: "Read posts", why: "X requires this alongside profile access. SociVanta only reads your post count." },
+      { label: "Read posts", why: "X requires this alongside profile access. Sociotix only reads your post count." },
       { label: "Stay connected", why: "So you don't have to sign in to X again every two hours." },
     ],
     never: NEVER,
     revokeOnDisconnect: true,
-    manageAccessHint: "In X, open Settings → Security and account access → Apps and sessions → Connected apps and remove SociVanta.",
+    manageAccessHint: "In X, open Settings → Security and account access → Apps and sessions → Connected apps and remove Sociotix.",
     renewal: "Access renews automatically while you keep the account connected.",
   },
   {
@@ -159,21 +159,21 @@ export const SOCIAL_PLATFORMS: SocialPlatform[] = [
     permissions: [{ label: "Your name", why: "So the connected profile is labelled correctly." }],
     never: NEVER,
     revokeOnDisconnect: false,
-    manageAccessHint: "In LinkedIn, open Settings → Data privacy → Permitted services and remove SociVanta.",
+    manageAccessHint: "In LinkedIn, open Settings → Data privacy → Permitted services and remove Sociotix.",
     renewal: "Access lasts about 60 days, then LinkedIn asks you to reconnect.",
   },
 ];
 
 export const SOCIAL_PLATFORM: Record<SocialProviderId, SocialPlatform> = Object.fromEntries(SOCIAL_PLATFORMS.map((p) => [p.id, p])) as Record<SocialProviderId, SocialPlatform>;
 
-/** Platforms on the roadmap, and ones SociVanta deliberately won't connect. Shown so the list is honest. */
+/** Platforms on the roadmap, and ones Sociotix deliberately won't connect. Shown so the list is honest. */
 export const SOCIAL_PLANNED: { name: string; icon: PlatformIconKey | null; note: string }[] = [
   { name: "Threads", icon: null, note: "Planned once an account-level reading API fits the same permissions model." },
   { name: "Pinterest", icon: "pinterest", note: "Planned for a later phase." },
 ];
 
 export const SOCIAL_UNSUPPORTED: { name: string; icon: PlatformIconKey; note: string }[] = [
-  { name: "WhatsApp", icon: "whatsapp", note: "Private messaging — not something SociVanta should read." },
+  { name: "WhatsApp", icon: "whatsapp", note: "Private messaging — not something Sociotix should read." },
   { name: "Telegram", icon: "telegram", note: "No account-level insights in its official API." },
 ];
 

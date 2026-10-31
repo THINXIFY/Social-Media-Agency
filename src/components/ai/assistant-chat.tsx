@@ -12,7 +12,7 @@ import { useToolStatus } from "./use-ai-status";
 import { EXAMPLE_EVENT } from "./workspace";
 
 /*
- * SociVanta AI Assistant — the conversation surface (AI-04).
+ * Sociotix AI Assistant — the conversation surface (AI-04).
  *
  * The conversation lives in this component for the session only: nothing is
  * stored, and a page reload starts fresh. Each turn sends a bounded transcript
@@ -42,9 +42,9 @@ const MAX_CHARS = 1_000;
 
 const QUICK = [
   { icon: Search, label: "Help me find a service", prompt: "Help me find the right service for my goal." },
-  { icon: Compass, label: "What can SociVanta help me with?", prompt: "What can SociVanta help me with?" },
-  { icon: Package, label: "How do orders work?", prompt: "How do orders work on SociVanta?" },
-  { icon: Sparkles, label: "Explore AI content tools", prompt: "Which SociVanta AI tools can help me create content?" },
+  { icon: Compass, label: "What can Sociotix help me with?", prompt: "What can Sociotix help me with?" },
+  { icon: Package, label: "How do orders work?", prompt: "How do orders work on Sociotix?" },
+  { icon: Sparkles, label: "Explore AI content tools", prompt: "Which Sociotix AI tools can help me create content?" },
 ];
 const POPULAR = ["Which platforms do you support?", "Are results guaranteed?", "How do I add funds?", "How do I track my order?"];
 
@@ -64,13 +64,13 @@ interface ChatCopy {
 
 const COPY: Record<string, ChatCopy> = {
   assistant: {
-    title: "SociVanta AI Assistant",
+    title: "Sociotix AI Assistant",
     heading: "How can I help you today?",
-    intro: "Ask about SociVanta's services, how ordering works, which AI tool fits your task — or a social media question.",
+    intro: "Ask about Sociotix's services, how ordering works, which AI tool fits your task — or a social media question.",
     quick: QUICK,
     popular: POPULAR,
-    placeholder: "Ask about services, orders or SociVanta AI…",
-    inputLabel: "Message the SociVanta AI Assistant",
+    placeholder: "Ask about services, orders or Sociotix AI…",
+    inputLabel: "Message the Sociotix AI Assistant",
     liveNote: "Enter to send · Shift + Enter for a new line · The assistant can't see your orders or account, and nothing is saved.",
     signedOut: "questions a day",
     verify: "Verify your email to chat with the assistant.",
@@ -258,7 +258,7 @@ export function AssistantChat({ tool, examples = [] }: { tool: AiTool; examples?
           <h2 id={`${formId}-title`} className="truncate font-heading text-[0.98rem] font-bold">
             {started ? "Conversation" : copy.title}
           </h2>
-          <p className="truncate text-xs text-muted-foreground">{live ? (remaining !== null ? `${remaining} of ${usage!.allowance} questions left today` : "Answers from SociVanta's own information") : "Preview — not answering yet"}</p>
+          <p className="truncate text-xs text-muted-foreground">{live ? (remaining !== null ? `${remaining} of ${usage!.allowance} questions left today` : "Answers from Sociotix's own information") : "Preview — not answering yet"}</p>
         </div>
         {started ? (
           <button type="button" onClick={reset} aria-label="New conversation" title="New conversation" className="inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full border px-2.5 text-xs font-semibold hover:bg-muted focus-visible:ring-3 focus-visible:ring-primary/30 focus-visible:outline-none sm:px-3">
@@ -375,7 +375,7 @@ export function AssistantChat({ tool, examples = [] }: { tool: AiTool; examples?
           <div className="flex flex-col items-center gap-3 rounded-2xl border bg-card px-4 py-4 text-center sm:flex-row sm:justify-between sm:text-left">
             <p className="flex items-center gap-2 text-sm">
               {account === "unverified" ? <MailCheck className="size-4 text-primary" aria-hidden /> : <LogIn className="size-4 text-primary" aria-hidden />}
-              {account === "unverified" ? copy.verify : `Free with a SociVanta account — ${usage?.allowance ?? tool.free?.signedInPerDay ?? 0} ${copy.signedOut}.`}
+              {account === "unverified" ? copy.verify : `Free with a Sociotix account — ${usage?.allowance ?? tool.free?.signedInPerDay ?? 0} ${copy.signedOut}.`}
             </p>
             {account === "unverified" ? (
               <Link href="/verify-email" className="inline-flex h-10 items-center rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground">

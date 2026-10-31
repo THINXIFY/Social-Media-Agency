@@ -342,7 +342,7 @@ export function AutomationStudio({ data }: { data: AutomationData & { accounts: 
             <div className="p-6 sm:p-8">
               <EmptyIllustration icon={Workflow} />
               <h2 className="mt-5 font-heading text-[1.5rem] leading-tight font-extrabold tracking-tight">Automate the routine. Keep the judgement.</h2>
-              <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">Set up reminders, checklists and checks that run on your schedule and land in your SociVanta inbox. Automations never publish, order or spend anything — every one runs only after you activate it.</p>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">Set up reminders, checklists and checks that run on your schedule and land in your Sociotix inbox. Automations never publish, order or spend anything — every one runs only after you activate it.</p>
               <Link href={AUTOMATION_ROUTES.create} className={cn(primaryButton, "mt-6")}>
                 <Plus className="size-4" aria-hidden /> Create your first automation
               </Link>

@@ -1,4 +1,4 @@
-# SociVanta — Backend Architecture
+# Sociotix — Backend Architecture
 
 Status: **approved plan. Phase 5A (foundation) is implemented**: see [PHASE_5A_REPORT.md](PHASE_5A_REPORT.md) and [BACKEND_SETUP.md](BACKEND_SETUP.md). Sections below describe the target architecture; the 5A report lists where the implementation differs.
 Companion documents: [DATABASE.md](DATABASE.md) · [FRONTEND_BACKEND_MAP.md](FRONTEND_BACKEND_MAP.md) · [SECURITY.md](SECURITY.md) · [PHASE_5_ROADMAP.md](PHASE_5_ROADMAP.md) · [OPEN_DECISIONS.md](OPEN_DECISIONS.md)

@@ -1,5 +1,5 @@
 /*
- * SociVanta AI plans (AI-09): the code-defined product tiers.
+ * Sociotix AI plans (AI-09): the code-defined product tiers.
  *
  * Free is what every account has today. Pro and Business are proposed tiers,
  * not approved offers: they have no price, no allowance numbers and no
@@ -33,7 +33,7 @@ export const PLANS: Plan[] = [
     id: "free",
     name: "Free",
     price: { kind: "free", label: "Free" },
-    audience: "Every SociVanta account",
+    audience: "Every Sociotix account",
     summary: "Everything that works today, with no payment details needed.",
     features: [
       { label: "Social workspace: drafts and content calendar", state: "included", detail: "Live publishing is off for now." },

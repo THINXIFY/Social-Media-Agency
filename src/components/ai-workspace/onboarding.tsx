@@ -77,7 +77,7 @@ export function Onboarding({ profile, tools }: { profile: AiProfileView | null; 
     <div className="mx-auto flex min-h-[calc(100dvh-4rem)] max-w-3xl flex-col px-4 py-5 sm:px-6 sm:py-8">
       <div className="flex items-center justify-between gap-3">
         <Link href={AI_ROUTES.home} className="inline-flex items-center gap-1.5 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground focus-visible:ring-3 focus-visible:ring-primary/30 focus-visible:outline-none">
-          <Sparkles className="size-4 text-primary" aria-hidden /> SociVanta AI
+          <Sparkles className="size-4 text-primary" aria-hidden /> Sociotix AI
         </Link>
         <button
           type="button"

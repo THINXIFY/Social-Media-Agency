@@ -308,19 +308,19 @@ describe("AI Support Assistant", () => {
 
   it("offers a person for refund questions by pointing to the ticket form, never a pretend ticket", async () => {
     const c = await makeCustomer(db);
-    const { provider: p } = provider(() => reply({ answer: "Refunds after work starts need a reviewed decision by the SociVanta team." }));
+    const { provider: p } = provider(() => reply({ answer: "Refunds after work starts need a reviewed decision by the Sociotix team." }));
     const none = (await runTool(db, "support-assistant", ask("I want a refund for my order"), subjectOf(c), {}, { provider: p, env: env({ SUPPORT_CONTACT_EMAIL: "" }) })).output as { escalation: { email: string | null; ticketsConnected: boolean; note: string } };
     expect(none.escalation).toMatchObject({ email: null, ticketsConnected: true });
     expect(none.escalation.note).toMatch(/open a support ticket from the Support page/);
     expect(none.escalation.note).not.toMatch(/has been (created|submitted)|forwarded/i);
-    const withEmail = (await runTool(db, "support-assistant", ask("I was charged twice"), subjectOf(c), {}, { provider: p, env: env({ SUPPORT_CONTACT_EMAIL: "help@socivanta.example" }) })).output as { escalation: { email: string | null; note: string } };
-    expect(withEmail.escalation.email).toBe("help@socivanta.example");
-    expect(withEmail.escalation.note).toContain("help@socivanta.example");
+    const withEmail = (await runTool(db, "support-assistant", ask("I was charged twice"), subjectOf(c), {}, { provider: p, env: env({ SUPPORT_CONTACT_EMAIL: "help@sociotix.example" }) })).output as { escalation: { email: string | null; note: string } };
+    expect(withEmail.escalation.email).toBe("help@sociotix.example");
+    expect(withEmail.escalation.note).toContain("help@sociotix.example");
   });
 
   it("rejects answers that claim a ticket, a hand-off or a callback", async () => {
     const c = await makeCustomer(db);
-    for (const answer of ["Your ticket has been created and the team has it.", "I've forwarded your request to the SociVanta team.", "Someone will contact you within a day.", "Please send me your password so I can check."]) {
+    for (const answer of ["Your ticket has been created and the team has it.", "I've forwarded your request to the Sociotix team.", "Someone will contact you within a day.", "Please send me your password so I can check."]) {
       const { provider: p } = provider(() => reply({ answer }));
       expect(await codeOf(runTool(db, "support-assistant", ask("My order looks wrong"), subjectOf(c), {}, { provider: p, env: env() })), answer).toBe("SERVICE_UNAVAILABLE");
     }

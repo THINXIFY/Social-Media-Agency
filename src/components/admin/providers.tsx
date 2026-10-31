@@ -1290,7 +1290,7 @@ function EditorBody({
           </div>
         </EditorSection>
 
-        <EditorSection id="mapping" title="Service mapping" description="Pair SociVanta services with this provider's own service references. Mappings save immediately and never change pricing or availability.">
+        <EditorSection id="mapping" title="Service mapping" description="Pair Sociotix services with this provider's own service references. Mappings save immediately and never change pricing or availability.">
           {isNew || !saved ? (
             <p className="rounded-xl bg-muted/40 p-3.5 text-sm text-muted-foreground">Save the provider first, then map services here.</p>
           ) : (
@@ -1355,7 +1355,7 @@ function EditorBody({
             <div>
               <p className="text-sm font-semibold">Supplier eligibility review completed</p>
               <p id="prov-supplier-desc" className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
-                Confirms the supplier was checked against SociVanta&apos;s supplier and platform policies. A simulated attestation in this demo; it doesn&apos;t verify a connection.
+                Confirms the supplier was checked against Sociotix&apos;s supplier and platform policies. A simulated attestation in this demo; it doesn&apos;t verify a connection.
               </p>
             </div>
             <Switch id="prov-supplier" label="Supplier eligibility review completed (simulated)" describedBy="prov-supplier-desc" checked={p.supplierReviewed} onChange={(v) => set({ supplierReviewed: v })} />
@@ -1540,7 +1540,7 @@ function MappingManager({
   );
 }
 
-/** Choose a SociVanta service → enter the provider's reference → save. */
+/** Choose a Sociotix service → enter the provider's reference → save. */
 function MappingForm({
   provider,
   providers,
@@ -1596,7 +1596,7 @@ function MappingForm({
       <p className="text-sm font-semibold">{initial ? "Edit mapping" : "Map a service"}</p>
       {!initial ? (
         <fieldset className="space-y-2">
-          <legend className="mb-1.5 text-xs font-semibold text-muted-foreground">1 · Choose a SociVanta service</legend>
+          <legend className="mb-1.5 text-xs font-semibold text-muted-foreground">1 · Choose a Sociotix service</legend>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-[1fr_11rem]">
             <div className="relative">
               <label htmlFor={`${uid}-search`} className="sr-only">
@@ -1622,7 +1622,7 @@ function MappingForm({
             Eligible services only{hiddenIneligible ? ` (${hiddenIneligible} hidden)` : ""}
           </label>
           {shown.length ? (
-            <div role="radiogroup" aria-label="SociVanta services" className="max-h-64 divide-y overflow-y-auto rounded-xl border">
+            <div role="radiogroup" aria-label="Sociotix services" className="max-h-64 divide-y overflow-y-auto rounded-xl border">
               {shown.map((r) => {
                 const e = serviceEligibility(r);
                 const pl = PLATFORM_BY_ID[r.platformId];

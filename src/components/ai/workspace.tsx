@@ -21,14 +21,14 @@ import { useToolStatus } from "./use-ai-status";
  * When live it needs a signed-in, verified account and shows real results.
  *
  * "Try this example" buttons anywhere on the page fill the form through the
- * `socivanta:ai-example` event. Filling never generates or uses a run.
+ * `sociotix:ai-example` event. Filling never generates or uses a run.
  */
 
 type Values = Record<string, string | string[]>;
 type Run = { kind: "idle" } | { kind: "loading"; started: number } | { kind: "error"; message: string } | { kind: "result"; output: unknown; key: number };
 export type WorkspaceExample = { title: string; fill: Values };
 
-export const EXAMPLE_EVENT = "socivanta:ai-example";
+export const EXAMPLE_EVENT = "sociotix:ai-example";
 
 const control =
   "w-full rounded-xl border bg-background px-3.5 text-[0.95rem] transition-[border-color,box-shadow] outline-none placeholder:text-muted-foreground/70 hover:border-foreground/20 focus-visible:border-primary/60 focus-visible:ring-4 focus-visible:ring-primary/15 disabled:cursor-not-allowed disabled:opacity-75 aria-invalid:border-destructive/60 dark:bg-white/[0.03]";
@@ -227,7 +227,7 @@ export function AiWorkspace({ tool, examples = [] }: { tool: AiTool; examples?: 
                   </>
                 ) : (
                   <>
-                    <span className="font-semibold text-foreground">Free with a SociVanta account.</span> {tool.free ? `${tool.free.signedInPerDay} runs a day, no card needed.` : null}
+                    <span className="font-semibold text-foreground">Free with a Sociotix account.</span> {tool.free ? `${tool.free.signedInPerDay} runs a day, no card needed.` : null}
                   </>
                 )}
               </span>
@@ -384,7 +384,7 @@ export function AiWorkspace({ tool, examples = [] }: { tool: AiTool; examples?: 
         </p>
         {/* Usage appears here once the tool is live; while it isn't, the header already shows the planned allowance. */}
         {live && tool.free ? (
-          <p className="shrink-0 tabular-nums">{usage ? `${usage.used} of ${usage.allowance} free runs used today · resets at midnight UTC` : `${tool.free.signedInPerDay} free runs a day with a SociVanta account`}</p>
+          <p className="shrink-0 tabular-nums">{usage ? `${usage.used} of ${usage.allowance} free runs used today · resets at midnight UTC` : `${tool.free.signedInPerDay} free runs a day with a Sociotix account`}</p>
         ) : null}
       </div>
     </div>

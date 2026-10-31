@@ -9,8 +9,8 @@ import { accountSnapshot } from "@/server/customers/customers";
 import { getDb } from "@/server/db/client";
 
 export const metadata: Metadata = {
-  title: { default: "Overview · SociVanta Dashboard", template: "%s · SociVanta Dashboard" },
-  description: "Your SociVanta workspace: balance, orders and services in one place.",
+  title: { default: "Overview · Sociotix Dashboard", template: "%s · Sociotix Dashboard" },
+  description: "Your Sociotix workspace: balance, orders and services in one place.",
   robots: { index: false, follow: false },
 };
 

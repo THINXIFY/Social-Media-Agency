@@ -8,7 +8,7 @@ import { AI_TOOLS, aiToolHref } from "@/lib/ai/registry";
 import { breadcrumbs, faqPage, graph, itemList, webPage } from "@/lib/seo/schema";
 import { SITE } from "@/lib/seo/site";
 
-const TITLE = "AI Social Media Tools for Content Creators | SociVanta AI";
+const TITLE = "AI Social Media Tools for Content Creators | Sociotix AI";
 const DESCRIPTION =
   "AI tools for social media content: a caption generator, hashtag and keyword finder, post ideas and a content calendar, shaped for each platform. Launching in stages.";
 
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: "/ai-tools" },
-  openGraph: { type: "website", url: "/ai-tools", siteName: SITE.name, title: "SociVanta AI — AI Tools for Social Media", description: "Turn a quick idea into captions, hashtags, post ideas and a posting plan — shaped for each platform." },
-  twitter: { card: "summary_large_image", title: "SociVanta AI — AI Tools for Social Media", description: "Turn a quick idea into captions, hashtags, post ideas and a posting plan — shaped for each platform." },
+  openGraph: { type: "website", url: "/ai-tools", siteName: SITE.name, title: "Sociotix AI — AI Tools for Social Media", description: "Turn a quick idea into captions, hashtags, post ideas and a posting plan — shaped for each platform." },
+  twitter: { card: "summary_large_image", title: "Sociotix AI — AI Tools for Social Media", description: "Turn a quick idea into captions, hashtags, post ideas and a posting plan — shaped for each platform." },
 };
 
 export default function AiToolsPage() {
@@ -37,7 +37,7 @@ export default function AiToolsPage() {
             { name: SITE.name, path: "/" },
             { name: SITE.aiName, path: "/ai-tools" },
           ]),
-          itemList("SociVanta AI Content Studio tools", guided),
+          itemList("Sociotix AI Content Studio tools", guided),
           faqPage(AI_FAQ.map((f) => ({ q: f.q, a: f.a }))),
         )}
       />

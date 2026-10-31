@@ -124,7 +124,7 @@ export function ToolGuideSection({ tool, guide }: { tool: AiTool; guide: ToolGui
         <div>
           <p className={eyebrow}>Better results</p>
           <h2 id="guide-tips" className={cn(h2, "mt-2")}>
-            Tips from the SociVanta team
+            Tips from the Sociotix team
           </h2>
           <ul className="mt-6 divide-y border-y">
             {guide.tips.map((t) => (
@@ -179,7 +179,7 @@ export function ToolGuideSection({ tool, guide }: { tool: AiTool; guide: ToolGui
           <h2 id="guide-faq" className={cn(h2, "mt-2")}>
             {`${short} questions`}
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Short answers to what people ask most. More about SociVanta AI on the{" "}
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Short answers to what people ask most. More about Sociotix AI on the{" "}
             <Link href="/ai-tools#faq" className="font-semibold text-primary hover:underline">
               AI tools page
             </Link>

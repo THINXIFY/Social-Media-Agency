@@ -697,7 +697,7 @@ function ReportsView({ ctx }: { ctx: Ctx }) {
             <p className="mt-0.5 text-xs text-muted-foreground">{r.note}</p>
             <button
               type="button"
-              onClick={() => downloadCsv(`socivanta-${r.id}-${stamp}.csv`, r.rows())}
+              onClick={() => downloadCsv(`sociotix-${r.id}-${stamp}.csv`, r.rows())}
               className="mt-3 inline-flex h-9 items-center justify-center gap-1.5 self-start rounded-full border bg-card px-3.5 text-[0.82rem] font-semibold transition-colors hover:border-primary/40 hover:text-primary focus-visible:ring-3 focus-visible:ring-primary/30 focus-visible:outline-none"
             >
               <Download className="size-3.5" aria-hidden /> Download CSV

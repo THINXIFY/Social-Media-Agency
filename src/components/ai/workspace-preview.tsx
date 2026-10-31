@@ -21,7 +21,7 @@ export function WorkspacePreview() {
   const tool = AI_TOOL_BY_ID["caption-generator"];
   const picked = ["Instagram", "TikTok"];
   return (
-    <figure className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#141519] shadow-[0_40px_120px_-50px_rgb(112_71_235/0.55)]" aria-label="Preview of the SociVanta AI workspace. Example inputs and placeholder results; nothing is generated.">
+    <figure className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#141519] shadow-[0_40px_120px_-50px_rgb(112_71_235/0.55)]" aria-label="Preview of the Sociotix AI workspace. Example inputs and placeholder results; nothing is generated.">
       {/* Window bar */}
       <div className="flex items-center gap-4 border-b border-white/[0.07] px-5 py-3.5">
         <div className="flex gap-1.5" aria-hidden>

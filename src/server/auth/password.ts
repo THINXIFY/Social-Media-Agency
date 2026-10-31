@@ -45,6 +45,7 @@ const COMMON = new Set([
   "letmein1234",
   "welcome123",
   "abc1234567",
+  "sociotix123",
   "socivanta123",
 ]);
 

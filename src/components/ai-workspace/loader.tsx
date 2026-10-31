@@ -21,7 +21,7 @@ function Fallback() {
   const block = "animate-pulse rounded-3xl bg-muted motion-reduce:animate-none";
   return (
     <div className="mx-auto max-w-[90rem] px-3 py-4 sm:px-6 sm:py-7 lg:px-8" aria-busy="true">
-      <span className="sr-only">Loading SociVanta AI…</span>
+      <span className="sr-only">Loading Sociotix AI…</span>
       <div className={`h-28 max-w-xl ${block}`} />
       <div className={`mt-5 h-11 w-80 max-w-full ${block}`} />
       <div className={`mt-8 h-56 ${block}`} />

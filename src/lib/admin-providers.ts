@@ -175,7 +175,7 @@ export function nextStepOf(p: Provider, all: Provider[], records: Record<string,
   if (!p.enabled) return { id: "enable", title: "Disabled", detail: "Enable the provider to work on it again.", action: "Enable provider", section: "general" };
   const [first] = issuesOf(p, all, records);
   if (first) return first;
-  if (!p.mappings.length) return { id: "map", title: "No services mapped", detail: "Map the SociVanta services this provider can fulfil.", action: "Map services", section: "mapping" };
+  if (!p.mappings.length) return { id: "map", title: "No services mapped", detail: "Map the Sociotix services this provider can fulfil.", action: "Map services", section: "mapping" };
   return null;
 }
 

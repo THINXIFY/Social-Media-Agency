@@ -9,7 +9,7 @@ import { CopyButton } from "./results";
 /*
  * Growth Intelligence results (AI-03). AI text is untrusted and only ever
  * rendered as plain text. In the Service Recommender, every service name,
- * price and status comes from the SociVanta catalog — never from the model —
+ * price and status comes from the Sociotix catalog — never from the model —
  * and ordering is offered only when the server says a service is orderable.
  */
 
@@ -73,7 +73,7 @@ export function advisorMarkdown(r: AdvisorResult) {
     "**How to adjust**",
     bullets(r.nextSteps.adjust),
     "",
-    "_AI-written suggestions from SociVanta AI. Not a guarantee of results._",
+    "_AI-written suggestions from Sociotix AI. Not a guarantee of results._",
   ].join("\n\n");
 }
 
@@ -100,7 +100,7 @@ export function roadmapMarkdown(r: RoadmapResult) {
     "## Next steps",
     bullets(r.nextSteps),
     "",
-    "_AI-written plan from SociVanta AI. Milestones are suggestions, not predictions._",
+    "_AI-written plan from Sociotix AI. Milestones are suggestions, not predictions._",
   ].join("\n\n");
 }
 
@@ -174,7 +174,7 @@ export function AdvisorResults({ result }: { result: AdvisorResult }) {
     <div className="ai-print-area space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">{r.recommendations.length} recommendations · based only on what you shared</p>
-        <Actions copyLabel="Copy the strategy" text={advisorMarkdown(r)} file="socivanta-growth-strategy.md" />
+        <Actions copyLabel="Copy the strategy" text={advisorMarkdown(r)} file="sociotix-growth-strategy.md" />
       </div>
 
       {/* Assessment */}
@@ -290,7 +290,7 @@ export function RoadmapResults({ result }: { result: RoadmapResult }) {
         <p className="text-xs text-muted-foreground">
           {r.duration}-day plan · {r.stages.length} stages · nothing is scheduled for you
         </p>
-        <Actions copyLabel="Copy the roadmap" text={roadmapMarkdown(r)} file={`socivanta-${r.duration}-day-roadmap.md`} />
+        <Actions copyLabel="Copy the roadmap" text={roadmapMarkdown(r)} file={`sociotix-${r.duration}-day-roadmap.md`} />
       </div>
       <div className="rounded-2xl border bg-card p-4 sm:p-5">
         <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">Objective</p>
@@ -441,8 +441,8 @@ export function RecommenderResults({ result }: { result: RecommenderResult }) {
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-muted-foreground">
-          Matched against {r.candidatesConsidered} SociVanta {r.candidatesConsidered === 1 ? "service" : "services"} for {r.platform.name}
-          {r.focus ? ` · ${r.focus}` : ""}. Prices and availability come from SociVanta, not the AI.
+          Matched against {r.candidatesConsidered} Sociotix {r.candidatesConsidered === 1 ? "service" : "services"} for {r.platform.name}
+          {r.focus ? ` · ${r.focus}` : ""}. Prices and availability come from Sociotix, not the AI.
         </p>
         <CopyButton text={recommenderText(r)} label="Copy the recommendations">
           Copy

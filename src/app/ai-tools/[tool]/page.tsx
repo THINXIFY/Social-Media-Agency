@@ -27,14 +27,14 @@ export function generateStaticParams() {
 const isLive = (tool: AiTool) => effectiveAvailability(tool) === "available";
 
 /** Availability clause for descriptions: never claims generation that isn't switched on. */
-const availabilityNote = (tool: AiTool) => (isLive(tool) ? `Free with a SociVanta account${tool.free ? ` — ${tool.free.signedInPerDay} runs a day` : ""}.` : "Coming soon to SociVanta AI.");
+const availabilityNote = (tool: AiTool) => (isLive(tool) ? `Free with a Sociotix account${tool.free ? ` — ${tool.free.signedInPerDay} runs a day` : ""}.` : "Coming soon to Sociotix AI.");
 
 export async function generateMetadata({ params }: { params: Promise<{ tool: string }> }): Promise<Metadata> {
   const tool = AI_TOOL_BY_SLUG[(await params).tool];
   if (!tool) return {};
   const guide = TOOL_GUIDES[tool.id];
   const path = aiToolHref(tool);
-  const title = guide?.seoTitle ?? `${tool.name} — SociVanta AI`;
+  const title = guide?.seoTitle ?? `${tool.name} — Sociotix AI`;
   const description = guide ? `${guide.metaDescription} ${availabilityNote(tool)}` : `${tool.tagline} ${tool.description}`.slice(0, 300);
   return {
     title: { absolute: title },
@@ -81,7 +81,7 @@ export default async function AiToolPage({ params }: { params: Promise<{ tool: s
               <ol className="flex flex-wrap items-center gap-1 text-[0.8rem] text-muted-foreground">
                 <li>
                   <Link href="/ai-tools" className="rounded hover:text-foreground">
-                    SociVanta AI
+                    Sociotix AI
                   </Link>
                 </li>
                 <ChevronRight className="size-3" aria-hidden />

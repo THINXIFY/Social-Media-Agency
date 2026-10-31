@@ -49,6 +49,7 @@ export async function bootstrapOwner(db: Db, input: { email: string; name: strin
   if (name.length < 2) throw fieldError("name", "Enter the owner's name.");
 
   const result = await db.transaction(async (tx) => {
+    // The lock key predates the Sociotix rename; it stays as-is so every running version serialises on the same lock.
     await tx.execute(sql`select pg_advisory_xact_lock(hashtext('socivanta:owner-bootstrap'))`);
     await ensureSystemRoles(tx);
     const owner = (await roleByKey(tx, "owner"))!;

@@ -296,7 +296,7 @@ export function CalendarResults({ result }: { result: CalendarResult }) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `socivanta-content-calendar-${result.days}-days.csv`;
+    a.download = `sociotix-content-calendar-${result.days}-days.csv`;
     a.click();
     window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   };

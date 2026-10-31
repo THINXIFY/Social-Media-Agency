@@ -38,7 +38,7 @@ export interface AskSpec<T> {
 }
 export type Ask = <T>(spec: AskSpec<T>) => Promise<T>;
 
-/** Read-only context for generators that ground answers in SociVanta data (e.g. the public catalog). Never used to write. */
+/** Read-only context for generators that ground answers in Sociotix data (e.g. the public catalog). Never used to write. */
 export interface GeneratorContext {
   db: Db;
   /** The configuration this run uses (live facts such as checkout or AI availability). */

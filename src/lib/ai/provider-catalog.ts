@@ -3,7 +3,7 @@
  * descriptions shared by the server and the admin UI.
  *
  * Listing a provider here does NOT mean it works. Each entry states how far
- * SociVanta's support actually goes:
+ * Sociotix's support actually goes:
  *  - generation: "native" (own adapter), "openai_compatible" (shared transport
  *    over the provider's documented OpenAI-compatible endpoint) or "pending"
  *    (no adapter yet: keys can't be used for generation).
@@ -79,5 +79,5 @@ export const CAPABILITY_LABEL: Record<Capability, string> = { structured_output:
 /** true = documented as supported, false = documented as unsupported, null = not verified (never assumed). */
 export type Capabilities = Partial<Record<Capability, boolean | null>>;
 
-/** Every SociVanta AI tool returns validated JSON, so its model must support structured output. */
+/** Every Sociotix AI tool returns validated JSON, so its model must support structured output. */
 export const TOOL_REQUIREMENTS: Capability[] = ["structured_output"];

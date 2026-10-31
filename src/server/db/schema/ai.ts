@@ -6,7 +6,7 @@ import { customers, users } from "./identity";
 export const AI_USAGE_STATUS = ["pending", "ok", "rejected_quota", "rejected_budget", "provider_error", "timeout", "invalid_output"] as const;
 
 /**
- * SociVanta AI usage accounting (AI-01). Metadata only: no prompt or generated
+ * Sociotix AI usage accounting (AI-01). Metadata only: no prompt or generated
  * text is ever stored. The subject is an HMAC of the account id (or the
  * visitor's IP for anonymous use), so usage can be counted without linking
  * it to account records. A pending row reserves the tool's cost ceiling
@@ -47,7 +47,7 @@ export const AI_PERSONAS = ["creator", "small_business", "agency", "ecommerce", 
 export const AI_ONBOARDING = ["completed", "skipped"] as const;
 
 /**
- * A customer's SociVanta AI workspace preferences (AI-09): who they are and
+ * A customer's Sociotix AI workspace preferences (AI-09): who they are and
  * what they want to achieve, chosen in the optional onboarding. Only these
  * choices are stored; they personalise navigation and never grant access.
  */
@@ -152,7 +152,7 @@ export const aiModels = pgTable(
 
 export const AI_ASSIGNMENT_STATUS = ["draft", "active", "disabled"] as const;
 
-/** Which model each SociVanta tool uses when generation runs through the Control Center. Server-authoritative. */
+/** Which model each Sociotix tool uses when generation runs through the Control Center. Server-authoritative. */
 export const aiToolAssignments = pgTable(
   "ai_tool_assignments",
   {

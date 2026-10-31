@@ -75,7 +75,7 @@ const output = z
   .strict();
 export type OrderAssistantOutput = z.infer<typeof output>;
 
-const SYSTEM = `You help a SociVanta customer choose and set up one service from SociVanta's catalog before they order it themselves.
+const SYSTEM = `You help a Sociotix customer choose and set up one service from Sociotix's catalog before they order it themselves.
 
 Rules that always apply:
 - <candidates> are the only services you may choose. Pick by id. If none fits the goal, return an empty serviceId and ask one clarifying question.
@@ -92,7 +92,7 @@ async function candidates(i: Input, ctx: GeneratorContext): Promise<PublicServic
     return [s];
   }
   const found = await findCandidates(ctx.db, parseServiceQuery(i.goal), { platform: i.platform, limit: 24 });
-  if (!found.length) throw new AppError("VALIDATION_FAILED", "We couldn't match that to a SociVanta service. Name the platform and what you'd like more of — for example “followers for my Instagram shop”.", { details: { field: "goal" } });
+  if (!found.length) throw new AppError("VALIDATION_FAILED", "We couldn't match that to a Sociotix service. Name the platform and what you'd like more of — for example “followers for my Instagram shop”.", { details: { field: "goal" } });
   return found;
 }
 

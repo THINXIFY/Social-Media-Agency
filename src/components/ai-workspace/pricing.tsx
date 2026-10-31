@@ -3,19 +3,19 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { AiMark } from "@/components/ai/parts";
 import { BILLING_FACTS, PlanCards, PlanComparison } from "./plans";
 
-/* The public SociVanta AI plans page (AI-09). Server-rendered; every claim matches what works today. */
+/* The public Sociotix AI plans page (AI-09). Server-rendered; every claim matches what works today. */
 
-export const PRICING_TITLE = "SociVanta AI Plans & Pricing — Free to Start";
+export const PRICING_TITLE = "Sociotix AI Plans & Pricing — Free to Start";
 export const PRICING_DESCRIPTION =
-  "See what the free SociVanta AI plan includes for social media planning and automation today, and how the proposed Pro and Business plans will work. No card needed.";
+  "See what the free Sociotix AI plan includes for social media planning and automation today, and how the proposed Pro and Business plans will work. No card needed.";
 
 export const PRICING_FAQ: { q: string; a: string }[] = [
-  { q: "Is SociVanta AI free?", a: "Yes. Every account is on the Free plan and no payment details are needed. The social workspace and Automation Studio work today, and each AI tool will include a daily free allowance when it launches." },
+  { q: "Is Sociotix AI free?", a: "Yes. Every account is on the Free plan and no payment details are needed. The social workspace and Automation Studio work today, and each AI tool will include a daily free allowance when it launches." },
   { q: "How much will Pro and Business cost?", a: "Pricing hasn't been announced. Pro and Business are proposed plans, and nothing in them is available or billed yet." },
   { q: "When do the AI tools launch?", a: "Each tool launches once its AI service has been tested. Until then its page shows Coming soon, and nothing runs or counts toward an allowance." },
   { q: "What counts toward my daily allowance?", a: "Only completed runs. Requests that hit an AI service error, time out or return something we can't use are never counted. Allowances reset every day at 00:00 UTC." },
-  { q: "Can I pay for AI with my SociVanta wallet?", a: "No. Your wallet is only for SMM service orders, and wallet balances will never be used for AI plans." },
-  { q: "How are SMM services priced?", a: "Each SMM service has its own price, shown before you order. Those prices are separate from SociVanta AI plans." },
+  { q: "Can I pay for AI with my Sociotix wallet?", a: "No. Your wallet is only for SMM service orders, and wallet balances will never be used for AI plans." },
+  { q: "How are SMM services priced?", a: "Each SMM service has its own price, shown before you order. Those prices are separate from Sociotix AI plans." },
 ];
 
 export function PricingPage() {
@@ -25,9 +25,9 @@ export function PricingPage() {
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(50rem_24rem_at_50%_-10%,rgb(112_71_235/0.14),transparent_70%)] dark:bg-[radial-gradient(50rem_24rem_at_50%_-10%,rgb(112_71_235/0.28),transparent_70%)]" />
         <div className="relative mx-auto max-w-3xl px-4 pt-14 pb-12 text-center sm:px-6 sm:pt-20 sm:pb-16">
           <AiMark />
-          <h1 className="mt-5 font-heading text-[2.2rem] leading-[1.05] font-extrabold tracking-tight text-balance sm:text-[3.4rem]">SociVanta AI plans &amp; pricing</h1>
+          <h1 className="mt-5 font-heading text-[2.2rem] leading-[1.05] font-extrabold tracking-tight text-balance sm:text-[3.4rem]">Sociotix AI plans &amp; pricing</h1>
           <p className="mx-auto mt-5 max-w-2xl text-[1.05rem] text-pretty text-muted-foreground sm:text-lg">
-            SociVanta AI is free to start. Free includes the social media planning workspace and Automation Studio today, plus a daily allowance for each AI tool as it launches. Pro and Business are proposed plans whose pricing hasn&apos;t been announced.
+            Sociotix AI is free to start. Free includes the social media planning workspace and Automation Studio today, plus a daily allowance for each AI tool as it launches. Pro and Business are proposed plans whose pricing hasn&apos;t been announced.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-2.5">
             <Link href="/register" className="inline-flex h-11 items-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-[0_10px_24px_-14px_rgb(112_71_235/0.9)] hover:bg-primary/90 focus-visible:ring-3 focus-visible:ring-primary/35 focus-visible:outline-none">
@@ -44,7 +44,7 @@ export function PricingPage() {
         <h2 id="plans-heading" className="font-heading text-[1.6rem] font-extrabold tracking-tight sm:text-[2rem]">
           Choose what fits
         </h2>
-        <p className="mt-2 max-w-2xl text-muted-foreground">Free is the only plan available. The others show where SociVanta AI is heading, clearly marked as proposed.</p>
+        <p className="mt-2 max-w-2xl text-muted-foreground">Free is the only plan available. The others show where Sociotix AI is heading, clearly marked as proposed.</p>
         <div className="mt-8">
           <PlanCards freeAction={{ href: "/register", label: "Start free" }} />
         </div>
@@ -97,7 +97,7 @@ export function PricingPage() {
           </Link>{" "}
           or read about{" "}
           <Link href="/social-management" className="font-semibold text-primary hover:underline">
-            social media management in SociVanta
+            social media management in Sociotix
           </Link>
           .
         </p>

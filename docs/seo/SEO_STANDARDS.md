@@ -1,4 +1,4 @@
-# SociVanta SEO standards
+# Sociotix SEO standards
 
 Every phase that adds or changes a public page must meet this checklist. The utilities named here are the single source of truth. Don't duplicate them in components.
 

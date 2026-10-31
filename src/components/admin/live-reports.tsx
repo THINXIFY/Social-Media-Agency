@@ -113,7 +113,7 @@ export function LiveReports({ allowed }: { allowed: ReportId[] }) {
         throw new Error(body?.error?.message ?? "The export couldn't be created.");
       }
       const blob = await res.blob();
-      const name = /filename="([^"]+)"/.exec(res.headers.get("content-disposition") ?? "")?.[1] ?? "socivanta-report.csv";
+      const name = /filename="([^"]+)"/.exec(res.headers.get("content-disposition") ?? "")?.[1] ?? "sociotix-report.csv";
       const lines = (await blob.text()).split("\r\n").filter(Boolean).length - 1;
       const href = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -145,7 +145,7 @@ export function LiveReports({ allowed }: { allowed: ReportId[] }) {
         <div className="min-w-0">
           <p className="text-[0.8rem] font-medium text-muted-foreground">Analytics</p>
           <h1 className="mt-1.5 font-heading text-[1.75rem] leading-tight font-extrabold tracking-tight sm:text-[2.1rem]">Reports</h1>
-          <p className="mt-1 max-w-2xl text-[0.95rem] text-muted-foreground">Accurate figures from SociVanta&apos;s records, with CSV export for the rows behind them.</p>
+          <p className="mt-1 max-w-2xl text-[0.95rem] text-muted-foreground">Accurate figures from Sociotix&apos;s records, with CSV export for the rows behind them.</p>
         </div>
         <div className="flex min-w-0 flex-col gap-2 xl:items-end">
           <div className="flex flex-wrap items-center gap-2">

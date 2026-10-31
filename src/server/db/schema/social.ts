@@ -78,7 +78,7 @@ export const socialConnections = pgTable(
   },
   (t) => [
     index("social_connections_customer_idx").on(t.customerId, t.status),
-    // A platform account can be connected to one SociVanta account at a time.
+    // A platform account can be connected to one Sociotix account at a time.
     uniqueIndex("social_connections_live_idx").on(t.provider, t.externalId).where(sql`${t.status} <> 'disconnected'`),
     check("social_connections_provider_check", oneOf(t.provider, SOCIAL_PROVIDERS)),
     check("social_connections_status_check", oneOf(t.status, SOCIAL_STATUS)),

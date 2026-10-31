@@ -590,7 +590,7 @@ function ReceiptForm({ amountCents, busy, error, onCancel, onSubmit }: { amountC
       }}
     >
       <p className="font-semibold">Record bank receipt · review 1 of 2</p>
-      <p className="text-xs text-muted-foreground">Copy these from SociVanta&apos;s own bank statement — never from a customer&apos;s screenshot or message. The amount must be exactly {cents(amountCents)}.</p>
+      <p className="text-xs text-muted-foreground">Copy these from Sociotix&apos;s own bank statement — never from a customer&apos;s screenshot or message. The amount must be exactly {cents(amountCents)}.</p>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <label className="text-sm font-medium">
           Bank transaction reference
@@ -613,7 +613,7 @@ function ReceiptForm({ amountCents, busy, error, onCancel, onSubmit }: { amountC
         <legend className="sr-only">Confirmations</legend>
         {(
           [
-            ["onBankStatement", "The transfer is on SociVanta's bank statement"],
+            ["onBankStatement", "The transfer is on Sociotix's bank statement"],
             ["referenceMatches", "The deposit reference matches"],
             ["fundsCleared", "The funds have cleared"],
           ] as const

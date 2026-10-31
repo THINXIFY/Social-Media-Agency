@@ -46,6 +46,13 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: SECURITY_HEADERS }];
   },
+  // Help articles renamed with the SociVanta → Sociotix rebrand: old links land on the same article.
+  async redirects() {
+    return [
+      { source: "/help/what-is-socivanta", destination: "/help/what-is-sociotix", permanent: true },
+      { source: "/help/what-are-socivanta-ai-tools", destination: "/help/what-are-sociotix-ai-tools", permanent: true },
+    ];
+  },
   turbopack: {
     rules: {
       "*.css": {
